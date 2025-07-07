@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Task {
     id: string;
@@ -19,6 +19,7 @@ interface TaskManagerProps {
 }
 
 export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
+    const [mounted, setMounted] = useState(false);
     const [tasks, setTasks] = useState<Task[]>([
         {
             id: '1',
@@ -69,6 +70,10 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
     const [showAddTask, setShowAddTask] = useState(false);
     const [filter, setFilter] = useState<'all' | 'todo' | 'in-progress' | 'completed'>('all');
     const [priorityFilter, setPriorityFilter] = useState<'all' | 'low' | 'medium' | 'high'>('all');
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const columns = {
         todo: { title: 'To Do', color: 'border-gray-500' },

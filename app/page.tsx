@@ -7,14 +7,16 @@ import { TimeTracker } from '../components/TimeTracker';
 export default function Page() {
     const [currentStatus, setCurrentStatus] = useState('active');
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [mounted, setMounted] = useState(false);
     const [inTime, setInTime] = useState('09:00 AM');
     const [outTime, setOutTime] = useState('06:00 PM');
     const [isEditingTime, setIsEditingTime] = useState(false);
     const [selectedAnnouncement, setSelectedAnnouncement] = useState<any>(null);
     const [showAnnouncementModal, setShowAnnouncementModal] = useState(false);
 
-    // Update time every second
+    // Update time every second and handle mounting
     useEffect(() => {
+        setMounted(true);
         const timer = setInterval(() => {
             setCurrentTime(new Date());
         }, 1000);

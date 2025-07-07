@@ -21,6 +21,11 @@ export function TimeTracker() {
     const [isOnBreak, setIsOnBreak] = useState(false);
     const [breakStartTime, setBreakStartTime] = useState<Date | null>(null);
     const [totalBreakTime, setTotalBreakTime] = useState(0);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
