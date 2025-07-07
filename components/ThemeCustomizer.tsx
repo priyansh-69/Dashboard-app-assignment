@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface Theme {
     name: string;
@@ -82,7 +82,7 @@ export function ThemeCustomizer() {
         }
     }, []);
 
-    const applyTheme = (colors: Theme['colors']) => {
+    const applyTheme = useCallback((colors: Theme['colors']) => {
         const root = document.documentElement;
 
         // Update CSS variables
@@ -103,7 +103,7 @@ export function ThemeCustomizer() {
             '--gradient-secondary',
             `linear-gradient(135deg, ${colors.secondary} 0%, ${adjustBrightness(colors.secondary, -20)} 100%)`,
         );
-    };
+    }, []);
 
     const adjustBrightness = (color: string, amount: number) => {
         // Simple brightness adjustment for hex colors

@@ -22,55 +22,55 @@ interface GlobalSearchProps {
     };
 }
 
+// Sample data for demonstration - moved outside component to prevent recreation
+const searchData: SearchResult[] = [
+    {
+        id: '1',
+        title: 'Priyansh-Dashboard-App',
+        description: 'Main project for developing intern dashboard application',
+        type: 'project',
+        category: 'Projects',
+        metadata: { status: 'In Progress', progress: 85 },
+    },
+    {
+        id: '2',
+        title: 'Implement time tracking feature',
+        description: 'Build real-time time tracking with start/stop functionality',
+        type: 'task',
+        category: 'Tasks',
+        metadata: { priority: 'high', status: 'in-progress' },
+    },
+    {
+        id: '3',
+        title: 'Daily Stand-up Meeting',
+        description: 'Stand-up meeting at 10:00 AM in Conference Room B',
+        type: 'announcement',
+        category: 'Announcements',
+        metadata: { priority: 'high', time: 'Today, 9:30 AM' },
+    },
+    {
+        id: '4',
+        title: 'Sarah Chen',
+        description: 'Senior Developer - Engineering Department',
+        type: 'team',
+        category: 'Team Members',
+        metadata: { role: 'Senior Developer', status: 'active' },
+    },
+    {
+        id: '5',
+        title: 'Code review completed',
+        description: 'Reviewed pull request for dashboard components',
+        type: 'activity',
+        category: 'Recent Activities',
+        metadata: { time: '4 hours ago', project: 'Priyansh-Dashboard-App' },
+    },
+];
+
 export function GlobalSearch({ data }: GlobalSearchProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<SearchResult[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
-
-    // Sample data for demonstration
-    const searchData: SearchResult[] = [
-        {
-            id: '1',
-            title: 'Priyansh-Dashboard-App',
-            description: 'Main project for developing intern dashboard application',
-            type: 'project',
-            category: 'Projects',
-            metadata: { status: 'In Progress', progress: 85 },
-        },
-        {
-            id: '2',
-            title: 'Implement time tracking feature',
-            description: 'Build real-time time tracking with start/stop functionality',
-            type: 'task',
-            category: 'Tasks',
-            metadata: { priority: 'high', status: 'in-progress' },
-        },
-        {
-            id: '3',
-            title: 'Daily Stand-up Meeting',
-            description: 'Stand-up meeting at 10:00 AM in Conference Room B',
-            type: 'announcement',
-            category: 'Announcements',
-            metadata: { priority: 'high', time: 'Today, 9:30 AM' },
-        },
-        {
-            id: '4',
-            title: 'Sarah Chen',
-            description: 'Senior Developer - Engineering Department',
-            type: 'team',
-            category: 'Team Members',
-            metadata: { role: 'Senior Developer', status: 'active' },
-        },
-        {
-            id: '5',
-            title: 'Code review completed',
-            description: 'Reviewed pull request for dashboard components',
-            type: 'activity',
-            category: 'Recent Activities',
-            metadata: { time: '4 hours ago', project: 'Priyansh-Dashboard-App' },
-        },
-    ];
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {

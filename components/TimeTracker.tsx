@@ -270,7 +270,7 @@ export function TimeTracker() {
                     style={{ color: 'var(--text-primary)' }}
                     data-oid="aa:e2ic"
                 >
-                    📊 Today's Summary
+                    📊 Today&apos;s Summary
                 </h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4" data-oid="vr:e1za">
                     <div
