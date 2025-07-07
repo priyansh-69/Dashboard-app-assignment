@@ -234,82 +234,65 @@
         );
         border: 1px solid rgba(245, 158, 11, 0.2);
     }
-} /* 🌟 Modern Animations */
+} /* 🎯 Subtle Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-@keyframes pulse {
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1);
-    }
-}
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-16px);
     }
     to {
         opacity: 1;
         transform: translateX(0);
     }
 }
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-}
 .fade-in {
     animation: fadeIn 0.3s ease;
 }
 .slide-in {
-    animation: slideIn 0.4s ease;
-}
-.float-animation {
-    animation: float 3s ease-in-out infinite;
+    animation: slideIn 0.3s ease;
 }
 @layer base {
     * {
         @apply border-border;
     }
     body {
-        font-family: 'Inter', sans-serif;
-        background: var(--bg-gradient);
+        font-family:
+            'Segoe UI',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Roboto',
+            sans-serif;
+        background: var(--bg-primary);
         color: var(--text-primary);
         overflow-x: hidden;
-        line-height: 1.6;
+        line-height: 1.5;
         font-weight: 400;
-    } /* 🌈 Colorful Scrollbar */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } /* 🎨 Clean Scrollbar */
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
     }
     ::-webkit-scrollbar-track {
-        background: var(--bg-secondary);
-        border-radius: 4px;
+        background: var(--bg-tertiary);
     }
     ::-webkit-scrollbar-thumb {
-        background: var(--gradient-primary);
-        border-radius: 4px;
+        background: var(--border-secondary);
+        border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: var(--gradient-secondary);
-    } /* 🎨 Modern Typography */
+        background: var(--accent-primary);
+    } /* 📝 Clean Typography */
     h1,
     h2,
     h3,
@@ -318,31 +301,54 @@
     h6 {
         font-weight: 600;
         line-height: 1.3;
-        letter-spacing: -0.025em;
-    } /* 🎯 Colorful Focus States */
+        color: var(--text-primary);
+    }
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    } /* 🎯 Focus States */
     input:focus,
     textarea:focus,
     select:focus {
         outline: none;
-        border-color: var(--accent-primary);
-        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    } /* 🌟 Gradient Selection */
+        border-color: var(--border-focus);
+        box-shadow: 0 0 0 2px rgba(98, 100, 167, 0.2);
+    } /* 🌟 Selection */
     ::selection {
         background: var(--accent-primary);
         color: white;
-    } /* 🎨 Custom Input Styles */
+    } /* 🎨 Form Elements */
     input,
     textarea,
     select {
-        background: var(--bg-tertiary);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-primary);
-        border-radius: 8px;
+        border-radius: 4px;
         color: var(--text-primary);
+        padding: 8px 12px;
+        font-size: 14px;
         transition: all 0.2s ease;
     }
     input:hover,
     textarea:hover,
     select:hover {
         border-color: var(--border-secondary);
+    } /* 📱 Responsive Text */
+    .text-responsive {
+        font-size: clamp(14px, 2vw, 16px);
     }
 }
