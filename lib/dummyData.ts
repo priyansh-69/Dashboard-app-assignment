@@ -145,7 +145,7 @@ export const announcements: Announcement[] = [
         id: 2,
         title: 'Project Deadline Extended',
         message:
-            'Customer Analytics Platform deadline has been extended to July 15th due to additional feature requests from stakeholders.',
+            'Priyansh-Dashboard-App deadline has been extended to July 30th due to additional feature requests from stakeholders.',
         time: 'Yesterday',
         priority: 'medium',
         type: 'update',
