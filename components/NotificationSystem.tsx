@@ -158,10 +158,10 @@ export function NotificationSystem() {
 
     return (
         <>
-            <Toaster position="top-right" data-oid="p.p2600" />
+            <Toaster position="top-right" />
 
             {/* Notification Bell */}
-            <div className="relative" data-oid="xbbn:mf">
+            <div className="relative">
                 <button
                     onClick={() => setShowNotifications(!showNotifications)}
                     className="relative p-2 rounded-lg transition-all hover:scale-110"
@@ -169,16 +169,16 @@ export function NotificationSystem() {
                         background: 'var(--bg-tertiary)',
                         color: 'var(--text-primary)',
                     }}
-                    data-oid="oad.q0r"
+                   
                 >
-                    <span className="text-xl" data-oid="37.tl-x">
+                    <span className="text-xl">
                         🔔
                     </span>
                     {getUnreadCount() > 0 && (
                         <span
                             className="absolute -top-1 -right-1 w-5 h-5 rounded-full text-xs flex items-center justify-center text-white font-bold"
                             style={{ background: 'var(--accent-red)' }}
-                            data-oid="im4r6iz"
+                           
                         >
                             {getUnreadCount()}
                         </span>
@@ -190,17 +190,17 @@ export function NotificationSystem() {
                     <div
                         className="absolute right-0 top-12 w-80 max-h-96 overflow-y-auto glass-effect rounded-xl p-4 z-50"
                         style={{ background: 'var(--bg-secondary)' }}
-                        data-oid="iacqwir"
+                       
                     >
-                        <div className="flex items-center justify-between mb-4" data-oid="5_45:f.">
+                        <div className="flex items-center justify-between mb-4">
                             <h3
                                 className="font-bold"
                                 style={{ color: 'var(--text-primary)' }}
-                                data-oid="sc6qyhk"
+                               
                             >
                                 Notifications
                             </h3>
-                            <div className="flex space-x-2" data-oid="ajlq3d9">
+                            <div className="flex space-x-2">
                                 <button
                                     onClick={markAllAsRead}
                                     className="text-xs px-2 py-1 rounded-md transition-all hover:scale-105"
@@ -208,7 +208,7 @@ export function NotificationSystem() {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-secondary)',
                                     }}
-                                    data-oid="1zzcp_w"
+                                   
                                 >
                                     Mark all read
                                 </button>
@@ -216,19 +216,19 @@ export function NotificationSystem() {
                                     onClick={() => setShowNotifications(false)}
                                     className="text-lg hover:text-red-400 transition-colors"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="1nu-cc1"
+                                   
                                 >
                                     ×
                                 </button>
                             </div>
                         </div>
 
-                        <div className="space-y-3" data-oid="uh_6gia">
+                        <div className="space-y-3">
                             {notifications.length === 0 ? (
                                 <div
                                     className="text-center py-8"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid=":1f2rz."
+                                   
                                 >
                                     No notifications
                                 </div>
@@ -246,24 +246,24 @@ export function NotificationSystem() {
                                             opacity: notification.read ? 0.7 : 1,
                                         }}
                                         onClick={() => markAsRead(notification.id)}
-                                        data-oid="s.9:dq8"
+                                       
                                     >
                                         <div
                                             className="flex items-start space-x-3"
-                                            data-oid="l58q1pq"
+                                           
                                         >
-                                            <span className="text-lg" data-oid="p3crds9">
+                                            <span className="text-lg">
                                                 {getNotificationIcon(notification.type)}
                                             </span>
-                                            <div className="flex-1" data-oid="wfmv2y4">
+                                            <div className="flex-1">
                                                 <div
                                                     className="flex items-start justify-between"
-                                                    data-oid="-q-cq5g"
+                                                   
                                                 >
                                                     <h4
                                                         className="font-medium text-sm"
                                                         style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="1hsz8yi"
+                                                       
                                                     >
                                                         {notification.title}
                                                     </h4>
@@ -274,7 +274,7 @@ export function NotificationSystem() {
                                                         }}
                                                         className="text-xs hover:text-red-400 transition-colors"
                                                         style={{ color: 'var(--text-muted)' }}
-                                                        data-oid="xrclcxq"
+                                                       
                                                     >
                                                         ×
                                                     </button>
@@ -282,18 +282,18 @@ export function NotificationSystem() {
                                                 <p
                                                     className="text-xs mt-1"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="q:k::g3"
+                                                   
                                                 >
                                                     {notification.message}
                                                 </p>
                                                 <div
                                                     className="flex items-center justify-between mt-2"
-                                                    data-oid="pb43lp0"
+                                                   
                                                 >
                                                     <span
                                                         className="text-xs"
                                                         style={{ color: 'var(--text-muted)' }}
-                                                        data-oid="3d9ktbg"
+                                                       
                                                     >
                                                         {formatTimeAgo(notification.timestamp)}
                                                     </span>
@@ -309,7 +309,7 @@ export function NotificationSystem() {
                                                                     'var(--gradient-primary)',
                                                                 color: 'white',
                                                             }}
-                                                            data-oid="q7krrr:"
+                                                           
                                                         >
                                                             {notification.action.label}
                                                         </button>
@@ -319,7 +319,7 @@ export function NotificationSystem() {
                                                     <div
                                                         className="w-2 h-2 rounded-full mt-2"
                                                         style={{ background: 'var(--accent-red)' }}
-                                                        data-oid="m-rw58a"
+                                                       
                                                     ></div>
                                                 )}
                                             </div>

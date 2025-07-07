@@ -120,33 +120,33 @@ export function TimeTracker() {
     };
 
     return (
-        <div className="space-y-6" data-oid="htq:epu">
+        <div className="space-y-6">
             {/* Active Timer */}
-            <div className="glass-effect rounded-2xl p-6" data-oid="xuue:lr">
-                <div className="flex items-center space-x-2 mb-6" data-oid="fbx8xqh">
-                    <span className="text-2xl" data-oid="quwkqmo">
+            <div className="glass-effect rounded-2xl p-6">
+                <div className="flex items-center space-x-2 mb-6">
+                    <span className="text-2xl">
                         ⏱️
                     </span>
                     <h3
                         className="text-xl font-bold"
                         style={{ color: 'var(--text-primary)' }}
-                        data-oid="hr9bv.u"
+                       
                     >
                         Time Tracker
                     </h3>
                 </div>
 
                 {/* Timer Display */}
-                <div className="text-center mb-6" data-oid="rlg1hgh">
+                <div className="text-center mb-6">
                     <div
                         className={`text-6xl font-mono font-bold mb-2 ${isTracking ? 'text-green-400' : 'text-gray-400'}`}
                         style={{ color: isTracking ? 'var(--status-active)' : 'var(--text-muted)' }}
-                        data-oid="-l-6szv"
+                       
                     >
                         {formatTime(elapsedTime)}
                     </div>
                     {isOnBreak && (
-                        <div className="text-yellow-400 font-medium" data-oid="o1r88hr">
+                        <div className="text-yellow-400 font-medium">
                             🟡 On Break
                         </div>
                     )}
@@ -154,7 +154,7 @@ export function TimeTracker() {
 
                 {/* Task Input */}
                 {!isTracking && (
-                    <div className="space-y-4 mb-6" data-oid="p7meuln">
+                    <div className="space-y-4 mb-6">
                         <input
                             type="text"
                             placeholder="What are you working on?"
@@ -165,7 +165,7 @@ export function TimeTracker() {
                                 background: 'var(--bg-tertiary)',
                                 color: 'var(--text-primary)',
                             }}
-                            data-oid="65xakv-"
+                           
                         />
 
                         <input
@@ -178,13 +178,13 @@ export function TimeTracker() {
                                 background: 'var(--bg-tertiary)',
                                 color: 'var(--text-primary)',
                             }}
-                            data-oid="c7gx2fm"
+                           
                         />
                     </div>
                 )}
 
                 {/* Control Buttons */}
-                <div className="flex space-x-3" data-oid="96tppu5">
+                <div className="flex space-x-3">
                     {!isTracking ? (
                         <button
                             onClick={startTracking}
@@ -194,7 +194,7 @@ export function TimeTracker() {
                                 background: 'var(--gradient-primary)',
                                 color: 'white',
                             }}
-                            data-oid="2dlw3-1"
+                           
                         >
                             ▶️ Start Timer
                         </button>
@@ -209,7 +209,7 @@ export function TimeTracker() {
                                         : 'var(--gradient-secondary)',
                                     color: isOnBreak ? 'white' : 'black',
                                 }}
-                                data-oid="mn17cb3"
+                               
                             >
                                 {isOnBreak ? '▶️ Resume' : '⏸️ Break'}
                             </button>
@@ -221,7 +221,7 @@ export function TimeTracker() {
                                     color: 'var(--text-primary)',
                                     border: '1px solid var(--border-primary)',
                                 }}
-                                data-oid="47q9qrc"
+                               
                             >
                                 ⏹️ Stop
                             </button>
@@ -234,19 +234,19 @@ export function TimeTracker() {
                     <div
                         className="mt-4 p-3 rounded-lg"
                         style={{ background: 'var(--bg-tertiary)' }}
-                        data-oid="w5:6oel"
+                       
                     >
                         <div
                             className="text-sm"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="scdm843"
+                           
                         >
                             Current Task:
                         </div>
                         <div
                             className="font-medium"
                             style={{ color: 'var(--text-primary)' }}
-                            data-oid="bau.qx_"
+                           
                         >
                             {currentTask}
                         </div>
@@ -254,7 +254,7 @@ export function TimeTracker() {
                             <div
                                 className="text-sm"
                                 style={{ color: 'var(--accent-yellow)' }}
-                                data-oid="fxok.xe"
+                               
                             >
                                 Project: {currentProject}
                             </div>
@@ -264,31 +264,31 @@ export function TimeTracker() {
             </div>
 
             {/* Daily Summary */}
-            <div className="glass-effect rounded-2xl p-6" data-oid="t7as4u4">
+            <div className="glass-effect rounded-2xl p-6">
                 <h4
                     className="text-lg font-bold mb-4"
                     style={{ color: 'var(--text-primary)' }}
-                    data-oid="u6245-z"
+                   
                 >
                     📊 Today's Summary
                 </h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" data-oid="pgsm21k">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div
                         className="p-3 rounded-lg text-center"
                         style={{ background: 'var(--bg-tertiary)' }}
-                        data-oid="-jsu3-r"
+                       
                     >
                         <div
                             className="text-2xl font-bold"
                             style={{ color: 'var(--accent-yellow)' }}
-                            data-oid="gd.o_.b"
+                           
                         >
                             {formatTime(getTotalTimeToday())}
                         </div>
                         <div
                             className="text-xs"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="hi2ko-j"
+                           
                         >
                             Total Time
                         </div>
@@ -296,19 +296,19 @@ export function TimeTracker() {
                     <div
                         className="p-3 rounded-lg text-center"
                         style={{ background: 'var(--bg-tertiary)' }}
-                        data-oid="n589unv"
+                       
                     >
                         <div
                             className="text-2xl font-bold"
                             style={{ color: 'var(--status-active)' }}
-                            data-oid="p_-5f6_"
+                           
                         >
                             {getTodayEntries().length}
                         </div>
                         <div
                             className="text-xs"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="ix70rrl"
+                           
                         >
                             Tasks
                         </div>
@@ -316,19 +316,19 @@ export function TimeTracker() {
                     <div
                         className="p-3 rounded-lg text-center"
                         style={{ background: 'var(--bg-tertiary)' }}
-                        data-oid="rwls36e"
+                       
                     >
                         <div
                             className="text-2xl font-bold"
                             style={{ color: 'var(--accent-cream)' }}
-                            data-oid="t9lfrk4"
+                           
                         >
                             {formatTime(totalBreakTime)}
                         </div>
                         <div
                             className="text-xs"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="zinpo1g"
+                           
                         >
                             Break Time
                         </div>
@@ -336,18 +336,18 @@ export function TimeTracker() {
                     <div
                         className="p-3 rounded-lg text-center"
                         style={{ background: 'var(--bg-tertiary)' }}
-                        data-oid=".vcf_dv"
+                       
                     >
                         <div
                             className={`text-2xl font-bold ${getOvertimeHours() > 0 ? 'text-red-400' : 'text-green-400'}`}
-                            data-oid="hab3m7a"
+                           
                         >
                             {getOvertimeHours()}h
                         </div>
                         <div
                             className="text-xs"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="c92oxqd"
+                           
                         >
                             Overtime
                         </div>
@@ -356,15 +356,15 @@ export function TimeTracker() {
             </div>
 
             {/* Recent Time Entries */}
-            <div className="glass-effect rounded-2xl p-6" data-oid="w6:-qpn">
+            <div className="glass-effect rounded-2xl p-6">
                 <h4
                     className="text-lg font-bold mb-4"
                     style={{ color: 'var(--text-primary)' }}
-                    data-oid="w5kf_w."
+                   
                 >
                     📝 Recent Entries
                 </h4>
-                <div className="space-y-3" data-oid="k9c5qg3">
+                <div className="space-y-3">
                     {getTodayEntries()
                         .slice(0, 5)
                         .map((entry) => (
@@ -372,48 +372,48 @@ export function TimeTracker() {
                                 key={entry.id}
                                 className="p-3 rounded-lg transition-all hover:scale-105"
                                 style={{ background: 'var(--bg-tertiary)' }}
-                                data-oid="mntua5v"
+                               
                             >
                                 <div
                                     className="flex justify-between items-start"
-                                    data-oid="8v84v4w"
+                                   
                                 >
-                                    <div className="flex-1" data-oid="xfju1co">
+                                    <div className="flex-1">
                                         <div
                                             className="font-medium"
                                             style={{ color: 'var(--text-primary)' }}
-                                            data-oid="cvx:yl:"
+                                           
                                         >
                                             {entry.task}
                                         </div>
                                         <div
                                             className="text-sm"
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="ece5:.x"
+                                           
                                         >
                                             {entry.project}
                                         </div>
                                         <div
                                             className="text-xs"
                                             style={{ color: 'var(--text-muted)' }}
-                                            data-oid="ij4rlm3"
+                                           
                                         >
                                             {entry.startTime.toLocaleTimeString()} -{' '}
                                             {entry.endTime?.toLocaleTimeString() || 'Active'}
                                         </div>
                                     </div>
-                                    <div className="text-right" data-oid="28y-wcw">
+                                    <div className="text-right">
                                         <div
                                             className="font-bold"
                                             style={{ color: 'var(--accent-yellow)' }}
-                                            data-oid="3vfhfwf"
+                                           
                                         >
                                             {formatTime(entry.duration)}
                                         </div>
                                         {entry.isActive && (
                                             <div
                                                 className="text-xs text-green-400"
-                                                data-oid="tqk14nv"
+                                               
                                             >
                                                 🟢 Active
                                             </div>

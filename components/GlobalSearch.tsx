@@ -174,14 +174,14 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                     color: 'var(--text-secondary)',
                     border: '1px solid var(--border-primary)',
                 }}
-                data-oid="ge52hdo"
+               
             >
-                <span data-oid="eyz4u8j">🔍</span>
-                <span data-oid="0k:-a0s">Search...</span>
+                <span>🔍</span>
+                <span>Search...</span>
                 <span
                     className="text-xs px-2 py-1 rounded-md"
                     style={{ background: 'var(--bg-secondary)' }}
-                    data-oid=":nuku.2"
+                   
                 >
                     ⌘K
                 </span>
@@ -191,21 +191,21 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center pt-20 z-50 p-4"
-                    data-oid="je:wnn:"
+                   
                 >
                     <div
                         className="glass-effect rounded-2xl w-full max-w-2xl"
                         style={{ background: 'var(--bg-secondary)' }}
-                        data-oid="1zromz7"
+                       
                     >
                         {/* Search Input */}
                         <div
                             className="p-4 border-b"
                             style={{ borderColor: 'var(--border-primary)' }}
-                            data-oid="xxqu-yy"
+                           
                         >
-                            <div className="flex items-center space-x-3" data-oid="e1enrkv">
-                                <span className="text-xl" data-oid="hhpplap">
+                            <div className="flex items-center space-x-3">
+                                <span className="text-xl">
                                     🔍
                                 </span>
                                 <input
@@ -217,14 +217,14 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                     className="flex-1 bg-transparent border-0 outline-none text-lg"
                                     style={{ color: 'var(--text-primary)' }}
                                     autoFocus
-                                    data-oid="03x_th6"
+                                   
                                 />
 
                                 <button
                                     onClick={() => setIsOpen(false)}
                                     className="text-lg hover:text-red-400 transition-colors"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="3t73o57"
+                                   
                                 >
                                     ✕
                                 </button>
@@ -232,20 +232,20 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                         </div>
 
                         {/* Search Results */}
-                        <div className="max-h-96 overflow-y-auto" data-oid="vg:l2:o">
+                        <div className="max-h-96 overflow-y-auto">
                             {query.trim() === '' ? (
                                 <div
                                     className="p-8 text-center"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="fh8a1:z"
+                                   
                                 >
-                                    <div className="text-4xl mb-4" data-oid="jhrklfj">
+                                    <div className="text-4xl mb-4">
                                         🔍
                                     </div>
-                                    <div className="text-lg mb-2" data-oid="e-5bn9g">
+                                    <div className="text-lg mb-2">
                                         Start typing to search
                                     </div>
-                                    <div className="text-sm" data-oid="pu00zy7">
+                                    <div className="text-sm">
                                         Search across projects, tasks, announcements, and team
                                         members
                                     </div>
@@ -254,20 +254,20 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                 <div
                                     className="p-8 text-center"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="s2epbkg"
+                                   
                                 >
-                                    <div className="text-4xl mb-4" data-oid="ve.g-l1">
+                                    <div className="text-4xl mb-4">
                                         😔
                                     </div>
-                                    <div className="text-lg mb-2" data-oid="myfo74p">
+                                    <div className="text-lg mb-2">
                                         No results found
                                     </div>
-                                    <div className="text-sm" data-oid="84rn5re">
+                                    <div className="text-sm">
                                         Try searching with different keywords
                                     </div>
                                 </div>
                             ) : (
-                                <div className="p-2" data-oid="zskoj88">
+                                <div className="p-2">
                                     {results.map((result, index) => (
                                         <div
                                             key={result.id}
@@ -281,38 +281,38 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                                         ? 'var(--bg-tertiary)'
                                                         : 'transparent',
                                             }}
-                                            data-oid="hkqa7-i"
+                                           
                                         >
                                             <div
                                                 className="flex items-start space-x-3"
-                                                data-oid="ybhm9tk"
+                                               
                                             >
                                                 <div
                                                     className="flex items-center space-x-2"
-                                                    data-oid="gbtwrga"
+                                                   
                                                 >
-                                                    <span className="text-xl" data-oid="dlafl:_">
+                                                    <span className="text-xl">
                                                         {getResultIcon(result.type)}
                                                     </span>
                                                     <span
                                                         className={`px-2 py-1 rounded-full text-xs text-white ${getTypeColor(result.type)}`}
-                                                        data-oid="vj74sr4"
+                                                       
                                                     >
                                                         {result.category}
                                                     </span>
                                                 </div>
-                                                <div className="flex-1" data-oid="w0:qvbe">
+                                                <div className="flex-1">
                                                     <h4
                                                         className="font-medium mb-1"
                                                         style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="q-t__wq"
+                                                       
                                                     >
                                                         {result.title}
                                                     </h4>
                                                     <p
                                                         className="text-sm mb-2"
                                                         style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid="574iek2"
+                                                       
                                                     >
                                                         {result.description}
                                                     </p>
@@ -320,27 +320,27 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                                         <div
                                                             className="flex items-center space-x-4 text-xs"
                                                             style={{ color: 'var(--text-muted)' }}
-                                                            data-oid="g4y7d1r"
+                                                           
                                                         >
                                                             {result.metadata.status && (
-                                                                <span data-oid="f8pa7pq">
+                                                                <span>
                                                                     Status: {result.metadata.status}
                                                                 </span>
                                                             )}
                                                             {result.metadata.priority && (
-                                                                <span data-oid="w:_ekkh">
+                                                                <span>
                                                                     Priority:{' '}
                                                                     {result.metadata.priority}
                                                                 </span>
                                                             )}
                                                             {result.metadata.progress && (
-                                                                <span data-oid=":xpnsg9">
+                                                                <span>
                                                                     Progress:{' '}
                                                                     {result.metadata.progress}%
                                                                 </span>
                                                             )}
                                                             {result.metadata.time && (
-                                                                <span data-oid="qsrxrzb">
+                                                                <span>
                                                                     {result.metadata.time}
                                                                 </span>
                                                             )}
@@ -359,17 +359,17 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                             <div
                                 className="p-4 border-t"
                                 style={{ borderColor: 'var(--border-primary)' }}
-                                data-oid="f8bzm6g"
+                               
                             >
                                 <div
                                     className="text-xs"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="8e_59zh"
+                                   
                                 >
-                                    <div className="flex items-center space-x-4" data-oid="-x-8ig1">
-                                        <span data-oid="05x1oc8">↑↓ Navigate</span>
-                                        <span data-oid="2w1qo98">↵ Select</span>
-                                        <span data-oid="hk_h2i:">ESC Close</span>
+                                    <div className="flex items-center space-x-4">
+                                        <span>↑↓ Navigate</span>
+                                        <span>↵ Select</span>
+                                        <span>ESC Close</span>
                                     </div>
                                 </div>
                             </div>
