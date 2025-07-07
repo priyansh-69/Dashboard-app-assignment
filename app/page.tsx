@@ -1,12 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Charts } from '../components/Charts';
 import { TaskManager } from '../components/TaskManager';
 import { TimeTracker } from '../components/TimeTracker';
-import { NotificationSystem } from '../components/NotificationSystem';
-import { ThemeCustomizer } from '../components/ThemeCustomizer';
-import { GlobalSearch } from '../components/GlobalSearch';
 
 export default function Page() {
     const [currentStatus, setCurrentStatus] = useState('active');
@@ -564,145 +560,88 @@ export default function Page() {
             style={{ background: 'var(--bg-primary)' }}
             data-oid="g_h-r6l"
         >
-            {/* Animated Background */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none" data-oid="zyfxiia">
-                <div
-                    className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-20 float-animation"
-                    style={{ background: 'var(--gradient-primary)' }}
-                    data-oid="eozl6a0"
-                ></div>
-                <div
-                    className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full opacity-20 float-animation"
-                    style={{ background: 'var(--gradient-secondary)', animationDelay: '1s' }}
-                    data-oid="o4h2fsr"
-                ></div>
-            </div>
-
             {/* Header */}
             <header
-                className="glass-effect border-b"
+                className="card border-b-0 rounded-none"
                 style={{ borderColor: 'var(--border-primary)' }}
-                data-oid="jk.r5d9"
+                data-oid="d282xdw"
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="72vnwfw">
-                    <div className="flex justify-between items-center h-20" data-oid="w4486b-">
-                        <div className="flex items-center space-x-4" data-oid="9c:ygg:">
-                            <div className="flex items-center space-x-3" data-oid="vwli_cu">
-                                <div
-                                    className="w-12 h-12 rounded-xl flex items-center justify-center glow-red"
-                                    style={{ background: 'var(--gradient-primary)' }}
-                                    data-oid="e2f53vp"
+                    <div className="flex justify-between items-center h-16" data-oid="jbk2riy">
+                        <div className="flex items-center space-x-3" data-oid="va8y33w">
+                            <div
+                                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                                style={{ background: 'var(--gradient-primary)' }}
+                                data-oid="eofcbpk"
+                            >
+                                <span className="text-white font-bold" data-oid="pdu5ysb">
+                                    D
+                                </span>
+                            </div>
+                            <div data-oid="xugtdou">
+                                <h1
+                                    className="text-xl font-semibold"
+                                    style={{ color: 'var(--text-primary)' }}
+                                    data-oid="8631cm7"
                                 >
-                                    <span
-                                        className="text-white font-bold text-lg"
-                                        data-oid="-_fn6qo"
-                                    >
-                                        PGT
-                                    </span>
-                                </div>
-                                <div data-oid="pktv.5k">
-                                    <h1
-                                        className="text-2xl font-bold"
-                                        style={{ color: 'var(--text-primary)' }}
-                                        data-oid="yjx90ox"
-                                    >
-                                        Intern Dashboard
-                                    </h1>
-                                    <p
-                                        className="text-sm"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="52p3vkv"
-                                    >
-                                        {formatDate(currentTime)}
-                                    </p>
-                                </div>
+                                    Dashboard
+                                </h1>
+                                <p
+                                    className="text-sm"
+                                    style={{ color: 'var(--text-secondary)' }}
+                                    data-oid="3s6xz1i"
+                                >
+                                    {formatDate(currentTime)}
+                                </p>
                             </div>
                         </div>
 
-                        {/* Header Right - Search, Notifications, Time and Profile */}
-                        <div className="flex items-center space-x-6" data-oid="bzx.utv">
-                            {/* Global Search */}
-                            <GlobalSearch data={{}} data-oid="dk39ka6" />
-
-                            {/* Notifications */}
-                            <NotificationSystem data-oid="japc9pt" />
+                        {/* Header Right - Time and Profile */}
+                        <div className="flex items-center space-x-6" data-oid="ehfe_na">
                             {/* Live Clock */}
-                            <div className="text-right" data-oid="n1_0pf1">
+                            <div className="text-right" data-oid="5q_liv1">
                                 <div
-                                    className="text-2xl font-bold font-mono"
-                                    style={{ color: 'var(--accent-yellow)' }}
-                                    data-oid="5eos8o5"
+                                    className="text-xl font-semibold"
+                                    style={{ color: 'var(--accent-primary)' }}
+                                    data-oid="_s.ttsc"
                                 >
                                     {formatTime(currentTime)}
                                 </div>
                                 <div
                                     className="text-xs"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="c-7p_ha"
+                                    data-oid="ypkx.nc"
                                 >
-                                    Live Time
+                                    Current Time
                                 </div>
                             </div>
 
-                            {/* Profile with Status */}
-                            <div className="flex items-center space-x-3" data-oid="ls:fv37">
-                                <div className="text-right" data-oid="3kjm1g7">
+                            {/* Profile */}
+                            <div className="flex items-center space-x-3" data-oid="fkpu-sw">
+                                <div className="text-right" data-oid="bnqp.j5">
                                     <div
                                         className="text-sm font-medium"
                                         style={{ color: 'var(--text-primary)' }}
-                                        data-oid="7baokmh"
+                                        data-oid="3.byoo5"
                                     >
-                                        Welcome, {internProfile.name.split(' ')[0]}
+                                        {internProfile.name}
                                     </div>
-                                    <div className="flex items-center space-x-2" data-oid="itil6:v">
-                                        <span
-                                            className="text-xs"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="gqqz7.2"
-                                        >
-                                            Status:
-                                        </span>
-                                        <select
-                                            value={currentStatus}
-                                            onChange={(e) => setCurrentStatus(e.target.value)}
-                                            className="text-xs px-2 py-1 rounded-md border-0 focus:ring-2 focus:ring-red-500"
-                                            style={{
-                                                background: 'var(--bg-tertiary)',
-                                                color: 'var(--text-primary)',
-                                                borderColor: 'var(--border-primary)',
-                                            }}
-                                            data-oid="9m335gi"
-                                        >
-                                            {statusOptions.map((option) => (
-                                                <option
-                                                    key={option.value}
-                                                    value={option.value}
-                                                    data-oid="5:e9_4q"
-                                                >
-                                                    {option.icon} {option.label}
-                                                </option>
-                                            ))}
-                                        </select>
+                                    <div
+                                        className="text-xs"
+                                        style={{ color: 'var(--text-secondary)' }}
+                                        data-oid="zzxeixf"
+                                    >
+                                        {internProfile.role}
                                     </div>
                                 </div>
-                                <div className="relative" data-oid="gt6chn4">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center glow-yellow"
-                                        style={{ background: 'var(--gradient-secondary)' }}
-                                        data-oid="reiiyqg"
-                                    >
-                                        <span
-                                            className="text-black font-bold text-lg"
-                                            data-oid="3pk_0o5"
-                                        >
-                                            {internProfile.avatar}
-                                        </span>
-                                    </div>
-                                    <div
-                                        className={`absolute -top-1 -right-1 w-4 h-4 ${getStatusInfo(currentStatus).color} rounded-full border-2`}
-                                        style={{ borderColor: 'var(--bg-primary)' }}
-                                        data-oid="0zjn4ae"
-                                    ></div>
+                                <div
+                                    className="w-10 h-10 rounded-full flex items-center justify-center"
+                                    style={{ background: 'var(--gradient-primary)' }}
+                                    data-oid="ghor44c"
+                                >
+                                    <span className="text-white font-semibold" data-oid="rbtqxl1">
+                                        {internProfile.avatar}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1197,156 +1136,113 @@ export default function Page() {
                         <TimeTracker data-oid=":1e9v2j" />
                     </div>
 
-                    {/* Right Column */}
-                    <div className="space-y-8" data-oid="z4uop.x">
-                        {/* Enhanced Team Members */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid="zbxt0ty"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="q7xzh--">
-                                <span className="text-2xl" data-oid="9j8lfi.">
-                                    👥
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="2e28:at"
+                    {/* Right Column - Sidebar */}
+                    <div className="space-y-6" data-oid="xk2g52j">
+                        {/* Quick Stats */}
+                        <div className="card p-4" data-oid="mlfx-:j">
+                            <h3
+                                className="text-sm font-semibold mb-4"
+                                style={{ color: 'var(--text-primary)' }}
+                                data-oid="1ao0yu."
+                            >
+                                Quick Stats
+                            </h3>
+                            <div className="space-y-3" data-oid="dlfs0af">
+                                <div
+                                    className="flex justify-between items-center"
+                                    data-oid="tp8panj"
                                 >
-                                    Team Members
-                                </h3>
-                            </div>
-                            <div className="space-y-4" data-oid="od_k588">
-                                {teamMembers.map((member, index) => (
-                                    <div
-                                        key={index}
-                                        className="p-4 rounded-xl transition-all duration-200 hover:scale-105"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="xxq9ywo"
+                                    <span
+                                        className="text-sm"
+                                        style={{ color: 'var(--text-secondary)' }}
+                                        data-oid="ayk7s3o"
                                     >
-                                        <div
-                                            className="flex items-center space-x-4 mb-3"
-                                            data-oid="wl1ff.b"
-                                        >
-                                            <div className="relative" data-oid="xg3pqk-">
-                                                <div
-                                                    className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                                    style={{
-                                                        background: 'var(--gradient-secondary)',
-                                                    }}
-                                                    data-oid="tinicw9"
-                                                >
-                                                    <span
-                                                        className="text-black font-bold"
-                                                        data-oid="f0jujt8"
-                                                    >
-                                                        {member.avatar}
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    className={`absolute -top-1 -right-1 w-4 h-4 ${getStatusInfo(member.status).color} rounded-full border-2`}
-                                                    style={{ borderColor: 'var(--bg-primary)' }}
-                                                    data-oid="nhuy27q"
-                                                ></div>
-                                            </div>
-                                            <div className="flex-1" data-oid="vk.8emz">
-                                                <div
-                                                    className="flex items-center space-x-2 mb-1"
-                                                    data-oid="suzw9lx"
-                                                >
-                                                    <p
-                                                        className="font-medium"
-                                                        style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="e33jupr"
-                                                    >
-                                                        {member.name}
-                                                    </p>
-                                                    <span
-                                                        className={`px-2 py-0.5 rounded-full text-xs ${getStatusInfo(member.status).color} text-white`}
-                                                        data-oid="njkl7:y"
-                                                    >
-                                                        {getStatusInfo(member.status).label}
-                                                    </span>
-                                                </div>
-                                                <p
-                                                    className="text-sm"
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="hpmulpa"
-                                                >
-                                                    {member.role}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div
-                                            className="flex justify-between text-xs"
-                                            style={{ color: 'var(--text-muted)' }}
-                                            data-oid="e-n50t8"
-                                        >
-                                            <span data-oid="za6mh1j">In: {member.inTime}</span>
-                                            <span data-oid="bi26bcm">Out: {member.outTime}</span>
-                                        </div>
-                                    </div>
-                                ))}
+                                        Tasks Completed
+                                    </span>
+                                    <span
+                                        className="font-semibold"
+                                        style={{ color: 'var(--accent-primary)' }}
+                                        data-oid="_j7kf-r"
+                                    >
+                                        {performanceStats.tasksCompleted}
+                                    </span>
+                                </div>
+                                <div
+                                    className="flex justify-between items-center"
+                                    data-oid="hbmfy1."
+                                >
+                                    <span
+                                        className="text-sm"
+                                        style={{ color: 'var(--text-secondary)' }}
+                                        data-oid="a:15::q"
+                                    >
+                                        Productivity
+                                    </span>
+                                    <span
+                                        className="font-semibold"
+                                        style={{ color: 'var(--accent-secondary)' }}
+                                        data-oid="6s_--it"
+                                    >
+                                        {performanceStats.productivityScore}%
+                                    </span>
+                                </div>
+                                <div
+                                    className="flex justify-between items-center"
+                                    data-oid=".lrx2xq"
+                                >
+                                    <span
+                                        className="text-sm"
+                                        style={{ color: 'var(--text-secondary)' }}
+                                        data-oid=":vh84z0"
+                                    >
+                                        Code Commits
+                                    </span>
+                                    <span
+                                        className="font-semibold"
+                                        style={{ color: 'var(--accent-primary)' }}
+                                        data-oid="mzzy8i7"
+                                    >
+                                        {performanceStats.codeCommits}
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Enhanced Announcements */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid=":3eq5hv"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="zjv69ke">
-                                <span className="text-2xl" data-oid="io3hym-">
-                                    📢
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="e57eeg8"
-                                >
-                                    Announcements
-                                </h3>
-                            </div>
-                            <div className="space-y-4" data-oid="xt6fxcc">
-                                {announcements.map((announcement) => (
+                        {/* Recent Announcements */}
+                        <div className="card p-4" data-oid="jbtonu7">
+                            <h3
+                                className="text-sm font-semibold mb-4"
+                                style={{ color: 'var(--text-primary)' }}
+                                data-oid=".lkt0o0"
+                            >
+                                Recent Announcements
+                            </h3>
+                            <div className="space-y-3" data-oid="i4wt9lq">
+                                {announcements.slice(0, 3).map((announcement) => (
                                     <div
                                         key={announcement.id}
-                                        className={`p-4 rounded-xl border-l-4 transition-all hover:scale-105 ${getPriorityColor(announcement.priority)}`}
-                                        data-oid="6j29f:g"
+                                        className="p-3 rounded-lg"
+                                        style={{ background: 'var(--bg-tertiary)' }}
+                                        data-oid="6bv_ona"
                                     >
-                                        <div
-                                            className="flex justify-between items-start mb-2"
-                                            data-oid="7yqcxye"
+                                        <h4
+                                            className="text-sm font-medium mb-1"
+                                            style={{ color: 'var(--text-primary)' }}
+                                            data-oid="bc_x_y5"
                                         >
-                                            <h4
-                                                className="font-medium"
-                                                style={{ color: 'var(--text-primary)' }}
-                                                data-oid="r3f-nka"
-                                            >
-                                                {announcement.title}
-                                            </h4>
-                                            <span
-                                                className="text-xs px-2 py-1 rounded-full"
-                                                style={{
-                                                    background: 'var(--bg-tertiary)',
-                                                    color: 'var(--text-secondary)',
-                                                }}
-                                                data-oid=".3_jn5g"
-                                            >
-                                                {announcement.type}
-                                            </span>
-                                        </div>
-                                        <p
-                                            className="text-sm mb-3 leading-relaxed"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="63yth-t"
-                                        >
-                                            {announcement.message}
-                                        </p>
+                                            {announcement.title}
+                                        </h4>
                                         <p
                                             className="text-xs"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid="3r:va8f"
+                                        >
+                                            {announcement.message.substring(0, 80)}...
+                                        </p>
+                                        <p
+                                            className="text-xs mt-1"
                                             style={{ color: 'var(--text-muted)' }}
-                                            data-oid="tnnsqic"
+                                            data-oid=".vbuhtw"
                                         >
                                             {announcement.time}
                                         </p>
@@ -1355,825 +1251,56 @@ export default function Page() {
                             </div>
                         </div>
 
-                        {/* Performance Statistics */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid=".2o0i9t"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="_1l5z4p">
-                                <span className="text-2xl" data-oid="3gcqg3o">
-                                    📊
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="mt5st87"
-                                >
-                                    Performance Statistics
-                                </h3>
-                            </div>
-                            <div
-                                className="grid grid-cols-2 md:grid-cols-4 gap-4"
-                                data-oid="wlx4-e8"
+                        {/* Team Members */}
+                        <div className="card p-4" data-oid="0tlubts">
+                            <h3
+                                className="text-sm font-semibold mb-4"
+                                style={{ color: 'var(--text-primary)' }}
+                                data-oid="4_--qh3"
                             >
-                                <div
-                                    className="p-4 rounded-xl text-center"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="u0:087g"
-                                >
-                                    <div
-                                        className="text-2xl font-bold"
-                                        style={{ color: 'var(--accent-yellow)' }}
-                                        data-oid="lezuo-h"
-                                    >
-                                        {performanceStats.tasksCompleted}
-                                    </div>
-                                    <div
-                                        className="text-xs"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="7ap02gf"
-                                    >
-                                        Tasks Completed
-                                    </div>
-                                </div>
-                                <div
-                                    className="p-4 rounded-xl text-center"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid=":neno_8"
-                                >
-                                    <div
-                                        className="text-2xl font-bold"
-                                        style={{ color: 'var(--status-active)' }}
-                                        data-oid="zfy5o_8"
-                                    >
-                                        {performanceStats.productivityScore}%
-                                    </div>
-                                    <div
-                                        className="text-xs"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="qu.kl4n"
-                                    >
-                                        Productivity Score
-                                    </div>
-                                </div>
-                                <div
-                                    className="p-4 rounded-xl text-center"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="q63jwn5"
-                                >
-                                    <div
-                                        className="text-2xl font-bold"
-                                        style={{ color: 'var(--accent-red)' }}
-                                        data-oid="6rsqc-9"
-                                    >
-                                        {performanceStats.codeCommits}
-                                    </div>
-                                    <div
-                                        className="text-xs"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="7b_61a7"
-                                    >
-                                        Code Commits
-                                    </div>
-                                </div>
-                                <div
-                                    className="p-4 rounded-xl text-center"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="yht1fnp"
-                                >
-                                    <div
-                                        className="text-2xl font-bold"
-                                        style={{ color: 'var(--accent-cream)' }}
-                                        data-oid="f3ikob6"
-                                    >
-                                        {performanceStats.bugsFixed}
-                                    </div>
-                                    <div
-                                        className="text-xs"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="-.6wn3r"
-                                    >
-                                        Bugs Fixed
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4"
-                                data-oid="eb1l3sn"
-                            >
-                                <div
-                                    className="p-4 rounded-xl"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="ps28op7"
-                                >
-                                    <div
-                                        className="flex justify-between items-center mb-2"
-                                        data-oid="ep:f_rm"
-                                    >
-                                        <span
-                                            className="text-sm"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid=":3:qseu"
-                                        >
-                                            Client Satisfaction
-                                        </span>
-                                        <span
-                                            className="font-bold"
-                                            style={{ color: 'var(--accent-yellow)' }}
-                                            data-oid=".dposs:"
-                                        >
-                                            {performanceStats.clientSatisfaction}/5.0
-                                        </span>
-                                    </div>
-                                    <div
-                                        className="w-full rounded-full h-2"
-                                        style={{ background: 'var(--bg-secondary)' }}
-                                        data-oid="qk40lbl"
-                                    >
-                                        <div
-                                            className="h-2 rounded-full"
-                                            style={{
-                                                width: `${(performanceStats.clientSatisfaction / 5) * 100}%`,
-                                                background: 'var(--gradient-secondary)',
-                                            }}
-                                            data-oid="01jnuwq"
-                                        ></div>
-                                    </div>
-                                </div>
-                                <div
-                                    className="p-4 rounded-xl"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="0je8dmv"
-                                >
-                                    <div
-                                        className="flex justify-between items-center mb-2"
-                                        data-oid="d7y_z_m"
-                                    >
-                                        <span
-                                            className="text-sm"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="m8ia_r5"
-                                        >
-                                            Team Collaboration
-                                        </span>
-                                        <span
-                                            className="font-bold"
-                                            style={{ color: 'var(--status-active)' }}
-                                            data-oid="q_65qx9"
-                                        >
-                                            {performanceStats.teamCollaboration}/5.0
-                                        </span>
-                                    </div>
-                                    <div
-                                        className="w-full rounded-full h-2"
-                                        style={{ background: 'var(--bg-secondary)' }}
-                                        data-oid="2qbwe74"
-                                    >
-                                        <div
-                                            className="h-2 rounded-full"
-                                            style={{
-                                                width: `${(performanceStats.teamCollaboration / 5) * 100}%`,
-                                                background: 'var(--gradient-primary)',
-                                            }}
-                                            data-oid="6:_c-sg"
-                                        ></div>
-                                    </div>
-                                </div>
-                                <div
-                                    className="p-4 rounded-xl"
-                                    style={{ background: 'var(--bg-tertiary)' }}
-                                    data-oid="x2c1_1q"
-                                >
-                                    <div
-                                        className="flex justify-between items-center mb-2"
-                                        data-oid="yz30:sn"
-                                    >
-                                        <span
-                                            className="text-sm"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="lxpa36o"
-                                        >
-                                            Technical Skills
-                                        </span>
-                                        <span
-                                            className="font-bold"
-                                            style={{ color: 'var(--accent-red)' }}
-                                            data-oid="c1f.j3a"
-                                        >
-                                            {performanceStats.technicalSkills}/5.0
-                                        </span>
-                                    </div>
-                                    <div
-                                        className="w-full rounded-full h-2"
-                                        style={{ background: 'var(--bg-secondary)' }}
-                                        data-oid="g6kw51f"
-                                    >
-                                        <div
-                                            className="h-2 rounded-full"
-                                            style={{
-                                                width: `${(performanceStats.technicalSkills / 5) * 100}%`,
-                                                background: 'var(--gradient-primary)',
-                                            }}
-                                            data-oid="q883r.b"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Enhanced Team Members */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid="wfktc.9"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="4iovkfo">
-                                <span className="text-2xl" data-oid="c16m3.r">
-                                    👥
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="jgum7sj"
-                                >
-                                    Team Members
-                                </h3>
-                            </div>
-                            <div className="space-y-4" data-oid="o_npugl">
+                                Team Members
+                            </h3>
+                            <div className="space-y-3" data-oid="t_0:fz5">
                                 {teamMembers.slice(0, 4).map((member, index) => (
                                     <div
                                         key={index}
-                                        className="p-4 rounded-xl transition-all duration-200 hover:scale-105"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="x1wptzn"
+                                        className="flex items-center space-x-3"
+                                        data-oid="-opr611"
                                     >
                                         <div
-                                            className="flex items-center space-x-4 mb-3"
-                                            data-oid="ke:3z:7"
+                                            className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium"
+                                            style={{ background: 'var(--gradient-secondary)' }}
+                                            data-oid="v8hzzq2"
                                         >
-                                            <div className="relative" data-oid="dr3z:fz">
-                                                <div
-                                                    className="w-12 h-12 rounded-xl flex items-center justify-center"
-                                                    style={{
-                                                        background: 'var(--gradient-secondary)',
-                                                    }}
-                                                    data-oid="32652c:"
-                                                >
-                                                    <span
-                                                        className="text-black font-bold"
-                                                        data-oid="ms9dik."
-                                                    >
-                                                        {member.avatar}
-                                                    </span>
-                                                </div>
-                                                <div
-                                                    className={`absolute -top-1 -right-1 w-4 h-4 ${getStatusInfo(member.status).color} rounded-full border-2`}
-                                                    style={{ borderColor: 'var(--bg-primary)' }}
-                                                    data-oid="lv5ow55"
-                                                ></div>
-                                            </div>
-                                            <div className="flex-1" data-oid="wccmmu7">
-                                                <div
-                                                    className="flex items-center space-x-2 mb-1"
-                                                    data-oid="o:-3f2d"
-                                                >
-                                                    <p
-                                                        className="font-medium"
-                                                        style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="fkrwsjl"
-                                                    >
-                                                        {member.name}
-                                                    </p>
-                                                    <span
-                                                        className={`px-2 py-0.5 rounded-full text-xs ${getStatusInfo(member.status).color} text-white`}
-                                                        data-oid="4:4qo_i"
-                                                    >
-                                                        {getStatusInfo(member.status).label}
-                                                    </span>
-                                                </div>
-                                                <p
-                                                    className="text-sm mb-1"
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="oirc1u-"
-                                                >
-                                                    {member.role}
-                                                </p>
-                                                <p
-                                                    className="text-xs"
-                                                    style={{ color: 'var(--text-muted)' }}
-                                                    data-oid="1nognvt"
-                                                >
-                                                    {member.currentProject}
-                                                </p>
-                                            </div>
+                                            {member.avatar}
                                         </div>
-                                        <div
-                                            className="flex justify-between text-xs"
-                                            style={{ color: 'var(--text-muted)' }}
-                                            data-oid="ecoahd5"
-                                        >
-                                            <span data-oid="k_2:u.2">In: {member.inTime}</span>
-                                            <span data-oid="-y2-h4a">Out: {member.outTime}</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Enhanced Announcements */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid="oeq3mcp"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid=".4s2spz">
-                                <span className="text-2xl" data-oid="12uq4t2">
-                                    📢
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="l.rez4."
-                                >
-                                    Announcements
-                                </h3>
-                            </div>
-                            <div className="space-y-4" data-oid="coel8d2">
-                                {announcements.slice(0, 6).map((announcement) => (
-                                    <div
-                                        key={announcement.id}
-                                        className={`p-4 rounded-xl border-l-4 transition-all hover:scale-105 cursor-pointer ${getPriorityColor(announcement.priority)}`}
-                                        onClick={() => handleAnnouncementClick(announcement)}
-                                        data-oid="w7yq43h"
-                                    >
-                                        <div
-                                            className="flex justify-between items-start mb-2"
-                                            data-oid="dthq:4g"
-                                        >
-                                            <h4
-                                                className="font-medium hover:text-yellow-400 transition-colors"
-                                                style={{ color: 'var(--text-primary)' }}
-                                                data-oid="zb4bit8"
-                                            >
-                                                {announcement.title}
-                                            </h4>
+                                        <div className="flex-1" data-oid="p8_39xx">
                                             <div
-                                                className="flex items-center space-x-2"
-                                                data-oid="0sx.geg"
-                                            >
-                                                <span
-                                                    className="text-xs px-2 py-1 rounded-full"
-                                                    style={{
-                                                        background: 'var(--bg-tertiary)',
-                                                        color: 'var(--text-secondary)',
-                                                    }}
-                                                    data-oid="7d817.1"
-                                                >
-                                                    {announcement.type}
-                                                </span>
-                                                <span
-                                                    className="text-xs text-gray-400"
-                                                    data-oid=":i4sw8t"
-                                                >
-                                                    👆 Click for details
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <p
-                                            className="text-sm mb-3 leading-relaxed"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="3fnyt_y"
-                                        >
-                                            {announcement.message}
-                                        </p>
-                                        <div
-                                            className="flex justify-between items-center"
-                                            data-oid="tu622g_"
-                                        >
-                                            <p
-                                                className="text-xs"
-                                                style={{ color: 'var(--text-muted)' }}
-                                                data-oid="rn6wjhq"
-                                            >
-                                                {announcement.time}
-                                            </p>
-                                            <p
-                                                className="text-xs"
-                                                style={{ color: 'var(--text-muted)' }}
-                                                data-oid="i1y3.gc"
-                                            >
-                                                By: {announcement.author}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Recent Activities */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid="0i8hs0l"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="w11s5lu">
-                                <span className="text-2xl" data-oid="o:52v8t">
-                                    ⚡
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="oawn1gy"
-                                >
-                                    Recent Activities
-                                </h3>
-                            </div>
-                            <div className="space-y-3" data-oid="bt65veg">
-                                {recentActivities.map((activity) => (
-                                    <div
-                                        key={activity.id}
-                                        className="p-3 rounded-lg transition-all hover:scale-105"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="1qymawb"
-                                    >
-                                        <div
-                                            className="flex items-start space-x-3"
-                                            data-oid="yl6mgd:"
-                                        >
-                                            <span className="text-lg" data-oid="9p9g6b_">
-                                                {getActivityIcon(activity.type)}
-                                            </span>
-                                            <div className="flex-1" data-oid="aokoo32">
-                                                <div
-                                                    className="flex justify-between items-start mb-1"
-                                                    data-oid="c6gbtpx"
-                                                >
-                                                    <span
-                                                        className="font-medium text-sm"
-                                                        style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="_rc7y-3"
-                                                    >
-                                                        {activity.action}
-                                                    </span>
-                                                    <span
-                                                        className="text-xs"
-                                                        style={{ color: 'var(--text-muted)' }}
-                                                        data-oid="db-awei"
-                                                    >
-                                                        {activity.time}
-                                                    </span>
-                                                </div>
-                                                <p
-                                                    className="text-xs mb-1"
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="0uo9nt2"
-                                                >
-                                                    {activity.description}
-                                                </p>
-                                                <span
-                                                    className="text-xs px-2 py-1 rounded-full"
-                                                    style={{
-                                                        background: 'var(--bg-secondary)',
-                                                        color: 'var(--accent-yellow)',
-                                                    }}
-                                                    data-oid=":1sl2i3"
-                                                >
-                                                    {activity.project}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Upcoming Deadlines */}
-                        <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
-                            data-oid="ey_4k_0"
-                        >
-                            <div className="flex items-center space-x-2 mb-6" data-oid="5sezhii">
-                                <span className="text-2xl" data-oid="9c1d:4k">
-                                    ⏰
-                                </span>
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="ab1rkml"
-                                >
-                                    Upcoming Deadlines
-                                </h3>
-                            </div>
-                            <div className="space-y-4" data-oid="mysu6yl">
-                                {upcomingDeadlines.map((deadline) => (
-                                    <div
-                                        key={deadline.id}
-                                        className="p-4 rounded-xl transition-all hover:scale-105"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="zy:.jo3"
-                                    >
-                                        <div
-                                            className="flex justify-between items-start mb-2"
-                                            data-oid="4dvs3k-"
-                                        >
-                                            <h4
-                                                className="font-medium"
+                                                className="text-sm font-medium"
                                                 style={{ color: 'var(--text-primary)' }}
-                                                data-oid="fkj:ils"
+                                                data-oid="vrlzxhy"
                                             >
-                                                {deadline.title}
-                                            </h4>
-                                            <span
-                                                className={`px-2 py-1 rounded-full text-xs text-white ${getPriorityBadgeColor(deadline.priority)}`}
-                                                data-oid="pfdtih6"
-                                            >
-                                                {deadline.priority}
-                                            </span>
-                                        </div>
-                                        <p
-                                            className="text-sm mb-2"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="z5c7qmr"
-                                        >
-                                            {deadline.project}
-                                        </p>
-                                        <div
-                                            className="flex justify-between items-center"
-                                            data-oid="iasy3v0"
-                                        >
-                                            <span
+                                                {member.name}
+                                            </div>
+                                            <div
                                                 className="text-xs"
-                                                style={{ color: 'var(--text-muted)' }}
-                                                data-oid="5fd5v4c"
+                                                style={{ color: 'var(--text-secondary)' }}
+                                                data-oid="xf5225k"
                                             >
-                                                Due: {deadline.deadline}
-                                            </span>
-                                            <span
-                                                className={`text-xs font-bold ${
-                                                    deadline.daysLeft <= 3
-                                                        ? 'text-red-400'
-                                                        : deadline.daysLeft <= 7
-                                                          ? 'text-yellow-400'
-                                                          : 'text-green-400'
-                                                }`}
-                                                data-oid="r46.2-1"
-                                            >
-                                                {deadline.daysLeft} days left
-                                            </span>
+                                                {member.role}
+                                            </div>
                                         </div>
+                                        <div
+                                            className={`w-2 h-2 rounded-full ${getStatusInfo(member.status).color}`}
+                                            data-oid="hquyicp"
+                                        ></div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* Announcement Modal */}
-                {showAnnouncementModal && selectedAnnouncement && (
-                    <div
-                        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                        onClick={closeAnnouncementModal}
-                        data-oid="5qbvv57"
-                    >
-                        <div
-                            className="glass-effect rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-                            onClick={(e) => e.stopPropagation()}
-                            data-oid="ln.nkmb"
-                        >
-                            <div
-                                className="flex justify-between items-start mb-6"
-                                data-oid="8adnryr"
-                            >
-                                <div data-oid="z:aj60h">
-                                    <h2
-                                        className="text-2xl font-bold mb-2"
-                                        style={{ color: 'var(--text-primary)' }}
-                                        data-oid="utkyd9e"
-                                    >
-                                        {selectedAnnouncement.title}
-                                    </h2>
-                                    <div
-                                        className="flex items-center space-x-4 text-sm"
-                                        data-oid="a7fh-fk"
-                                    >
-                                        <span
-                                            className={`px-3 py-1 rounded-full text-white ${getPriorityBadgeColor(selectedAnnouncement.priority)}`}
-                                            data-oid="4zxykgd"
-                                        >
-                                            {selectedAnnouncement.priority} priority
-                                        </span>
-                                        <span
-                                            className="px-3 py-1 rounded-full"
-                                            style={{
-                                                background: 'var(--bg-tertiary)',
-                                                color: 'var(--text-secondary)',
-                                            }}
-                                            data-oid="0treu8f"
-                                        >
-                                            {selectedAnnouncement.type}
-                                        </span>
-                                        <span
-                                            style={{ color: 'var(--text-muted)' }}
-                                            data-oid="rzdrxhr"
-                                        >
-                                            {selectedAnnouncement.time}
-                                        </span>
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={closeAnnouncementModal}
-                                    className="text-2xl hover:text-red-400 transition-colors"
-                                    style={{ color: 'var(--text-secondary)' }}
-                                    data-oid=":py3m86"
-                                >
-                                    ×
-                                </button>
-                            </div>
-
-                            <div className="space-y-6" data-oid="5-waofj">
-                                <div data-oid="6_rwcp6">
-                                    <p
-                                        className="text-lg leading-relaxed"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="vxhzk:8"
-                                    >
-                                        {selectedAnnouncement.message}
-                                    </p>
-                                </div>
-
-                                <div
-                                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                                    data-oid="0aoz075"
-                                >
-                                    <div
-                                        className="p-4 rounded-xl"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="l8mzq4t"
-                                    >
-                                        <h4
-                                            className="font-medium mb-2"
-                                            style={{ color: 'var(--text-primary)' }}
-                                            data-oid="cdhvbn:"
-                                        >
-                                            📝 Details
-                                        </h4>
-                                        <div className="space-y-2 text-sm" data-oid="io_yb.-">
-                                            <div data-oid="wlljjc:">
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="tqw0y28"
-                                                >
-                                                    Author:{' '}
-                                                </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="4qz41a1"
-                                                >
-                                                    {selectedAnnouncement.author}
-                                                </span>
-                                            </div>
-                                            <div data-oid="l6se375">
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="sye5uyw"
-                                                >
-                                                    Department:{' '}
-                                                </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="0j.c44p"
-                                                >
-                                                    {selectedAnnouncement.department}
-                                                </span>
-                                            </div>
-                                            {selectedAnnouncement.location && (
-                                                <div data-oid="1g84i2p">
-                                                    <span
-                                                        style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid="rq:x7pf"
-                                                    >
-                                                        Location:{' '}
-                                                    </span>
-                                                    <span
-                                                        style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="8dqqmqh"
-                                                    >
-                                                        {selectedAnnouncement.location}
-                                                    </span>
-                                                </div>
-                                            )}
-                                            {selectedAnnouncement.duration && (
-                                                <div data-oid="kfmj.ie">
-                                                    <span
-                                                        style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid="r.d02h9"
-                                                    >
-                                                        Duration:{' '}
-                                                    </span>
-                                                    <span
-                                                        style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="-:qhoh-"
-                                                    >
-                                                        {selectedAnnouncement.duration}
-                                                    </span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    {selectedAnnouncement.attendees && (
-                                        <div
-                                            className="p-4 rounded-xl"
-                                            style={{ background: 'var(--bg-tertiary)' }}
-                                            data-oid="wwoc9qs"
-                                        >
-                                            <h4
-                                                className="font-medium mb-2"
-                                                style={{ color: 'var(--text-primary)' }}
-                                                data-oid="per.gcw"
-                                            >
-                                                👥 Attendees
-                                            </h4>
-                                            <div className="space-y-1 text-sm" data-oid="7cshsu-">
-                                                {selectedAnnouncement.attendees.map(
-                                                    (attendee, index) => (
-                                                        <div
-                                                            key={index}
-                                                            style={{
-                                                                color: 'var(--text-secondary)',
-                                                            }}
-                                                            data-oid="g-itasf"
-                                                        >
-                                                            • {attendee}
-                                                        </div>
-                                                    ),
-                                                )}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {selectedAnnouncement.agenda && (
-                                    <div
-                                        className="p-4 rounded-xl"
-                                        style={{ background: 'var(--bg-tertiary)' }}
-                                        data-oid="4w3:g:y"
-                                    >
-                                        <h4
-                                            className="font-medium mb-3"
-                                            style={{ color: 'var(--text-primary)' }}
-                                            data-oid="39gypo_"
-                                        >
-                                            📋 Agenda
-                                        </h4>
-                                        <div className="space-y-2" data-oid="cko53.3">
-                                            {selectedAnnouncement.agenda.map((item, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="flex items-start space-x-2 text-sm"
-                                                    data-oid="f2-siaq"
-                                                >
-                                                    <span
-                                                        className="font-medium"
-                                                        style={{ color: 'var(--accent-yellow)' }}
-                                                        data-oid="_ef0zh5"
-                                                    >
-                                                        {index + 1}.
-                                                    </span>
-                                                    <span
-                                                        style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid="0.j1iq2"
-                                                    >
-                                                        {item}
-                                                    </span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {selectedAnnouncement.meetingLink && (
-                                    <div className="flex justify-center" data-oid="3m4mft:">
-                                        <a
-                                            href={selectedAnnouncement.meetingLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
-                                            style={{
-                                                background: 'var(--gradient-primary)',
-                                                color: 'white',
-                                            }}
-                                            data-oid=".ckcb9e"
-                                        >
-                                            🔗 Join Meeting
-                                        </a>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                )}
             </main>
-
-            {/* Theme Customizer */}
-            <ThemeCustomizer data-oid="e2vjugg" />
         </div>
     );
 }
