@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { TaskManager } from '../components/TaskManager';
+import { TimeTracker } from '../components/TimeTracker';
 
 export default function Dashboard() {
     const [currentStatus, setCurrentStatus] = useState('active');
