@@ -32,16 +32,16 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
     const searchData: SearchResult[] = [
         {
             id: '1',
-            title: 'Customer Analytics Platform',
-            description: 'Main project for developing analytics dashboard',
+            title: 'Priyansh-Dashboard-App',
+            description: 'Main project for developing intern dashboard application',
             type: 'project',
             category: 'Projects',
-            metadata: { status: 'In Progress', progress: 65 },
+            metadata: { status: 'In Progress', progress: 85 },
         },
         {
             id: '2',
-            title: 'Implement user authentication',
-            description: 'Add login and registration functionality with JWT tokens',
+            title: 'Implement time tracking feature',
+            description: 'Build real-time time tracking with start/stop functionality',
             type: 'task',
             category: 'Tasks',
             metadata: { priority: 'high', status: 'in-progress' },
@@ -68,7 +68,7 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
             description: 'Reviewed pull request for dashboard components',
             type: 'activity',
             category: 'Recent Activities',
-            metadata: { time: '4 hours ago', project: 'Customer Analytics Platform' },
+            metadata: { time: '4 hours ago', project: 'Priyansh-Dashboard-App' },
         },
     ];
 
