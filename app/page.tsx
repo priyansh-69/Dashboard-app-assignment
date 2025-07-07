@@ -7,6 +7,11 @@ export default function Dashboard() {
     const [currentTime, setCurrentTime] = useState(new Date());
     const [mounted, setMounted] = useState(false);
     const [showStatusDropdown, setShowStatusDropdown] = useState(false);
+    const [isEditingTime, setIsEditingTime] = useState(false);
+    const [inTime, setInTime] = useState('9:00 AM');
+    const [outTime, setOutTime] = useState('6:00 PM');
+    const [showAnnouncementModal, setShowAnnouncementModal] = useState(false);
+    const [selectedAnnouncement, setSelectedAnnouncement] = useState<any>(null);
 
     // Update time every second and handle mounting
     useEffect(() => {
@@ -109,6 +114,34 @@ export default function Dashboard() {
         },
     ];
 
+    // Performance stats data
+    const performanceStats = {
+        tasksCompleted: 24,
+        productivityScore: 87,
+        codeCommits: 42,
+        hoursWorked: 168,
+        projectsContributed: 3,
+        meetingsAttended: 12,
+    };
+
+    // Project info data
+    const projectInfo = {
+        name: 'Customer Analytics Platform',
+        description:
+            'Developing a comprehensive analytics dashboard to track customer behavior and engagement metrics across multiple touchpoints.',
+        status: 'In Progress',
+        progress: 68,
+        techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
+        deadline: 'July 15, 2024',
+        priority: 'High',
+        projectManager: 'Sarah Chen',
+        teamSize: 6,
+        completedTasks: 24,
+        totalTasks: 35,
+        nextMilestone: 'Beta Testing Phase',
+        milestoneDate: 'June 28, 2024',
+    };
+
     // Announcements data
     const announcements = [
         {
@@ -195,6 +228,29 @@ export default function Dashboard() {
             default:
                 return 'priority-medium';
         }
+    };
+
+    const getPriorityBadgeColor = (priority: string) => {
+        switch (priority) {
+            case 'high':
+                return 'bg-red-500';
+            case 'medium':
+                return 'bg-yellow-500';
+            case 'low':
+                return 'bg-green-500';
+            default:
+                return 'bg-gray-500';
+        }
+    };
+
+    const handleAnnouncementClick = (announcement: any) => {
+        setSelectedAnnouncement(announcement);
+        setShowAnnouncementModal(true);
+    };
+
+    const closeAnnouncementModal = () => {
+        setShowAnnouncementModal(false);
+        setSelectedAnnouncement(null);
     };
 
     if (!mounted) return null;
