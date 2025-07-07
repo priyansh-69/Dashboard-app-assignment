@@ -156,7 +156,7 @@ export function ThemeCustomizer() {
                     background: 'var(--gradient-primary)',
                     color: 'white',
                 }}
-                data-oid="jyg30bp"
+                data-oid="gxo0em4"
             >
                 🎨
             </button>
@@ -165,18 +165,18 @@ export function ThemeCustomizer() {
             {showCustomizer && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                    data-oid="0huuajt"
+                    data-oid="iqs4230"
                 >
                     <div
                         className="glass-effect rounded-2xl p-6 max-w-md w-full max-h-[80vh] overflow-y-auto"
                         style={{ background: 'var(--bg-secondary)' }}
-                        data-oid="07.808_"
+                        data-oid=":5ljxw2"
                     >
-                        <div className="flex items-center justify-between mb-6" data-oid="ssbjgpq">
+                        <div className="flex items-center justify-between mb-6" data-oid="wdvb65p">
                             <h3
                                 className="text-xl font-bold"
                                 style={{ color: 'var(--text-primary)' }}
-                                data-oid="yxy1y0x"
+                                data-oid="0t.zirm"
                             >
                                 🎨 Theme Customizer
                             </h3>
@@ -184,22 +184,22 @@ export function ThemeCustomizer() {
                                 onClick={() => setShowCustomizer(false)}
                                 className="text-2xl hover:text-red-400 transition-colors"
                                 style={{ color: 'var(--text-secondary)' }}
-                                data-oid="am5mab7"
+                                data-oid="bq1uh_b"
                             >
                                 ×
                             </button>
                         </div>
 
                         {/* Preset Themes */}
-                        <div className="mb-6" data-oid="6b00e2z">
+                        <div className="mb-6" data-oid="70e:kq0">
                             <h4
                                 className="font-medium mb-3"
                                 style={{ color: 'var(--text-primary)' }}
-                                data-oid="ke0.eux"
+                                data-oid="llc_rme"
                             >
                                 Preset Themes
                             </h4>
-                            <div className="space-y-2" data-oid="x72icav">
+                            <div className="space-y-2" data-oid="gsb8d20">
                                 {themes.map((theme, index) => (
                                     <button
                                         key={index}
@@ -213,36 +213,36 @@ export function ThemeCustomizer() {
                                             background: 'var(--bg-tertiary)',
                                             border: '1px solid var(--border-primary)',
                                         }}
-                                        data-oid="jzxzb9b"
+                                        data-oid="m0z.535"
                                     >
                                         <div
                                             className="flex items-center space-x-3"
-                                            data-oid="iit84g9"
+                                            data-oid="wus9zsh"
                                         >
-                                            <div className="flex space-x-1" data-oid="_g8dbxh">
+                                            <div className="flex space-x-1" data-oid="gjsj5d9">
                                                 <div
                                                     className="w-4 h-4 rounded-full"
                                                     style={{
                                                         backgroundColor: theme.colors.primary,
                                                     }}
-                                                    data-oid="vp0vs8h"
+                                                    data-oid="q_mrn30"
                                                 ></div>
                                                 <div
                                                     className="w-4 h-4 rounded-full"
                                                     style={{
                                                         backgroundColor: theme.colors.secondary,
                                                     }}
-                                                    data-oid="3hfywez"
+                                                    data-oid="r38hyow"
                                                 ></div>
                                                 <div
                                                     className="w-4 h-4 rounded-full"
                                                     style={{ backgroundColor: theme.colors.accent }}
-                                                    data-oid="pzgdtq2"
+                                                    data-oid="gyg7.sq"
                                                 ></div>
                                             </div>
                                             <span
                                                 style={{ color: 'var(--text-primary)' }}
-                                                data-oid="www.wvz"
+                                                data-oid="pku5y2f"
                                             >
                                                 {theme.name}
                                             </span>
@@ -253,24 +253,24 @@ export function ThemeCustomizer() {
                         </div>
 
                         {/* Custom Colors */}
-                        <div data-oid=".xx2bst">
+                        <div data-oid="p0aqz1w">
                             <h4
                                 className="font-medium mb-3"
                                 style={{ color: 'var(--text-primary)' }}
-                                data-oid="f1ss8m."
+                                data-oid="f_e:hoi"
                             >
                                 Custom Colors
                             </h4>
-                            <div className="space-y-3" data-oid="l5leu_a">
-                                <div data-oid="zz17g::">
+                            <div className="space-y-3" data-oid="6hx-o5e">
+                                <div data-oid="dhq-zqo">
                                     <label
                                         className="block text-sm mb-1"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="i5c79np"
+                                        data-oid="jown-e3"
                                     >
                                         Primary Color
                                     </label>
-                                    <div className="flex items-center space-x-2" data-oid="mqt7jxn">
+                                    <div className="flex items-center space-x-2" data-oid="olqzwrp">
                                         <input
                                             type="color"
                                             value={customColors.primary}
@@ -278,7 +278,7 @@ export function ThemeCustomizer() {
                                                 updateCustomColor('primary', e.target.value)
                                             }
                                             className="w-10 h-10 rounded-lg border-0 cursor-pointer"
-                                            data-oid="f8kf21k"
+                                            data-oid="9ojrn6i"
                                         />
 
                                         <input
@@ -292,20 +292,20 @@ export function ThemeCustomizer() {
                                                 background: 'var(--bg-tertiary)',
                                                 color: 'var(--text-primary)',
                                             }}
-                                            data-oid="op0ei2c"
+                                            data-oid="67ga43g"
                                         />
                                     </div>
                                 </div>
 
-                                <div data-oid="-6.1y.c">
+                                <div data-oid="gkonqlt">
                                     <label
                                         className="block text-sm mb-1"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="hz6dln5"
+                                        data-oid="c4ak8:q"
                                     >
                                         Secondary Color
                                     </label>
-                                    <div className="flex items-center space-x-2" data-oid="qvct3_.">
+                                    <div className="flex items-center space-x-2" data-oid="4qqlcvj">
                                         <input
                                             type="color"
                                             value={customColors.secondary}
@@ -313,7 +313,7 @@ export function ThemeCustomizer() {
                                                 updateCustomColor('secondary', e.target.value)
                                             }
                                             className="w-10 h-10 rounded-lg border-0 cursor-pointer"
-                                            data-oid="6_rgo7k"
+                                            data-oid="zl1lt2v"
                                         />
 
                                         <input
@@ -327,20 +327,20 @@ export function ThemeCustomizer() {
                                                 background: 'var(--bg-tertiary)',
                                                 color: 'var(--text-primary)',
                                             }}
-                                            data-oid="q0vy.th"
+                                            data-oid="xbrzgpv"
                                         />
                                     </div>
                                 </div>
 
-                                <div data-oid="k0xss0s">
+                                <div data-oid="2g31rf5">
                                     <label
                                         className="block text-sm mb-1"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="2dsbf18"
+                                        data-oid="75sk9r_"
                                     >
                                         Accent Color
                                     </label>
-                                    <div className="flex items-center space-x-2" data-oid="sr34moe">
+                                    <div className="flex items-center space-x-2" data-oid="yxj0doq">
                                         <input
                                             type="color"
                                             value={customColors.accent}
@@ -348,7 +348,7 @@ export function ThemeCustomizer() {
                                                 updateCustomColor('accent', e.target.value)
                                             }
                                             className="w-10 h-10 rounded-lg border-0 cursor-pointer"
-                                            data-oid="11kldp9"
+                                            data-oid="itj:922"
                                         />
 
                                         <input
@@ -362,20 +362,20 @@ export function ThemeCustomizer() {
                                                 background: 'var(--bg-tertiary)',
                                                 color: 'var(--text-primary)',
                                             }}
-                                            data-oid="m9ai81f"
+                                            data-oid="vtgs3mh"
                                         />
                                     </div>
                                 </div>
 
-                                <div data-oid="5s-zr3b">
+                                <div data-oid="73jn8vr">
                                     <label
                                         className="block text-sm mb-1"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="z.rxr_r"
+                                        data-oid="wvvnag5"
                                     >
                                         Background Color
                                     </label>
-                                    <div className="flex items-center space-x-2" data-oid="7hfzt27">
+                                    <div className="flex items-center space-x-2" data-oid="ei2pyrx">
                                         <input
                                             type="color"
                                             value={customColors.background}
@@ -383,7 +383,7 @@ export function ThemeCustomizer() {
                                                 updateCustomColor('background', e.target.value)
                                             }
                                             className="w-10 h-10 rounded-lg border-0 cursor-pointer"
-                                            data-oid="4or84pw"
+                                            data-oid="s3b31ic"
                                         />
 
                                         <input
@@ -397,20 +397,20 @@ export function ThemeCustomizer() {
                                                 background: 'var(--bg-tertiary)',
                                                 color: 'var(--text-primary)',
                                             }}
-                                            data-oid="ce0av1i"
+                                            data-oid="f:x80wi"
                                         />
                                     </div>
                                 </div>
 
-                                <div data-oid="i0i_p1c">
+                                <div data-oid="bnk1elu">
                                     <label
                                         className="block text-sm mb-1"
                                         style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="kwh-701"
+                                        data-oid="-fk.rat"
                                     >
                                         Text Color
                                     </label>
-                                    <div className="flex items-center space-x-2" data-oid="niopl5s">
+                                    <div className="flex items-center space-x-2" data-oid="p5bwb:w">
                                         <input
                                             type="color"
                                             value={customColors.text}
@@ -418,7 +418,7 @@ export function ThemeCustomizer() {
                                                 updateCustomColor('text', e.target.value)
                                             }
                                             className="w-10 h-10 rounded-lg border-0 cursor-pointer"
-                                            data-oid="vexfr99"
+                                            data-oid="ljv1.h7"
                                         />
 
                                         <input
@@ -432,7 +432,7 @@ export function ThemeCustomizer() {
                                                 background: 'var(--bg-tertiary)',
                                                 color: 'var(--text-primary)',
                                             }}
-                                            data-oid="ns:1bg5"
+                                            data-oid="5::1-1i"
                                         />
                                     </div>
                                 </div>
@@ -448,7 +448,7 @@ export function ThemeCustomizer() {
                                 color: 'var(--text-primary)',
                                 border: '1px solid var(--border-primary)',
                             }}
-                            data-oid="k2e:1:d"
+                            data-oid="iy8vj:l"
                         >
                             Reset to Default
                         </button>
