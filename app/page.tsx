@@ -77,39 +77,27 @@ export default function Dashboard() {
     if (isMinimalView) {
         return (
             <>
-                <ViewToggle
-                    isMinimal={isMinimalView}
-                    onToggle={setIsMinimalView}
-                    data-oid="23q5fag"
-                />
+                <ViewToggle isMinimal={isMinimalView} onToggle={setIsMinimalView} />
 
-                <MinimalView data-oid="gyizme9" />
+                <MinimalView />
             </>
         );
     }
 
     return (
-        <div className="min-h-screen relative" data-oid="g1dd2ux">
+        <div className="min-h-screen relative">
             {/* View Toggle */}
-            <ViewToggle isMinimal={isMinimalView} onToggle={setIsMinimalView} data-oid="3_e2ocp" />
+            <ViewToggle isMinimal={isMinimalView} onToggle={setIsMinimalView} />
 
             {/* Demo Data Notice */}
             {isDemoData && (
-                <div
-                    className="bg-amber-100 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 m-4 rounded"
-                    data-oid="53kh9qn"
-                >
-                    <div className="flex" data-oid="39brmmg">
-                        <div className="flex-shrink-0" data-oid="ndwgdn2">
-                            <span className="text-amber-500" data-oid="3wygzco">
-                                ⚠️
-                            </span>
+                <div className="bg-amber-100 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 m-4 rounded">
+                    <div className="flex">
+                        <div className="flex-shrink-0">
+                            <span className="text-amber-500">⚠️</span>
                         </div>
-                        <div className="ml-3" data-oid="bulib7-">
-                            <p
-                                className="text-sm text-amber-700 dark:text-amber-300"
-                                data-oid="gg2ek97"
-                            >
+                        <div className="ml-3">
+                            <p className="text-sm text-amber-700 dark:text-amber-300">
                                 {demoDataNotice}
                             </p>
                         </div>
@@ -118,50 +106,33 @@ export default function Dashboard() {
             )}
 
             {/* 🌊 Animated Background with Gradient Orbs */}
-            <div className="animated-background" data-oid="uks6li0">
-                <div className="orb orb-1" data-oid="hpe2yn5"></div>
-                <div className="orb orb-2" data-oid="x8.6yhn"></div>
-                <div className="orb orb-3" data-oid="6s41t:h"></div>
+            <div className="animated-background">
+                <div className="orb orb-1"></div>
+                <div className="orb orb-2"></div>
+                <div className="orb orb-3"></div>
             </div>
 
             {/* ✨ HEADER SECTION */}
-            <header
-                className="glass-effect border-b-0 rounded-none backdrop-blur-xl sticky top-0 z-50"
-                data-oid="b3bqtpb"
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="7nguyc-">
-                    <div
-                        className="flex flex-col sm:flex-row justify-between items-center h-auto sm:h-20 py-4 sm:py-0 gap-4 sm:gap-0"
-                        data-oid="2z7e5eh"
-                    >
+            <header className="glass-effect border-b-0 rounded-none backdrop-blur-xl sticky top-0 z-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col sm:flex-row justify-between items-center h-auto sm:h-20 py-4 sm:py-0 gap-4 sm:gap-0">
                         {/* Logo and Title */}
-                        <div
-                            className="flex items-center space-x-3 sm:space-x-4"
-                            data-oid=".kp46py"
-                        >
+                        <div className="flex items-center space-x-3 sm:space-x-4">
                             <div
                                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center glow-primary hover-lift"
                                 style={{ background: 'var(--gradient-primary)' }}
-                                data-oid="b4ygc7g"
                             >
-                                <span
-                                    className="text-white font-bold text-base sm:text-lg"
-                                    data-oid="u8i377t"
-                                >
+                                <span className="text-white font-bold text-base sm:text-lg">
                                     🚀
                                 </span>
                             </div>
-                            <div data-oid="p1siwkp">
-                                <h1
-                                    className="text-xl sm:text-2xl font-bold gradient-text"
-                                    data-oid="p5pu1__"
-                                >
-                                    Intern Dashboard
+                            <div>
+                                <h1 className="text-xl sm:text-2xl font-bold gradient-text">
+                                    Priyansh Dashboard
                                 </h1>
                                 <p
                                     className="text-xs sm:text-sm"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="cvly8pz"
                                 >
                                     {formatDate(currentTime)}
                                 </p>
@@ -169,47 +140,32 @@ export default function Dashboard() {
                         </div>
 
                         {/* Header Right - Time and Profile */}
-                        <div
-                            className="flex items-center space-x-4 sm:space-x-8"
-                            data-oid="eh6fajq"
-                        >
+                        <div className="flex items-center space-x-4 sm:space-x-8">
                             {/* Live Clock */}
-                            <div
-                                className="text-center sm:text-right glass-effect p-3 sm:p-4 rounded-xl hover-lift"
-                                data-oid="o538d9m"
-                            >
-                                <div
-                                    className="text-lg sm:text-2xl font-bold gradient-text-secondary glow-pulse"
-                                    data-oid="yi.kpjv"
-                                >
+                            <div className="text-center sm:text-right glass-effect p-3 sm:p-4 rounded-xl hover-lift">
+                                <div className="text-lg sm:text-2xl font-bold gradient-text-secondary glow-pulse">
                                     {formatTime(currentTime)}
                                 </div>
                                 <div
                                     className="text-xs hidden sm:block"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="oi8m5tb"
                                 >
                                     ⏰ Current Time
                                 </div>
                             </div>
 
                             {/* Profile */}
-                            <div
-                                className="flex items-center space-x-3 sm:space-x-4 glass-effect p-2 sm:p-3 rounded-xl hover-lift"
-                                data-oid="gxjtf0j"
-                            >
-                                <div className="text-right hidden sm:block" data-oid="01oscbz">
+                            <div className="flex items-center space-x-3 sm:space-x-4 glass-effect p-2 sm:p-3 rounded-xl hover-lift">
+                                <div className="text-right hidden sm:block">
                                     <div
                                         className="text-sm font-semibold"
                                         style={{ color: 'var(--text-primary)' }}
-                                        data-oid="vh.hhj-"
                                     >
                                         {internProfile.name}
                                     </div>
                                     <div
                                         className="text-xs"
                                         style={{ color: 'var(--accent-warning)' }}
-                                        data-oid="pdaa67c"
                                     >
                                         {internProfile.role}
                                     </div>
@@ -217,12 +173,8 @@ export default function Dashboard() {
                                 <div
                                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center glow-primary status-indicator status-active"
                                     style={{ background: 'var(--gradient-primary)' }}
-                                    data-oid="9tx:m3."
                                 >
-                                    <span
-                                        className="text-white font-bold text-base sm:text-lg"
-                                        data-oid=".z0a6_f"
-                                    >
+                                    <span className="text-white font-bold text-base sm:text-lg">
                                         {internProfile.avatar}
                                     </span>
                                 </div>
@@ -1124,15 +1076,11 @@ export default function Dashboard() {
             </main>
 
             {/* 🔔 FOOTER SECTION */}
-            <footer className="relative z-10 py-8 border-t border-gray-800" data-oid="_w7m-y:">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="9bzsux-">
-                    <div className="text-center" data-oid="l76ptpo">
-                        <p
-                            className="text-sm"
-                            style={{ color: 'var(--text-secondary)' }}
-                            data-oid="amzugr0"
-                        >
-                            © 2024 Intern Dashboard. Built with ❤️ for productivity.
+            <footer className="relative z-10 py-8 border-t border-gray-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center">
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                            © 2024 Priyansh-Dashboard-App. Built with ❤️ by Priyansh Kandwal.
                         </p>
                     </div>
                 </div>

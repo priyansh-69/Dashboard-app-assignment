@@ -1,7 +1,9 @@
 {
-    "name": "@onlook/next-template",
-    "version": "0.1.0",
+    "name": "priyansh-dashboard-app",
+    "version": "1.0.0",
     "private": true,
+    "author": "Priyansh Kandwal",
+    "description": "A modern intern dashboard application built with Next.js and TypeScript",
     "scripts": {
         "dev": "next dev",
         "build": "next build",

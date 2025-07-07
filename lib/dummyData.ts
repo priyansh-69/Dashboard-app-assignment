@@ -53,36 +53,36 @@ export interface Announcement {
 
 // 👤 INTERN PROFILE DATA (Demo)
 export const internProfile: InternProfile = {
-    name: 'Alex Johnson',
-    role: 'Software Development Intern',
-    email: 'alex.johnson@company.com',
-    college: 'Stanford University',
-    year: 'Junior (3rd Year)',
-    avatar: 'AJ',
+    name: 'Priyansh',
+    role: 'Frontend Intern',
+    email: 'priyansh.kandwal@company.com',
+    college: 'Delhi Technological University',
+    year: 'Final Year (4th Year)',
+    avatar: 'PK',
     department: 'Engineering',
     manager: 'Sarah Chen',
     startDate: 'June 1, 2024',
     employeeId: 'ENG-2024-001',
-    location: 'San Francisco, CA',
-    phone: '+1 (555) 123-4567',
+    location: 'Delhi, India',
+    phone: '+91 98765 43210',
 };
 
 // 🚀 ASSIGNED PROJECT INFO (Demo)
 export const projectInfo: ProjectInfo = {
-    name: 'Customer Analytics Platform',
+    name: 'Priyansh-Dashboard-App',
     description:
-        'Developing a comprehensive analytics dashboard to track customer behavior and engagement metrics across multiple touchpoints.',
+        'Building a modern, responsive intern dashboard application with real-time time tracking, task management, and performance analytics using Next.js and TypeScript.',
     status: 'In Progress',
-    progress: 68,
-    techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
-    deadline: 'July 15, 2024',
+    progress: 85,
+    techStack: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Recharts'],
+    deadline: 'July 30, 2024',
     priority: 'High',
     projectManager: 'Sarah Chen',
-    teamSize: 6,
-    completedTasks: 24,
-    totalTasks: 35,
-    nextMilestone: 'Beta Testing Phase',
-    milestoneDate: 'June 28, 2024',
+    teamSize: 4,
+    completedTasks: 28,
+    totalTasks: 33,
+    nextMilestone: 'Production Deployment',
+    milestoneDate: 'July 25, 2024',
 };
 
 // 👥 TEAM MEMBERS LIST (Demo)
@@ -251,5 +251,5 @@ export const formatDate = (date: Date) => {
 };
 
 // 🎨 DEMO DATA INDICATOR
-export const isDemoData = true;
-export const demoDataNotice = '⚠️ This dashboard uses dummy data for demonstration purposes only.';
+export const isDemoData = false;
+export const demoDataNotice = '✨ Welcome to your personalized dashboard workspace!';
