@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 interface Task {
     id: string;
@@ -96,19 +95,11 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
         }
     };
 
-    const onDragEnd = (result: any) => {
-        if (!result.destination) return;
-
-        const { source, destination, draggableId } = result;
-
-        if (source.droppableId !== destination.droppableId) {
-            const updatedTasks = tasks.map((task) =>
-                task.id === draggableId
-                    ? { ...task, status: destination.droppableId as Task['status'] }
-                    : task,
-            );
-            setTasks(updatedTasks);
-        }
+    const moveTask = (taskId: string, newStatus: Task['status']) => {
+        const updatedTasks = tasks.map((task) =>
+            task.id === taskId ? { ...task, status: newStatus } : task,
+        );
+        setTasks(updatedTasks);
     };
 
     const addNewTask = (taskData: Partial<Task>) => {
@@ -128,17 +119,17 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
     };
 
     return (
-        <div className="space-y-6" data-oid="bkjbqh8">
+        <div className="space-y-6" data-oid="_8mbt_0">
             {/* Header with filters */}
-            <div className="flex flex-wrap items-center justify-between gap-4" data-oid="ltn3hkt">
+            <div className="flex flex-wrap items-center justify-between gap-4" data-oid="u.zrs8z">
                 <h3
                     className="text-xl font-bold"
                     style={{ color: 'var(--text-primary)' }}
-                    data-oid="l0_ed.b"
+                    data-oid="iiqju8y"
                 >
                     📋 Task Management
                 </h3>
-                <div className="flex items-center space-x-4" data-oid="t0vm-t2">
+                <div className="flex items-center space-x-4" data-oid="x3ekcx0">
                     <select
                         value={filter}
                         onChange={(e) => setFilter(e.target.value as any)}
@@ -147,18 +138,18 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--bg-tertiary)',
                             color: 'var(--text-primary)',
                         }}
-                        data-oid="0k8:9bn"
+                        data-oid=".3qn329"
                     >
-                        <option value="all" data-oid="h.rr:b2">
+                        <option value="all" data-oid="hk2l6ib">
                             All Status
                         </option>
-                        <option value="todo" data-oid="24_9ksa">
+                        <option value="todo" data-oid="3q6:_jn">
                             To Do
                         </option>
-                        <option value="in-progress" data-oid="6tblmz3">
+                        <option value="in-progress" data-oid="y:v:0lo">
                             In Progress
                         </option>
-                        <option value="completed" data-oid="dx_oxwu">
+                        <option value="completed" data-oid="km8q2r1">
                             Completed
                         </option>
                     </select>
@@ -170,18 +161,18 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--bg-tertiary)',
                             color: 'var(--text-primary)',
                         }}
-                        data-oid="0:g0hkg"
+                        data-oid="t_r176w"
                     >
-                        <option value="all" data-oid="1:39_4.">
+                        <option value="all" data-oid=".aeul-e">
                             All Priority
                         </option>
-                        <option value="high" data-oid="r:ls1xm">
+                        <option value="high" data-oid="kr-rnmq">
                             High
                         </option>
-                        <option value="medium" data-oid="xp2xs-p">
+                        <option value="medium" data-oid="ni5g8pj">
                             Medium
                         </option>
-                        <option value="low" data-oid="qhul2mh">
+                        <option value="low" data-oid="aci3fth">
                             Low
                         </option>
                     </select>
@@ -192,7 +183,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--gradient-primary)',
                             color: 'white',
                         }}
-                        data-oid="q7s2brk"
+                        data-oid="gzwv::h"
                     >
                         + Add Task
                     </button>
@@ -200,160 +191,147 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
             </div>
 
             {/* Kanban Board */}
-            <DragDropContext onDragEnd={onDragEnd} data-oid="6gp2tur">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-oid="_6gfucg">
-                    {Object.entries(columns).map(([columnId, column]) => (
-                        <div key={columnId} className="space-y-4" data-oid="c27.z8m">
-                            <div
-                                className={`p-4 rounded-xl border-l-4 ${column.color}`}
-                                style={{ background: 'var(--bg-tertiary)' }}
-                                data-oid="bv7hfyg"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-oid="3qscktu">
+                {Object.entries(columns).map(([columnId, column]) => (
+                    <div key={columnId} className="space-y-4" data-oid="_orqds6">
+                        <div
+                            className={`p-4 rounded-xl border-l-4 ${column.color}`}
+                            style={{ background: 'var(--bg-tertiary)' }}
+                            data-oid="0evs088"
+                        >
+                            <h4
+                                className="font-bold text-lg"
+                                style={{ color: 'var(--text-primary)' }}
+                                data-oid=":fptux5"
                             >
-                                <h4
-                                    className="font-bold text-lg"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="i0-:9ny"
-                                >
-                                    {column.title}
-                                </h4>
-                                <span
-                                    className="text-sm"
-                                    style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="wp3d3i4"
-                                >
-                                    {
-                                        filteredTasks.filter((task) => task.status === columnId)
-                                            .length
-                                    }{' '}
-                                    tasks
-                                </span>
-                            </div>
-
-                            <Droppable droppableId={columnId} data-oid="ggt596h">
-                                {(provided, snapshot) => (
-                                    <div
-                                        ref={provided.innerRef}
-                                        {...provided.droppableProps}
-                                        className={`space-y-3 min-h-[200px] p-2 rounded-xl transition-colors ${
-                                            snapshot.isDraggingOver ? 'bg-gray-800/50' : ''
-                                        }`}
-                                        data-oid="4am-0tt"
-                                    >
-                                        {filteredTasks
-                                            .filter((task) => task.status === columnId)
-                                            .map((task, index) => (
-                                                <Draggable
-                                                    key={task.id}
-                                                    draggableId={task.id}
-                                                    index={index}
-                                                    data-oid="ews_rk6"
-                                                >
-                                                    {(provided, snapshot) => (
-                                                        <div
-                                                            ref={provided.innerRef}
-                                                            {...provided.draggableProps}
-                                                            {...provided.dragHandleProps}
-                                                            className={`p-4 rounded-xl transition-all hover:scale-105 ${
-                                                                snapshot.isDragging
-                                                                    ? 'rotate-3 shadow-2xl'
-                                                                    : ''
-                                                            }`}
-                                                            style={{
-                                                                background: 'var(--bg-card)',
-                                                                border: '1px solid var(--border-primary)',
-                                                                ...provided.draggableProps.style,
-                                                            }}
-                                                            data-oid="92mrrze"
-                                                        >
-                                                            <div
-                                                                className="flex items-start justify-between mb-2"
-                                                                data-oid="7vt67c-"
-                                                            >
-                                                                <h5
-                                                                    className="font-medium"
-                                                                    style={{
-                                                                        color: 'var(--text-primary)',
-                                                                    }}
-                                                                    data-oid=".ocm2qw"
-                                                                >
-                                                                    {task.title}
-                                                                </h5>
-                                                                <span
-                                                                    className={`px-2 py-1 rounded-full text-xs text-white ${getPriorityColor(task.priority)}`}
-                                                                    data-oid="sjgvoan"
-                                                                >
-                                                                    {task.priority}
-                                                                </span>
-                                                            </div>
-                                                            <p
-                                                                className="text-sm mb-3"
-                                                                style={{
-                                                                    color: 'var(--text-secondary)',
-                                                                }}
-                                                                data-oid="w3_ga37"
-                                                            >
-                                                                {task.description}
-                                                            </p>
-                                                            <div
-                                                                className="flex flex-wrap gap-1 mb-3"
-                                                                data-oid="hq7w47m"
-                                                            >
-                                                                {task.tags.map((tag, tagIndex) => (
-                                                                    <span
-                                                                        key={tagIndex}
-                                                                        className="px-2 py-1 rounded-md text-xs"
-                                                                        style={{
-                                                                            background:
-                                                                                'var(--bg-tertiary)',
-                                                                            color: 'var(--accent-yellow)',
-                                                                        }}
-                                                                        data-oid="ucs6j6i"
-                                                                    >
-                                                                        {tag}
-                                                                    </span>
-                                                                ))}
-                                                            </div>
-                                                            <div
-                                                                className="flex justify-between items-center text-xs"
-                                                                style={{
-                                                                    color: 'var(--text-muted)',
-                                                                }}
-                                                                data-oid="rjqdw3n"
-                                                            >
-                                                                <span data-oid="g-0zg9g">
-                                                                    Due: {task.dueDate}
-                                                                </span>
-                                                                <span data-oid="cjsw-br">
-                                                                    {task.project}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </Draggable>
-                                            ))}
-                                        {provided.placeholder}
-                                    </div>
-                                )}
-                            </Droppable>
+                                {column.title}
+                            </h4>
+                            <span
+                                className="text-sm"
+                                style={{ color: 'var(--text-secondary)' }}
+                                data-oid="wyp:4sn"
+                            >
+                                {filteredTasks.filter((task) => task.status === columnId).length}{' '}
+                                tasks
+                            </span>
                         </div>
-                    ))}
-                </div>
-            </DragDropContext>
+
+                        <div className="space-y-3 min-h-[200px] p-2 rounded-xl" data-oid="yf0y_9w">
+                            {filteredTasks
+                                .filter((task) => task.status === columnId)
+                                .map((task) => (
+                                    <div
+                                        key={task.id}
+                                        className="p-4 rounded-xl transition-all hover:scale-105 cursor-pointer"
+                                        style={{
+                                            background: 'var(--bg-card)',
+                                            border: '1px solid var(--border-primary)',
+                                        }}
+                                        data-oid="q2md2fw"
+                                    >
+                                        <div
+                                            className="flex items-start justify-between mb-2"
+                                            data-oid="kysxc08"
+                                        >
+                                            <h5
+                                                className="font-medium"
+                                                style={{ color: 'var(--text-primary)' }}
+                                                data-oid="t4gei8:"
+                                            >
+                                                {task.title}
+                                            </h5>
+                                            <span
+                                                className={`px-2 py-1 rounded-full text-xs text-white ${getPriorityColor(task.priority)}`}
+                                                data-oid="wa_6csd"
+                                            >
+                                                {task.priority}
+                                            </span>
+                                        </div>
+                                        <p
+                                            className="text-sm mb-3"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid="mw2-g.."
+                                        >
+                                            {task.description}
+                                        </p>
+                                        <div
+                                            className="flex flex-wrap gap-1 mb-3"
+                                            data-oid="lv5lv72"
+                                        >
+                                            {task.tags.map((tag, tagIndex) => (
+                                                <span
+                                                    key={tagIndex}
+                                                    className="px-2 py-1 rounded-md text-xs"
+                                                    style={{
+                                                        background: 'var(--bg-tertiary)',
+                                                        color: 'var(--accent-yellow)',
+                                                    }}
+                                                    data-oid="_k5bjye"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <div
+                                            className="flex justify-between items-center text-xs mb-3"
+                                            style={{ color: 'var(--text-muted)' }}
+                                            data-oid="4rq90dx"
+                                        >
+                                            <span data-oid="mwjkoxd">Due: {task.dueDate}</span>
+                                            <span data-oid=":g2r2.2">{task.project}</span>
+                                        </div>
+
+                                        {/* Status Change Buttons */}
+                                        <div className="flex space-x-2" data-oid="jd71.3p">
+                                            {Object.keys(columns).map((status) => (
+                                                <button
+                                                    key={status}
+                                                    onClick={() =>
+                                                        moveTask(task.id, status as Task['status'])
+                                                    }
+                                                    disabled={task.status === status}
+                                                    className={`px-2 py-1 rounded-md text-xs transition-all hover:scale-105 ${
+                                                        task.status === status
+                                                            ? 'opacity-50 cursor-not-allowed'
+                                                            : 'hover:opacity-80'
+                                                    }`}
+                                                    style={{
+                                                        background:
+                                                            task.status === status
+                                                                ? 'var(--accent-red)'
+                                                                : 'var(--bg-tertiary)',
+                                                        color:
+                                                            task.status === status
+                                                                ? 'white'
+                                                                : 'var(--text-primary)',
+                                                    }}
+                                                    data-oid="rn91ybr"
+                                                >
+                                                    {columns[status as keyof typeof columns].title}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
 
             {/* Add Task Modal */}
             {showAddTask && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                    data-oid="--90wj8"
+                    data-oid="g:qu1cw"
                 >
                     <div
                         className="glass-effect rounded-2xl p-6 max-w-md w-full"
-                        data-oid="tkag.xe"
+                        data-oid="0mkhth9"
                     >
                         <h3
                             className="text-xl font-bold mb-4"
                             style={{ color: 'var(--text-primary)' }}
-                            data-oid="_9a0_tq"
+                            data-oid="ix4k.70"
                         >
                             Add New Task
                         </h3>
@@ -372,9 +350,9 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         .map((tag) => tag.trim()),
                                 });
                             }}
-                            data-oid="e2llvp1"
+                            data-oid="c9p6ydy"
                         >
-                            <div className="space-y-4" data-oid="g.-gvub">
+                            <div className="space-y-4" data-oid="9mwf._6">
                                 <input
                                     name="title"
                                     placeholder="Task title"
@@ -384,7 +362,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="74my5z7"
+                                    data-oid="_.1ckol"
                                 />
 
                                 <textarea
@@ -396,7 +374,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="a_hg_ey"
+                                    data-oid="2f:c73p"
                                 />
 
                                 <select
@@ -406,15 +384,15 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="-r1vqb2"
+                                    data-oid="-t_0fdb"
                                 >
-                                    <option value="low" data-oid="-vqx6qm">
+                                    <option value="low" data-oid="t.958x_">
                                         Low Priority
                                     </option>
-                                    <option value="medium" data-oid="--8nle:">
+                                    <option value="medium" data-oid="who2:cp">
                                         Medium Priority
                                     </option>
-                                    <option value="high" data-oid="115.kg5">
+                                    <option value="high" data-oid="4:kqoiy">
                                         High Priority
                                     </option>
                                 </select>
@@ -426,7 +404,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="7u0cguj"
+                                    data-oid="cd_r0wx"
                                 />
 
                                 <input
@@ -437,7 +415,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="2v4h8dt"
+                                    data-oid="rjdefw4"
                                 />
 
                                 <input
@@ -448,10 +426,10 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="01xvkei"
+                                    data-oid="71k577s"
                                 />
                             </div>
-                            <div className="flex space-x-3 mt-6" data-oid="5:g7r3_">
+                            <div className="flex space-x-3 mt-6" data-oid="7p8vcgy">
                                 <button
                                     type="submit"
                                     className="flex-1 py-3 rounded-lg font-medium transition-all hover:scale-105"
@@ -459,7 +437,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--gradient-primary)',
                                         color: 'white',
                                     }}
-                                    data-oid="o-zqonw"
+                                    data-oid="l_7bbkn"
                                 >
                                     Add Task
                                 </button>
@@ -472,7 +450,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         color: 'var(--text-primary)',
                                         border: '1px solid var(--border-primary)',
                                     }}
-                                    data-oid="bgx2e-u"
+                                    data-oid="g99rt5."
                                 >
                                     Cancel
                                 </button>
