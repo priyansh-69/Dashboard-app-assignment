@@ -10,7 +10,7 @@ export default function Page() {
     const [inTime, setInTime] = useState('09:00 AM');
     const [outTime, setOutTime] = useState('06:00 PM');
     const [isEditingTime, setIsEditingTime] = useState(false);
-    const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
+    const [selectedAnnouncement, setSelectedAnnouncement] = useState<any>(null);
     const [showAnnouncementModal, setShowAnnouncementModal] = useState(false);
 
     // Update time every second
@@ -514,7 +514,7 @@ export default function Page() {
         });
     };
 
-    const handleAnnouncementClick = (announcement) => {
+    const handleAnnouncementClick = (announcement: any) => {
         setSelectedAnnouncement(announcement);
         setShowAnnouncementModal(true);
     };
@@ -1298,6 +1298,384 @@ export default function Page() {
                     </div>
                 </div>
             </main>
+
+            {/* Announcement Modal */}
+            {showAnnouncementModal && selectedAnnouncement && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                    onClick={closeAnnouncementModal}
+                    data-oid=".gcqy2p"
+                >
+                    <div
+                        className="card p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                        onClick={(e) => e.stopPropagation()}
+                        data-oid="38ycuk8"
+                    >
+                        <div className="flex justify-between items-start mb-6" data-oid="nn334-g">
+                            <div data-oid="oxlc8ep">
+                                <h2
+                                    className="text-2xl font-bold mb-2"
+                                    style={{ color: 'var(--text-primary)' }}
+                                    data-oid="k:-jk85"
+                                >
+                                    {selectedAnnouncement.title}
+                                </h2>
+                                <div
+                                    className="flex items-center space-x-3 text-sm"
+                                    data-oid="uy-qcbc"
+                                >
+                                    <span
+                                        className={`px-3 py-1 rounded-full text-white ${getPriorityBadgeColor(selectedAnnouncement.priority)}`}
+                                        data-oid="nhmpngd"
+                                    >
+                                        {selectedAnnouncement.priority} priority
+                                    </span>
+                                    <span
+                                        className="px-3 py-1 rounded-full"
+                                        style={{
+                                            background: 'var(--bg-tertiary)',
+                                            color: 'var(--text-secondary)',
+                                        }}
+                                        data-oid="65p3zfy"
+                                    >
+                                        {selectedAnnouncement.type}
+                                    </span>
+                                    <span style={{ color: 'var(--text-muted)' }} data-oid="8m43n4.">
+                                        {selectedAnnouncement.time}
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                onClick={closeAnnouncementModal}
+                                className="text-2xl hover:text-red-500 transition-colors"
+                                style={{ color: 'var(--text-secondary)' }}
+                                data-oid="ds8j6fq"
+                            >
+                                ×
+                            </button>
+                        </div>
+
+                        <div className="space-y-6" data-oid="zawdiyr">
+                            {/* Main Message */}
+                            <div data-oid="3z2ovi4">
+                                <p
+                                    className="text-lg leading-relaxed"
+                                    style={{ color: 'var(--text-secondary)' }}
+                                    data-oid="o_-kuu0"
+                                >
+                                    {selectedAnnouncement.message}
+                                </p>
+                            </div>
+
+                            {/* Details Section */}
+                            <div
+                                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                                data-oid="n:lvcli"
+                            >
+                                <div
+                                    className="p-4 rounded-lg"
+                                    style={{ background: 'var(--bg-tertiary)' }}
+                                    data-oid="25n_hf8"
+                                >
+                                    <h4
+                                        className="font-semibold mb-3"
+                                        style={{ color: 'var(--text-primary)' }}
+                                        data-oid="6ro07a:"
+                                    >
+                                        📝 Details
+                                    </h4>
+                                    <div className="space-y-2 text-sm" data-oid="7u010tx">
+                                        <div data-oid="a8ppfy4">
+                                            <span
+                                                style={{ color: 'var(--text-secondary)' }}
+                                                data-oid="1djwaxk"
+                                            >
+                                                Author:{' '}
+                                            </span>
+                                            <span
+                                                style={{ color: 'var(--text-primary)' }}
+                                                data-oid="ecqr5uh"
+                                            >
+                                                {selectedAnnouncement.author}
+                                            </span>
+                                        </div>
+                                        <div data-oid="2m29ysa">
+                                            <span
+                                                style={{ color: 'var(--text-secondary)' }}
+                                                data-oid="058ynya"
+                                            >
+                                                Department:{' '}
+                                            </span>
+                                            <span
+                                                style={{ color: 'var(--text-primary)' }}
+                                                data-oid="l58277."
+                                            >
+                                                {selectedAnnouncement.department}
+                                            </span>
+                                        </div>
+                                        {selectedAnnouncement.location && (
+                                            <div data-oid="mc6bg4v">
+                                                <span
+                                                    style={{ color: 'var(--text-secondary)' }}
+                                                    data-oid="ylr488a"
+                                                >
+                                                    Location:{' '}
+                                                </span>
+                                                <span
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="j4.e-4o"
+                                                >
+                                                    {selectedAnnouncement.location}
+                                                </span>
+                                            </div>
+                                        )}
+                                        {selectedAnnouncement.duration && (
+                                            <div data-oid="1tw9j0b">
+                                                <span
+                                                    style={{ color: 'var(--text-secondary)' }}
+                                                    data-oid="j:x60wv"
+                                                >
+                                                    Duration:{' '}
+                                                </span>
+                                                <span
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="xbpmtke"
+                                                >
+                                                    {selectedAnnouncement.duration}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Additional Info */}
+                                {(selectedAnnouncement.attendees ||
+                                    selectedAnnouncement.newEmployees ||
+                                    selectedAnnouncement.trainingModules) && (
+                                    <div
+                                        className="p-4 rounded-lg"
+                                        style={{ background: 'var(--bg-tertiary)' }}
+                                        data-oid="3thdh_p"
+                                    >
+                                        <h4
+                                            className="font-semibold mb-3"
+                                            style={{ color: 'var(--text-primary)' }}
+                                            data-oid="x01icua"
+                                        >
+                                            {selectedAnnouncement.attendees && '👥 Attendees'}
+                                            {selectedAnnouncement.newEmployees &&
+                                                '👋 New Team Members'}
+                                            {selectedAnnouncement.trainingModules &&
+                                                '📚 Training Modules'}
+                                        </h4>
+                                        <div className="space-y-1 text-sm" data-oid="qqqgd4x">
+                                            {selectedAnnouncement.attendees?.map(
+                                                (attendee: string, index: number) => (
+                                                    <div
+                                                        key={index}
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="6b2rta4"
+                                                    >
+                                                        • {attendee}
+                                                    </div>
+                                                ),
+                                            )}
+                                            {selectedAnnouncement.newEmployees?.map(
+                                                (employee: any, index: number) => (
+                                                    <div
+                                                        key={index}
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="kuiulj5"
+                                                    >
+                                                        • {employee.name} - {employee.role} (
+                                                        {employee.department})
+                                                    </div>
+                                                ),
+                                            )}
+                                            {selectedAnnouncement.trainingModules?.map(
+                                                (module: string, index: number) => (
+                                                    <div
+                                                        key={index}
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="om2plqg"
+                                                    >
+                                                        • {module}
+                                                    </div>
+                                                ),
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Agenda Section */}
+                            {selectedAnnouncement.agenda && (
+                                <div
+                                    className="p-4 rounded-lg"
+                                    style={{ background: 'var(--bg-tertiary)' }}
+                                    data-oid="jd1:cs6"
+                                >
+                                    <h4
+                                        className="font-semibold mb-3"
+                                        style={{ color: 'var(--text-primary)' }}
+                                        data-oid="02x1a5f"
+                                    >
+                                        📋 Agenda
+                                    </h4>
+                                    <div className="space-y-2" data-oid="ji_e-4-">
+                                        {selectedAnnouncement.agenda.map(
+                                            (item: string, index: number) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex items-start space-x-2 text-sm"
+                                                    data-oid="4p_.2v7"
+                                                >
+                                                    <span
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--accent-primary)' }}
+                                                        data-oid="py2y8t4"
+                                                    >
+                                                        {index + 1}.
+                                                    </span>
+                                                    <span
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="4c05s0y"
+                                                    >
+                                                        {item}
+                                                    </span>
+                                                </div>
+                                            ),
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Additional Details */}
+                            {(selectedAnnouncement.details ||
+                                selectedAnnouncement.improvements ||
+                                selectedAnnouncement.affectedAreas) && (
+                                <div
+                                    className="p-4 rounded-lg"
+                                    style={{ background: 'var(--bg-tertiary)' }}
+                                    data-oid="y1u:-6."
+                                >
+                                    <h4
+                                        className="font-semibold mb-3"
+                                        style={{ color: 'var(--text-primary)' }}
+                                        data-oid="kselavk"
+                                    >
+                                        ℹ️ Additional Information
+                                    </h4>
+                                    <div className="space-y-3 text-sm" data-oid="eh0cpok">
+                                        {selectedAnnouncement.details && (
+                                            <div data-oid="7b4x53l">
+                                                <span
+                                                    className="font-medium"
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="9hk6sxc"
+                                                >
+                                                    Details:
+                                                </span>
+                                                <span
+                                                    style={{ color: 'var(--text-secondary)' }}
+                                                    data-oid="o40o7.u"
+                                                >
+                                                    {selectedAnnouncement.details}
+                                                </span>
+                                            </div>
+                                        )}
+                                        {selectedAnnouncement.improvements && (
+                                            <div data-oid="d.i5lb:">
+                                                <span
+                                                    className="font-medium"
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="77z079q"
+                                                >
+                                                    Improvements:
+                                                </span>
+                                                <ul className="mt-1 space-y-1" data-oid="lhn.tqj">
+                                                    {selectedAnnouncement.improvements.map(
+                                                        (improvement: string, index: number) => (
+                                                            <li
+                                                                key={index}
+                                                                style={{
+                                                                    color: 'var(--text-secondary)',
+                                                                }}
+                                                                data-oid="_apri2w"
+                                                            >
+                                                                • {improvement}
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {selectedAnnouncement.affectedAreas && (
+                                            <div data-oid="0fhdfzu">
+                                                <span
+                                                    className="font-medium"
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="w8py:d:"
+                                                >
+                                                    Affected Areas:
+                                                </span>
+                                                <ul className="mt-1 space-y-1" data-oid="eld7tc9">
+                                                    {selectedAnnouncement.affectedAreas.map(
+                                                        (area: string, index: number) => (
+                                                            <li
+                                                                key={index}
+                                                                style={{
+                                                                    color: 'var(--text-secondary)',
+                                                                }}
+                                                                data-oid="q-f5265"
+                                                            >
+                                                                • {area}
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Action Buttons */}
+                            <div className="flex justify-center space-x-4" data-oid="63oi4rp">
+                                {selectedAnnouncement.meetingLink && (
+                                    <a
+                                        href={selectedAnnouncement.meetingLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-primary"
+                                        data-oid="ttovrkg"
+                                    >
+                                        🔗 Join Meeting
+                                    </a>
+                                )}
+                                {selectedAnnouncement.trainingLink && (
+                                    <a
+                                        href={selectedAnnouncement.trainingLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-secondary"
+                                        data-oid="j8wclpd"
+                                    >
+                                        📚 Start Training
+                                    </a>
+                                )}
+                                <button
+                                    onClick={closeAnnouncementModal}
+                                    className="btn-secondary"
+                                    data-oid="ugftd5k"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
