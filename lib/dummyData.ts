@@ -251,5 +251,5 @@ export const formatDate = (date: Date) => {
 };
 
 // 🎨 DEMO DATA INDICATOR
-export const isDemoData = false;
-export const demoDataNotice = '✨ Welcome to your personalized dashboard workspace!';
+export const isDemoData = true;
+export const demoDataNotice = 'This dashboard uses dummy data for demonstration purposes only.';

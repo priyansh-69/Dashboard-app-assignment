@@ -91,13 +91,13 @@ export default function Dashboard() {
 
             {/* Demo Data Notice */}
             {isDemoData && (
-                <div className="bg-amber-100 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 m-4 rounded">
-                    <div className="flex">
+                <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-400 p-4 m-4 rounded-lg shadow-lg relative z-40">
+                    <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <span className="text-amber-500">⚠️</span>
+                            <span className="text-amber-600 text-xl">⚠️</span>
                         </div>
                         <div className="ml-3">
-                            <p className="text-sm text-amber-700 dark:text-amber-300">
+                            <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
                                 {demoDataNotice}
                             </p>
                         </div>
