@@ -66,6 +66,26 @@ const themes: Theme[] = [
     },
 ];
 
+// Helper functions moved outside component to prevent recreation
+const adjustBrightness = (color: string, amount: number) => {
+    // Simple brightness adjustment for hex colors
+    const hex = color.replace('#', '');
+    const num = parseInt(hex, 16);
+    const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+    const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00ff) + amount));
+    const b = Math.max(0, Math.min(255, (num & 0x0000ff) + amount));
+    return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
+};
+
+const adjustOpacity = (color: string, opacity: number) => {
+    // Convert hex to rgba
+    const hex = color.replace('#', '');
+    const r = parseInt(hex.substr(0, 2), 16);
+    const g = parseInt(hex.substr(2, 2), 16);
+    const b = parseInt(hex.substr(4, 2), 16);
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
+
 export function ThemeCustomizer() {
     const [showCustomizer, setShowCustomizer] = useState(false);
     const [currentTheme, setCurrentTheme] = useState(themes[0]);
@@ -104,25 +124,6 @@ export function ThemeCustomizer() {
             `linear-gradient(135deg, ${colors.secondary} 0%, ${adjustBrightness(colors.secondary, -20)} 100%)`,
         );
     }, []);
-
-    const adjustBrightness = (color: string, amount: number) => {
-        // Simple brightness adjustment for hex colors
-        const hex = color.replace('#', '');
-        const num = parseInt(hex, 16);
-        const r = Math.max(0, Math.min(255, (num >> 16) + amount));
-        const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00ff) + amount));
-        const b = Math.max(0, Math.min(255, (num & 0x0000ff) + amount));
-        return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`;
-    };
-
-    const adjustOpacity = (color: string, opacity: number) => {
-        // Convert hex to rgba
-        const hex = color.replace('#', '');
-        const r = parseInt(hex.substr(0, 2), 16);
-        const g = parseInt(hex.substr(2, 2), 16);
-        const b = parseInt(hex.substr(4, 2), 16);
-        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-    };
 
     const selectTheme = (theme: Theme) => {
         setCurrentTheme(theme);
