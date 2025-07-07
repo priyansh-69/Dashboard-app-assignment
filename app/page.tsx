@@ -1126,14 +1126,11 @@ export default function Page() {
                             </div>
                         </div>
 
-                        {/* Interactive Charts */}
-                        <Charts performanceStats={performanceStats} data-oid="p-690wc" />
-
                         {/* Task Management */}
-                        <TaskManager data-oid="q5v4v4e" />
+                        <TaskManager data-oid="ss5rfxv" />
 
-                        {/* Enhanced Time Tracker */}
-                        <TimeTracker data-oid=":1e9v2j" />
+                        {/* Time Tracker */}
+                        <TimeTracker data-oid="j09wf6o" />
                     </div>
 
                     {/* Right Column - Sidebar */}
