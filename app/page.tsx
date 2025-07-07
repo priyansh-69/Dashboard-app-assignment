@@ -13,6 +13,7 @@ export default function Page() {
     const [isEditingTime, setIsEditingTime] = useState(false);
     const [selectedAnnouncement, setSelectedAnnouncement] = useState<any>(null);
     const [showAnnouncementModal, setShowAnnouncementModal] = useState(false);
+    const [showStatusDropdown, setShowStatusDropdown] = useState(false);
 
     // Update time every second and handle mounting
     useEffect(() => {
@@ -22,6 +23,20 @@ export default function Page() {
         }, 1000);
         return () => clearInterval(timer);
     }, []);
+
+    // Close status dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (showStatusDropdown) {
+                setShowStatusDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showStatusDropdown]);
 
     // Enhanced intern profile with status and time tracking
     const internProfile = {
@@ -524,6 +539,11 @@ export default function Page() {
     const closeAnnouncementModal = () => {
         setShowAnnouncementModal(false);
         setSelectedAnnouncement(null);
+    };
+
+    const handleStatusChange = (newStatus: string) => {
+        setCurrentStatus(newStatus);
+        setShowStatusDropdown(false);
     };
 
     const getActivityIcon = (type) => {
