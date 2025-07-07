@@ -174,14 +174,14 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                     color: 'var(--text-secondary)',
                     border: '1px solid var(--border-primary)',
                 }}
-                data-oid="8:h3x7a"
+                data-oid="3slm2t_"
             >
-                <span data-oid="1scneom">🔍</span>
-                <span data-oid="z9dbo.7">Search...</span>
+                <span data-oid="vhkgscy">🔍</span>
+                <span data-oid="zuy-e5k">Search...</span>
                 <span
                     className="text-xs px-2 py-1 rounded-md"
                     style={{ background: 'var(--bg-secondary)' }}
-                    data-oid="qqcju9j"
+                    data-oid="3fa7y32"
                 >
                     ⌘K
                 </span>
@@ -191,21 +191,21 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
             {isOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center pt-20 z-50 p-4"
-                    data-oid="lq_fepf"
+                    data-oid="7xe2r3z"
                 >
                     <div
                         className="glass-effect rounded-2xl w-full max-w-2xl"
                         style={{ background: 'var(--bg-secondary)' }}
-                        data-oid="dxzzcuh"
+                        data-oid="smxzh.5"
                     >
                         {/* Search Input */}
                         <div
                             className="p-4 border-b"
                             style={{ borderColor: 'var(--border-primary)' }}
-                            data-oid="7pc_ag_"
+                            data-oid="28txh4d"
                         >
-                            <div className="flex items-center space-x-3" data-oid="dqkqfyk">
-                                <span className="text-xl" data-oid="ul1g9gb">
+                            <div className="flex items-center space-x-3" data-oid="1dxf62-">
+                                <span className="text-xl" data-oid="9v33a70">
                                     🔍
                                 </span>
                                 <input
@@ -217,14 +217,14 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                     className="flex-1 bg-transparent border-0 outline-none text-lg"
                                     style={{ color: 'var(--text-primary)' }}
                                     autoFocus
-                                    data-oid="9yhmz:2"
+                                    data-oid="h.vlpxq"
                                 />
 
                                 <button
                                     onClick={() => setIsOpen(false)}
                                     className="text-lg hover:text-red-400 transition-colors"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="r3vspcu"
+                                    data-oid="a_0.6nq"
                                 >
                                     ✕
                                 </button>
@@ -232,20 +232,20 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                         </div>
 
                         {/* Search Results */}
-                        <div className="max-h-96 overflow-y-auto" data-oid="s_lwi14">
+                        <div className="max-h-96 overflow-y-auto" data-oid="j_98d87">
                             {query.trim() === '' ? (
                                 <div
                                     className="p-8 text-center"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="teo:8zg"
+                                    data-oid="iukpnbg"
                                 >
-                                    <div className="text-4xl mb-4" data-oid=".m9udr_">
+                                    <div className="text-4xl mb-4" data-oid="rwr_-z.">
                                         🔍
                                     </div>
-                                    <div className="text-lg mb-2" data-oid="tya9se-">
+                                    <div className="text-lg mb-2" data-oid="nb-0v94">
                                         Start typing to search
                                     </div>
-                                    <div className="text-sm" data-oid="_7g3lb5">
+                                    <div className="text-sm" data-oid="a4rbl5y">
                                         Search across projects, tasks, announcements, and team
                                         members
                                     </div>
@@ -254,20 +254,20 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                 <div
                                     className="p-8 text-center"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="-ybbozo"
+                                    data-oid="8-x-d5q"
                                 >
-                                    <div className="text-4xl mb-4" data-oid="wygch0p">
+                                    <div className="text-4xl mb-4" data-oid=":3x_i9y">
                                         😔
                                     </div>
-                                    <div className="text-lg mb-2" data-oid="nvgsi2h">
+                                    <div className="text-lg mb-2" data-oid="tj840hj">
                                         No results found
                                     </div>
-                                    <div className="text-sm" data-oid="2j-v59:">
+                                    <div className="text-sm" data-oid="k_awhdt">
                                         Try searching with different keywords
                                     </div>
                                 </div>
                             ) : (
-                                <div className="p-2" data-oid="aprjgzq">
+                                <div className="p-2" data-oid="b..ocbe">
                                     {results.map((result, index) => (
                                         <div
                                             key={result.id}
@@ -281,38 +281,38 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                                         ? 'var(--bg-tertiary)'
                                                         : 'transparent',
                                             }}
-                                            data-oid="rxb2dyu"
+                                            data-oid="m_yx9cg"
                                         >
                                             <div
                                                 className="flex items-start space-x-3"
-                                                data-oid="w3mje9k"
+                                                data-oid="0t17k:u"
                                             >
                                                 <div
                                                     className="flex items-center space-x-2"
-                                                    data-oid="1ex.66d"
+                                                    data-oid="3nqbxeq"
                                                 >
-                                                    <span className="text-xl" data-oid="597_38.">
+                                                    <span className="text-xl" data-oid="l1vsu0i">
                                                         {getResultIcon(result.type)}
                                                     </span>
                                                     <span
                                                         className={`px-2 py-1 rounded-full text-xs text-white ${getTypeColor(result.type)}`}
-                                                        data-oid="719dd_a"
+                                                        data-oid="s0w.mqj"
                                                     >
                                                         {result.category}
                                                     </span>
                                                 </div>
-                                                <div className="flex-1" data-oid="w7e5ys_">
+                                                <div className="flex-1" data-oid="b8f_v28">
                                                     <h4
                                                         className="font-medium mb-1"
                                                         style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="q9njvrw"
+                                                        data-oid="xj8ssd3"
                                                     >
                                                         {result.title}
                                                     </h4>
                                                     <p
                                                         className="text-sm mb-2"
                                                         style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid="ro:_9j_"
+                                                        data-oid=".:te.yx"
                                                     >
                                                         {result.description}
                                                     </p>
@@ -320,27 +320,27 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                                                         <div
                                                             className="flex items-center space-x-4 text-xs"
                                                             style={{ color: 'var(--text-muted)' }}
-                                                            data-oid="ojbismb"
+                                                            data-oid="p_m8o54"
                                                         >
                                                             {result.metadata.status && (
-                                                                <span data-oid="9nz9oih">
+                                                                <span data-oid="zsv.h98">
                                                                     Status: {result.metadata.status}
                                                                 </span>
                                                             )}
                                                             {result.metadata.priority && (
-                                                                <span data-oid="ytsnhti">
+                                                                <span data-oid="hlz3tab">
                                                                     Priority:{' '}
                                                                     {result.metadata.priority}
                                                                 </span>
                                                             )}
                                                             {result.metadata.progress && (
-                                                                <span data-oid="liem380">
+                                                                <span data-oid="s-nlfz3">
                                                                     Progress:{' '}
                                                                     {result.metadata.progress}%
                                                                 </span>
                                                             )}
                                                             {result.metadata.time && (
-                                                                <span data-oid="u5fxn3c">
+                                                                <span data-oid="gw4boec">
                                                                     {result.metadata.time}
                                                                 </span>
                                                             )}
@@ -359,17 +359,17 @@ export function GlobalSearch({ data }: GlobalSearchProps) {
                             <div
                                 className="p-4 border-t"
                                 style={{ borderColor: 'var(--border-primary)' }}
-                                data-oid="ure5o.v"
+                                data-oid="-0tcaev"
                             >
                                 <div
                                     className="text-xs"
                                     style={{ color: 'var(--text-muted)' }}
-                                    data-oid="03uengk"
+                                    data-oid="xlgen7."
                                 >
-                                    <div className="flex items-center space-x-4" data-oid="lunu_79">
-                                        <span data-oid="pffl.a3">↑↓ Navigate</span>
-                                        <span data-oid="3f3nke1">↵ Select</span>
-                                        <span data-oid="gb3fsqw">ESC Close</span>
+                                    <div className="flex items-center space-x-4" data-oid="fzs5f_j">
+                                        <span data-oid="1:6.p9n">↑↓ Navigate</span>
+                                        <span data-oid="8h1dr0q">↵ Select</span>
+                                        <span data-oid="y:7:2p:">ESC Close</span>
                                     </div>
                                 </div>
                             </div>

@@ -3,6 +3,23 @@
 import { useState, useEffect } from 'react';
 import { TaskManager } from '../components/TaskManager';
 import { TimeTracker } from '../components/TimeTracker';
+import { MinimalView } from '../components/MinimalView';
+import { ViewToggle } from '../components/ViewToggle';
+import {
+    internProfile,
+    teamMembers,
+    performanceStats,
+    projectInfo,
+    announcements,
+    statusOptions,
+    getStatusInfo,
+    getPriorityColor,
+    getPriorityBadgeColor,
+    formatTime,
+    formatDate,
+    isDemoData,
+    demoDataNotice,
+} from '../lib/dummyData';
 
 export default function Dashboard() {
     const [currentStatus, setCurrentStatus] = useState('active');
@@ -14,6 +31,7 @@ export default function Dashboard() {
     const [outTime, setOutTime] = useState('6:00 PM');
     const [showAnnouncementModal, setShowAnnouncementModal] = useState(false);
     const [selectedAnnouncement, setSelectedAnnouncement] = useState<any>(null);
+    const [isMinimalView, setIsMinimalView] = useState(false);
 
     // Update time every second and handle mounting
     useEffect(() => {
@@ -38,193 +56,9 @@ export default function Dashboard() {
         };
     }, [showStatusDropdown]);
 
-    // Intern profile data
-    const internProfile = {
-        name: 'Alex Johnson',
-        role: 'Software Development Intern',
-        email: 'alex.johnson@company.com',
-        college: 'Stanford University',
-        year: 'Junior (3rd Year)',
-        avatar: 'AJ',
-        department: 'Engineering',
-        manager: 'Sarah Chen',
-        startDate: 'June 1, 2024',
-        employeeId: 'ENG-2024-001',
-        location: 'San Francisco, CA',
-        phone: '+1 (555) 123-4567',
-    };
-
-    // Team members data
-    const teamMembers = [
-        {
-            name: 'Sarah Chen',
-            role: 'Senior Developer',
-            avatar: 'SC',
-            status: 'active',
-            email: 'sarah.chen@company.com',
-            department: 'Engineering',
-        },
-        {
-            name: 'Mike Rodriguez',
-            role: 'UI/UX Designer',
-            avatar: 'MR',
-            status: 'busy',
-            email: 'mike.rodriguez@company.com',
-            department: 'Design',
-        },
-        {
-            name: 'Emily Davis',
-            role: 'Product Manager',
-            avatar: 'ED',
-            status: 'active',
-            email: 'emily.davis@company.com',
-            department: 'Product',
-        },
-        {
-            name: 'James Wilson',
-            role: 'DevOps Engineer',
-            avatar: 'JW',
-            status: 'out-of-office',
-            email: 'james.wilson@company.com',
-            department: 'Infrastructure',
-        },
-        {
-            name: 'Lisa Park',
-            role: 'QA Engineer',
-            avatar: 'LP',
-            status: 'active',
-            email: 'lisa.park@company.com',
-            department: 'Quality Assurance',
-        },
-    ];
-
-    // Performance stats data
-    const performanceStats = {
-        tasksCompleted: 24,
-        productivityScore: 87,
-        codeCommits: 42,
-        hoursWorked: 168,
-        projectsContributed: 3,
-        meetingsAttended: 12,
-    };
-
-    // Project info data
-    const projectInfo = {
-        name: 'Customer Analytics Platform',
-        description:
-            'Developing a comprehensive analytics dashboard to track customer behavior and engagement metrics across multiple touchpoints.',
-        status: 'In Progress',
-        progress: 68,
-        techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
-        deadline: 'July 15, 2024',
-        priority: 'High',
-        projectManager: 'Sarah Chen',
-        teamSize: 6,
-        completedTasks: 24,
-        totalTasks: 35,
-        nextMilestone: 'Beta Testing Phase',
-        milestoneDate: 'June 28, 2024',
-    };
-
-    // Announcements data
-    const announcements = [
-        {
-            id: 1,
-            title: 'Daily Stand-up Meeting',
-            message: 'Team stand-up meeting at 10:00 AM in Conference Room B',
-            time: '9:30 AM',
-            priority: 'high',
-            type: 'meeting',
-            author: 'Sarah Chen',
-        },
-        {
-            id: 2,
-            title: 'Project Deadline Extended',
-            message: 'Customer Analytics Platform deadline extended to July 15th',
-            time: 'Yesterday',
-            priority: 'medium',
-            type: 'update',
-            author: 'Emily Davis',
-        },
-        {
-            id: 3,
-            title: 'Code Review Session',
-            message: 'Weekly code review session moved to Thursday 2:00 PM',
-            time: '2 days ago',
-            priority: 'medium',
-            type: 'review',
-            author: 'James Wilson',
-        },
-        {
-            id: 4,
-            title: 'Security Training',
-            message: 'Complete cybersecurity training by end of week',
-            time: '3 days ago',
-            priority: 'high',
-            type: 'training',
-            author: 'IT Security',
-        },
-    ];
-
-    // Status options
-    const statusOptions = [
-        { value: 'active', label: 'Available', color: 'bg-green-500', icon: '🟢' },
-        { value: 'busy', label: 'Busy', color: 'bg-red-500', icon: '🔴' },
-        { value: 'away', label: 'Away', color: 'bg-yellow-500', icon: '🟡' },
-        { value: 'out-of-office', label: 'Out of Office', color: 'bg-gray-500', icon: '⚫' },
-    ];
-
-    // Helper functions
-    const getStatusInfo = (status: string) => {
-        return statusOptions.find((option) => option.value === status) || statusOptions[0];
-    };
-
-    const formatTime = (date: Date) => {
-        return date.toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true,
-        });
-    };
-
-    const formatDate = (date: Date) => {
-        return date.toLocaleDateString('en-US', {
-            weekday: 'long',
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-        });
-    };
-
     const handleStatusChange = (newStatus: string) => {
         setCurrentStatus(newStatus);
         setShowStatusDropdown(false);
-    };
-
-    const getPriorityColor = (priority: string) => {
-        switch (priority) {
-            case 'high':
-                return 'priority-high';
-            case 'medium':
-                return 'priority-medium';
-            case 'low':
-                return 'priority-low';
-            default:
-                return 'priority-medium';
-        }
-    };
-
-    const getPriorityBadgeColor = (priority: string) => {
-        switch (priority) {
-            case 'high':
-                return 'bg-red-500';
-            case 'medium':
-                return 'bg-yellow-500';
-            case 'low':
-                return 'bg-green-500';
-            default:
-                return 'bg-gray-500';
-        }
     };
 
     const handleAnnouncementClick = (announcement: any) => {
@@ -239,53 +73,95 @@ export default function Dashboard() {
 
     if (!mounted) return null;
 
+    // Show minimal view if toggled
+    if (isMinimalView) {
+        return (
+            <>
+                <ViewToggle
+                    isMinimal={isMinimalView}
+                    onToggle={setIsMinimalView}
+                    data-oid="vm0k1l7"
+                />
+
+                <MinimalView data-oid="mfn60gm" />
+            </>
+        );
+    }
+
     return (
-        <div className="min-h-screen relative" data-oid=".pt6_ss">
+        <div className="min-h-screen relative" data-oid="o39-abc">
+            {/* View Toggle */}
+            <ViewToggle isMinimal={isMinimalView} onToggle={setIsMinimalView} data-oid="oqb3vvv" />
+
+            {/* Demo Data Notice */}
+            {isDemoData && (
+                <div
+                    className="bg-amber-100 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 m-4 rounded"
+                    data-oid="sp7j72q"
+                >
+                    <div className="flex" data-oid="io5qte:">
+                        <div className="flex-shrink-0" data-oid="v21hqo5">
+                            <span className="text-amber-500" data-oid="85m1n.l">
+                                ⚠️
+                            </span>
+                        </div>
+                        <div className="ml-3" data-oid="x_tiyi5">
+                            <p
+                                className="text-sm text-amber-700 dark:text-amber-300"
+                                data-oid="6kvjlbx"
+                            >
+                                {demoDataNotice}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* 🌊 Animated Background with Gradient Orbs */}
-            <div className="animated-background" data-oid="y2z55gg">
-                <div className="orb orb-1" data-oid="ue_ger5"></div>
-                <div className="orb orb-2" data-oid="9c.3t2y"></div>
-                <div className="orb orb-3" data-oid="1yfgq--"></div>
+            <div className="animated-background" data-oid="ilmezsr">
+                <div className="orb orb-1" data-oid="2uwhw7r"></div>
+                <div className="orb orb-2" data-oid="21:u.9_"></div>
+                <div className="orb orb-3" data-oid="ge0o-la"></div>
             </div>
 
             {/* ✨ HEADER SECTION */}
             <header
                 className="glass-effect border-b-0 rounded-none backdrop-blur-xl sticky top-0 z-50"
-                data-oid="wi:1liy"
+                data-oid="rbyvmvf"
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="xmgx:vl">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="l5._awx">
                     <div
                         className="flex flex-col sm:flex-row justify-between items-center h-auto sm:h-20 py-4 sm:py-0 gap-4 sm:gap-0"
-                        data-oid="brjxcqj"
+                        data-oid="mmuh94_"
                     >
                         {/* Logo and Title */}
                         <div
                             className="flex items-center space-x-3 sm:space-x-4"
-                            data-oid="i6:d2cn"
+                            data-oid="j13rr13"
                         >
                             <div
                                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center glow-primary hover-lift"
                                 style={{ background: 'var(--gradient-primary)' }}
-                                data-oid="pum11ua"
+                                data-oid="f.rq0rm"
                             >
                                 <span
                                     className="text-white font-bold text-base sm:text-lg"
-                                    data-oid="xig5zdp"
+                                    data-oid="4b.s-hz"
                                 >
                                     🚀
                                 </span>
                             </div>
-                            <div data-oid="ka9qw4v">
+                            <div data-oid="tpxtt7u">
                                 <h1
                                     className="text-xl sm:text-2xl font-bold gradient-text"
-                                    data-oid="f8_nglm"
+                                    data-oid="::12b3f"
                                 >
                                     Intern Dashboard
                                 </h1>
                                 <p
                                     className="text-xs sm:text-sm"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="_jkq64g"
+                                    data-oid="e3f:gdt"
                                 >
                                     {formatDate(currentTime)}
                                 </p>
@@ -295,23 +171,23 @@ export default function Dashboard() {
                         {/* Header Right - Time and Profile */}
                         <div
                             className="flex items-center space-x-4 sm:space-x-8"
-                            data-oid="i.8v72a"
+                            data-oid="2s:5ws4"
                         >
                             {/* Live Clock */}
                             <div
                                 className="text-center sm:text-right glass-effect p-3 sm:p-4 rounded-xl hover-lift"
-                                data-oid="hji_:p."
+                                data-oid="85::83p"
                             >
                                 <div
                                     className="text-lg sm:text-2xl font-bold gradient-text-secondary glow-pulse"
-                                    data-oid="pnrcsno"
+                                    data-oid="b.ckaq_"
                                 >
                                     {formatTime(currentTime)}
                                 </div>
                                 <div
                                     className="text-xs hidden sm:block"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="pyxaq:1"
+                                    data-oid="8q8g7tn"
                                 >
                                     ⏰ Current Time
                                 </div>
@@ -320,20 +196,20 @@ export default function Dashboard() {
                             {/* Profile */}
                             <div
                                 className="flex items-center space-x-3 sm:space-x-4 glass-effect p-2 sm:p-3 rounded-xl hover-lift"
-                                data-oid="9u9crl_"
+                                data-oid=":ins:8j"
                             >
-                                <div className="text-right hidden sm:block" data-oid="_km7uo4">
+                                <div className="text-right hidden sm:block" data-oid="sichall">
                                     <div
                                         className="text-sm font-semibold"
                                         style={{ color: 'var(--text-primary)' }}
-                                        data-oid="qg0y75c"
+                                        data-oid="injh2dv"
                                     >
                                         {internProfile.name}
                                     </div>
                                     <div
                                         className="text-xs"
                                         style={{ color: 'var(--accent-warning)' }}
-                                        data-oid="di.remw"
+                                        data-oid="f5uh1.m"
                                     >
                                         {internProfile.role}
                                     </div>
@@ -341,11 +217,11 @@ export default function Dashboard() {
                                 <div
                                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center glow-primary status-indicator status-active"
                                     style={{ background: 'var(--gradient-primary)' }}
-                                    data-oid="50_::4-"
+                                    data-oid="x6:te1m"
                                 >
                                     <span
                                         className="text-white font-bold text-base sm:text-lg"
-                                        data-oid="gd8og9c"
+                                        data-oid=":354ta5"
                                     >
                                         {internProfile.avatar}
                                     </span>
@@ -357,43 +233,43 @@ export default function Dashboard() {
             </header>
 
             {/* 🎯 HERO SECTION */}
-            <section className="relative z-10 py-8 sm:py-12" data-oid="3x8bjqh">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="pz3079z">
+            <section className="relative z-10 py-8 sm:py-12" data-oid="51g7lvr">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="t2pmie4">
                     {/* Welcome Banner */}
                     <div
                         className="glass-effect rounded-3xl p-6 sm:p-8 lg:p-10 hover-lift glow-primary mb-8"
-                        data-oid="d-1pa70"
+                        data-oid="jh29.fi"
                     >
                         <div
                             className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8"
-                            data-oid="4:8o5f2"
+                            data-oid="29.:nvp"
                         >
                             <div
                                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl flex items-center justify-center glow-primary float-animation mx-auto lg:mx-0"
                                 style={{ background: 'var(--gradient-primary)' }}
-                                data-oid="s6tp2my"
+                                data-oid="n7_q:q_"
                             >
                                 <span
                                     className="text-white font-bold text-2xl sm:text-3xl"
-                                    data-oid="6hvf5qs"
+                                    data-oid="l_xclct"
                                 >
                                     {internProfile.avatar}
                                 </span>
                             </div>
-                            <div className="flex-1 text-center lg:text-left" data-oid="oon5scq">
+                            <div className="flex-1 text-center lg:text-left" data-oid="v20n-40">
                                 <div
                                     className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mb-3"
-                                    data-oid=":a7touu"
+                                    data-oid="6uifhev"
                                 >
                                     <h2
                                         className="text-2xl sm:text-3xl font-bold gradient-text mb-2 sm:mb-0"
-                                        data-oid="rzh081o"
+                                        data-oid="lduuame"
                                     >
                                         Welcome back, {internProfile.name}!
                                     </h2>
                                     <span
                                         className={`px-4 py-2 rounded-full text-sm font-semibold ${getStatusInfo(currentStatus).color} text-white glow-secondary inline-block`}
-                                        data-oid="21d4rza"
+                                        data-oid="wcjsqvr"
                                     >
                                         {getStatusInfo(currentStatus).icon}{' '}
                                         {getStatusInfo(currentStatus).label}
@@ -401,81 +277,81 @@ export default function Dashboard() {
                                 </div>
                                 <p
                                     className="font-semibold text-lg sm:text-xl mb-4 gradient-text-secondary"
-                                    data-oid="ys8lvhg"
+                                    data-oid="imp_oxa"
                                 >
                                     {internProfile.role}
                                 </p>
                                 <div
                                     className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm"
-                                    data-oid="ohs.0lb"
+                                    data-oid="ikvr79t"
                                 >
                                     <div
                                         className="glass-effect p-3 rounded-xl text-center"
-                                        data-oid="aykxkmc"
+                                        data-oid="_sezyym"
                                     >
                                         <div
                                             className="text-lg sm:text-xl font-bold gradient-text-secondary"
-                                            data-oid="hgq8p.n"
+                                            data-oid="bc36uw:"
                                         >
                                             {performanceStats.tasksCompleted}
                                         </div>
                                         <div
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="lnk29x7"
+                                            data-oid="lkucyjx"
                                         >
                                             Tasks Done
                                         </div>
                                     </div>
                                     <div
                                         className="glass-effect p-3 rounded-xl text-center"
-                                        data-oid="594408."
+                                        data-oid="49-0q87"
                                     >
                                         <div
                                             className="text-lg sm:text-xl font-bold"
                                             style={{ color: 'var(--accent-success)' }}
-                                            data-oid="ch9m32a"
+                                            data-oid="tbq.rkb"
                                         >
                                             {performanceStats.productivityScore}%
                                         </div>
                                         <div
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="8lxq4k8"
+                                            data-oid="zh3l.o-"
                                         >
                                             Productivity
                                         </div>
                                     </div>
                                     <div
                                         className="glass-effect p-3 rounded-xl text-center"
-                                        data-oid="i4a56sr"
+                                        data-oid="07a3a0e"
                                     >
                                         <div
                                             className="text-lg sm:text-xl font-bold"
                                             style={{ color: 'var(--accent-warning)' }}
-                                            data-oid="c9a639l"
+                                            data-oid="_4xun5p"
                                         >
                                             {performanceStats.codeCommits}
                                         </div>
                                         <div
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="t4glidg"
+                                            data-oid="f699.w3"
                                         >
                                             Commits
                                         </div>
                                     </div>
                                     <div
                                         className="glass-effect p-3 rounded-xl text-center"
-                                        data-oid="a-8h5m:"
+                                        data-oid="_402rz6"
                                     >
                                         <div
                                             className="text-lg sm:text-xl font-bold"
                                             style={{ color: 'var(--accent-purple)' }}
-                                            data-oid="_gp-ld2"
+                                            data-oid="9s9z_60"
                                         >
                                             8h 30m
                                         </div>
                                         <div
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="hz:79r1"
+                                            data-oid="g7n6z27"
                                         >
                                             Today
                                         </div>
@@ -488,55 +364,55 @@ export default function Dashboard() {
             </section>
 
             {/* 📊 MAIN CONTENT SECTION */}
-            <main className="relative z-10 pb-12" data-oid="qrk4o7n">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="qpv8.hb">
+            <main className="relative z-10 pb-12" data-oid="559-gqx">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="asv:sv_">
                     <div
                         className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8"
-                        data-oid="dh1.ltz"
+                        data-oid="twg:ow2"
                     >
                         {/* LEFT COLUMN - Profile & Project Info */}
-                        <div className="xl:col-span-2 space-y-6 lg:space-y-8" data-oid="njmll7v">
+                        <div className="xl:col-span-2 space-y-6 lg:space-y-8" data-oid="5pr:.51">
                             {/* 👤 PROFILE DETAILS SECTION */}
                             <section
                                 className="glass-effect rounded-3xl p-6 sm:p-8 hover-lift glow-primary"
-                                data-oid="jog7rke"
+                                data-oid="yrsjcfp"
                             >
                                 <h3
                                     className="text-xl sm:text-2xl font-bold gradient-text mb-6 flex items-center"
-                                    data-oid="9ce6cz7"
+                                    data-oid="_ldrjn7"
                                 >
-                                    <span className="mr-3" data-oid="1vyf_x2">
+                                    <span className="mr-3" data-oid="cw12qg7">
                                         👤
                                     </span>
                                     Profile Details
                                 </h3>
                                 <div
                                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
-                                    data-oid="a68tsas"
+                                    data-oid="2t26b-u"
                                 >
-                                    <div className="space-y-4" data-oid="zogqxla">
+                                    <div className="space-y-4" data-oid="1bl_7rb">
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid="23m7.4k"
+                                            data-oid="uzwn-.w"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="5o.pud:"
+                                                data-oid="fqqkem2"
                                             >
                                                 📧
                                             </span>
-                                            <div data-oid="k_ou8c.">
+                                            <div data-oid="1xm9_qb">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="lmoh9x1"
+                                                    data-oid="cjgv4xs"
                                                 >
                                                     Email
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="d8uutkr"
+                                                    data-oid="ct4qzg5"
                                                 >
                                                     {internProfile.email}
                                                 </div>
@@ -544,26 +420,26 @@ export default function Dashboard() {
                                         </div>
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid=":mbdknc"
+                                            data-oid="43elpr_"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="hp2g-.s"
+                                                data-oid=":dg6.or"
                                             >
                                                 🎓
                                             </span>
-                                            <div data-oid="k9qe_k1">
+                                            <div data-oid="qz-6w9m">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="vny_dt2"
+                                                    data-oid="ov5rqf5"
                                                 >
                                                     College
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="umayf81"
+                                                    data-oid="84_.ux5"
                                                 >
                                                     {internProfile.college}
                                                 </div>
@@ -571,55 +447,55 @@ export default function Dashboard() {
                                         </div>
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid="6gn6ruo"
+                                            data-oid="fqjs-fa"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="p.lg96a"
+                                                data-oid="9kl7c89"
                                             >
                                                 📚
                                             </span>
-                                            <div data-oid="a-k2pro">
+                                            <div data-oid="z1ym6tp">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="g1ta1f1"
+                                                    data-oid="vu6rgv4"
                                                 >
                                                     Year
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid=".akw.fn"
+                                                    data-oid="4h2n7ug"
                                                 >
                                                     {internProfile.year}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="space-y-4" data-oid="nfur6hq">
+                                    <div className="space-y-4" data-oid="s.-h185">
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid="r4r47_j"
+                                            data-oid="9aslstx"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="7pgw-50"
+                                                data-oid="dr2gb_1"
                                             >
                                                 🏢
                                             </span>
-                                            <div data-oid="srfbkri">
+                                            <div data-oid="1orj0t.">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="a6nbijy"
+                                                    data-oid="k.983:l"
                                                 >
                                                     Department
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="-7_xge1"
+                                                    data-oid="ysgvuia"
                                                 >
                                                     {internProfile.department}
                                                 </div>
@@ -627,26 +503,26 @@ export default function Dashboard() {
                                         </div>
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid="2fjcac-"
+                                            data-oid="3.02:ci"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="-v3.mhd"
+                                                data-oid="u4rf8gu"
                                             >
                                                 👤
                                             </span>
-                                            <div data-oid="_.zubsd">
+                                            <div data-oid="tztnstt">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="kghv294"
+                                                    data-oid=".w:vu1."
                                                 >
                                                     Manager
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="9ry25r:"
+                                                    data-oid="qc0my2m"
                                                 >
                                                     {internProfile.manager}
                                                 </div>
@@ -654,26 +530,26 @@ export default function Dashboard() {
                                         </div>
                                         <div
                                             className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
-                                            data-oid="jk44uw2"
+                                            data-oid="jur5ma0"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="tor._is"
+                                                data-oid="s5dobp2"
                                             >
                                                 📅
                                             </span>
-                                            <div data-oid="9fbt8on">
+                                            <div data-oid="-7wgd37">
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="oyflx2_"
+                                                    data-oid=":4fjp35"
                                                 >
                                                     Start Date
                                                 </div>
                                                 <div
                                                     className="font-medium text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="7123r.e"
+                                                    data-oid="laj4_qh"
                                                 >
                                                     {internProfile.startDate}
                                                 </div>
@@ -686,30 +562,30 @@ export default function Dashboard() {
                             {/* 🚀 PROJECT INFO SECTION */}
                             <section
                                 className="glass-effect rounded-2xl p-6 hover-lift glow-secondary"
-                                data-oid="wzwe_jh"
+                                data-oid="i8ysf5i"
                             >
                                 <h3
                                     className="text-xl font-bold mb-6 flex items-center gradient-text"
-                                    data-oid="j0f08gj"
+                                    data-oid="-vcun4z"
                                 >
-                                    <span className="mr-3" data-oid="qh37t-t">
+                                    <span className="mr-3" data-oid="gqej-dz">
                                         🚀
                                     </span>
                                     Current Project
                                 </h3>
-                                <div className="space-y-6" data-oid="nrjcx76">
-                                    <div data-oid=":lfmon3">
+                                <div className="space-y-6" data-oid="zl7:ks8">
+                                    <div data-oid="q-slnrl">
                                         <h4
                                             className="font-bold text-lg mb-3"
                                             style={{ color: 'var(--accent-cream)' }}
-                                            data-oid="0:2ouw0"
+                                            data-oid="kdjwktg"
                                         >
                                             {projectInfo.name}
                                         </h4>
                                         <p
                                             className="leading-relaxed mb-4 text-sm sm:text-base"
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="yd4urji"
+                                            data-oid="f5u0oip"
                                         >
                                             {projectInfo.description}
                                         </p>
@@ -717,24 +593,24 @@ export default function Dashboard() {
 
                                     <div
                                         className="grid grid-cols-1 sm:grid-cols-3 gap-4"
-                                        data-oid="bc-t5-f"
+                                        data-oid="e:7cwio"
                                     >
                                         <div
                                             className="p-3 rounded-lg"
                                             style={{ background: 'var(--bg-tertiary)' }}
-                                            data-oid="bfynqup"
+                                            data-oid="kkiutt8"
                                         >
                                             <div
                                                 className="text-xs mb-1"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="xc6vq0f"
+                                                data-oid="oixcn0y"
                                             >
                                                 Status
                                             </div>
                                             <div
                                                 className="font-medium"
                                                 style={{ color: 'var(--status-active)' }}
-                                                data-oid="2aeumul"
+                                                data-oid="ehly3tv"
                                             >
                                                 {projectInfo.status}
                                             </div>
@@ -742,19 +618,19 @@ export default function Dashboard() {
                                         <div
                                             className="p-3 rounded-lg"
                                             style={{ background: 'var(--bg-tertiary)' }}
-                                            data-oid="t2uxyu."
+                                            data-oid="l.smw-n"
                                         >
                                             <div
                                                 className="text-xs mb-1"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="gwb3kv6"
+                                                data-oid="lki6cis"
                                             >
                                                 Priority
                                             </div>
                                             <div
                                                 className="font-medium"
                                                 style={{ color: 'var(--accent-red)' }}
-                                                data-oid="omrsm:6"
+                                                data-oid="5i9ax3j"
                                             >
                                                 {projectInfo.priority}
                                             </div>
@@ -762,40 +638,40 @@ export default function Dashboard() {
                                         <div
                                             className="p-3 rounded-lg"
                                             style={{ background: 'var(--bg-tertiary)' }}
-                                            data-oid="3cmmhmn"
+                                            data-oid="230civ6"
                                         >
                                             <div
                                                 className="text-xs mb-1"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="fim2_:k"
+                                                data-oid="lz3c74p"
                                             >
                                                 Deadline
                                             </div>
                                             <div
                                                 className="font-medium"
                                                 style={{ color: 'var(--accent-yellow)' }}
-                                                data-oid="0:bh5c-"
+                                                data-oid="-xx6r62"
                                             >
                                                 {projectInfo.deadline}
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div data-oid="bzer1_u">
+                                    <div data-oid="hub_n:j">
                                         <div
                                             className="flex justify-between items-center mb-2"
-                                            data-oid="60c-le1"
+                                            data-oid="m7sya3u"
                                         >
                                             <span
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="6b0gd6c"
+                                                data-oid="xxy7hfh"
                                             >
                                                 Progress
                                             </span>
                                             <span
                                                 className="font-bold"
                                                 style={{ color: 'var(--text-primary)' }}
-                                                data-oid="csy-j25"
+                                                data-oid="_-rdwzh"
                                             >
                                                 {projectInfo.progress}%
                                             </span>
@@ -803,7 +679,7 @@ export default function Dashboard() {
                                         <div
                                             className="w-full rounded-full h-3"
                                             style={{ background: 'var(--bg-tertiary)' }}
-                                            data-oid="ibuiuz1"
+                                            data-oid="x70083j"
                                         >
                                             <div
                                                 className="h-3 rounded-full transition-all duration-500 glow-red"
@@ -811,20 +687,20 @@ export default function Dashboard() {
                                                     width: `${projectInfo.progress}%`,
                                                     background: 'var(--gradient-primary)',
                                                 }}
-                                                data-oid="eq05udl"
+                                                data-oid="x1jrbsu"
                                             ></div>
                                         </div>
                                     </div>
 
-                                    <div data-oid="z29lqf5">
+                                    <div data-oid="up5rw7o">
                                         <span
                                             className="block mb-3 font-medium"
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="q_2d3.:"
+                                            data-oid="5ztbryr"
                                         >
                                             Tech Stack:
                                         </span>
-                                        <div className="flex flex-wrap gap-2" data-oid="vljnfrl">
+                                        <div className="flex flex-wrap gap-2" data-oid="g_i_c3s">
                                             {projectInfo.techStack.map((tech, index) => (
                                                 <span
                                                     key={index}
@@ -834,7 +710,7 @@ export default function Dashboard() {
                                                         color: 'var(--text-primary)',
                                                         border: '1px solid var(--border-secondary)',
                                                     }}
-                                                    data-oid="e6s76.j"
+                                                    data-oid="30_j86:"
                                                 >
                                                     {tech}
                                                 </span>
@@ -847,17 +723,17 @@ export default function Dashboard() {
                             {/* ⏰ TIME TRACKING SECTION */}
                             <section
                                 className="glass-effect rounded-3xl p-6 sm:p-8 hover-lift glow-secondary"
-                                data-oid="_vmbdv."
+                                data-oid="scd-8eo"
                             >
                                 <div
                                     className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4"
-                                    data-oid="6z5jfou"
+                                    data-oid="844xb_k"
                                 >
                                     <h3
                                         className="text-xl sm:text-2xl font-bold gradient-text flex items-center"
-                                        data-oid="yum-gth"
+                                        data-oid="xd8c._2"
                                     >
-                                        <span className="mr-3" data-oid="izq:i.k">
+                                        <span className="mr-3" data-oid="xmpn:k.">
                                             ⏰
                                         </span>
                                         Time Tracking
@@ -865,7 +741,7 @@ export default function Dashboard() {
                                     <button
                                         onClick={() => setIsEditingTime(!isEditingTime)}
                                         className="btn-secondary hover-lift text-sm sm:text-base"
-                                        data-oid="m6deknq"
+                                        data-oid="6o8dv9h"
                                     >
                                         {isEditingTime ? '💾 Save' : '✏️ Edit Times'}
                                     </button>
@@ -873,26 +749,26 @@ export default function Dashboard() {
 
                                 <div
                                     className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
-                                    data-oid="r1ruuyy"
+                                    data-oid="1j-gl8l"
                                 >
                                     <div
                                         className="glass-effect p-4 sm:p-6 rounded-2xl hover-lift glow-secondary"
-                                        data-oid="lhtvbzd"
+                                        data-oid="07_kod3"
                                     >
                                         <div
                                             className="flex items-center space-x-3 mb-4"
-                                            data-oid=".72j-uu"
+                                            data-oid="ihj6y84"
                                         >
                                             <span
                                                 className="text-2xl sm:text-3xl"
-                                                data-oid="9_k.i4u"
+                                                data-oid=".4242w8"
                                             >
                                                 🌅
                                             </span>
                                             <span
                                                 className="font-semibold text-base sm:text-lg"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="2:8tevm"
+                                                data-oid="1hhmq-p"
                                             >
                                                 Check In
                                             </span>
@@ -907,12 +783,12 @@ export default function Dashboard() {
                                                     background: 'var(--bg-secondary)',
                                                     color: 'var(--text-primary)',
                                                 }}
-                                                data-oid=".gwh_v8"
+                                                data-oid="j_ry46g"
                                             />
                                         ) : (
                                             <div
                                                 className="text-2xl sm:text-3xl font-bold gradient-text-secondary"
-                                                data-oid="03cxuha"
+                                                data-oid="q8z7zgd"
                                             >
                                                 {inTime}
                                             </div>
@@ -921,22 +797,22 @@ export default function Dashboard() {
 
                                     <div
                                         className="glass-effect p-4 sm:p-6 rounded-2xl hover-lift glow-danger"
-                                        data-oid="6xg7e2b"
+                                        data-oid="3rv3tae"
                                     >
                                         <div
                                             className="flex items-center space-x-3 mb-4"
-                                            data-oid="qim3409"
+                                            data-oid="9o9:3b."
                                         >
                                             <span
                                                 className="text-2xl sm:text-3xl"
-                                                data-oid="j2_7e:r"
+                                                data-oid=".3:mqk."
                                             >
                                                 🌇
                                             </span>
                                             <span
                                                 className="font-semibold text-base sm:text-lg"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="7sg5.c."
+                                                data-oid="bf7iir8"
                                             >
                                                 Check Out
                                             </span>
@@ -951,13 +827,13 @@ export default function Dashboard() {
                                                     background: 'var(--bg-secondary)',
                                                     color: 'var(--text-primary)',
                                                 }}
-                                                data-oid="vwbsj._"
+                                                data-oid="ttwzw3d"
                                             />
                                         ) : (
                                             <div
                                                 className="text-2xl sm:text-3xl font-bold"
                                                 style={{ color: 'var(--accent-danger)' }}
-                                                data-oid="dxyi01o"
+                                                data-oid="8dv_z4i"
                                             >
                                                 {outTime}
                                             </div>
@@ -967,33 +843,33 @@ export default function Dashboard() {
 
                                 <div
                                     className="mt-6 sm:mt-8 glass-effect p-4 sm:p-6 rounded-2xl hover-lift glow-warning"
-                                    data-oid="_x1e7jn"
+                                    data-oid="gj.:ibv"
                                 >
                                     <div
                                         className="flex flex-col sm:flex-row sm:items-center justify-between gap-2"
-                                        data-oid="9ud:8-8"
+                                        data-oid="qneb0ag"
                                     >
                                         <div
                                             className="flex items-center space-x-3"
-                                            data-oid="9grjxzj"
+                                            data-oid="6_kjjq4"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="1h3:xa8"
+                                                data-oid="i6.25fk"
                                             >
                                                 ⏱️
                                             </span>
                                             <span
                                                 className="font-semibold text-base sm:text-lg"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="foroolj"
+                                                data-oid="y4qzl.r"
                                             >
                                                 Total Work Hours Today
                                             </span>
                                         </div>
                                         <span
                                             className="text-2xl sm:text-3xl font-bold gradient-text-secondary"
-                                            data-oid="dym6xb:"
+                                            data-oid="jvy7bn7"
                                         >
                                             8h 30m
                                         </span>
@@ -1002,80 +878,80 @@ export default function Dashboard() {
                             </section>
 
                             {/* 📋 TASK MANAGEMENT SECTION */}
-                            <section data-oid="hfb5xry">
-                                <TaskManager data-oid="_qcb.15" />
+                            <section data-oid="5ep2_z9">
+                                <TaskManager data-oid="m7eu2-z" />
                             </section>
 
                             {/* ⏱️ TIME TRACKER SECTION */}
-                            <section data-oid="p8c0zey">
-                                <TimeTracker data-oid="cv5873n" />
+                            <section data-oid="g0zwvpg">
+                                <TimeTracker data-oid="1j5ptec" />
                             </section>
                         </div>
 
                         {/* SIDEBAR - Performance & Team */}
-                        <div className="xl:col-span-1 space-y-6 lg:space-y-8" data-oid="k2ys7bg">
+                        <div className="xl:col-span-1 space-y-6 lg:space-y-8" data-oid="uevt8ld">
                             {/* 📊 PERFORMANCE METRICS SECTION */}
                             <section
                                 className="glass-effect p-6 rounded-2xl hover-lift glow-primary"
-                                data-oid="lm7eqfb"
+                                data-oid="gpu6i69"
                             >
                                 <h3
                                     className="text-xl font-bold mb-6 gradient-text flex items-center"
-                                    data-oid="pvtvpvg"
+                                    data-oid="y2x8zu:"
                                 >
-                                    <span className="mr-3" data-oid="mtw_5l2">
+                                    <span className="mr-3" data-oid="oe0zm8r">
                                         📊
                                     </span>
                                     Performance Metrics
                                 </h3>
-                                <div className="space-y-4" data-oid=".--nrfb">
+                                <div className="space-y-4" data-oid="4qcp8h4">
                                     <div
                                         className="glass-effect p-4 rounded-xl hover-lift"
-                                        data-oid="gt1vect"
+                                        data-oid="o:_yp9p"
                                     >
                                         <div
                                             className="flex items-center space-x-3 mb-2"
-                                            data-oid="62k8-fh"
+                                            data-oid="a03fxd3"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="o6l68j_"
+                                                data-oid="6uxo5of"
                                             >
                                                 ✅
                                             </span>
                                             <span
                                                 className="font-medium text-sm sm:text-base"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="-c:dazz"
+                                                data-oid="uk-wdsw"
                                             >
                                                 Tasks Completed
                                             </span>
                                         </div>
                                         <span
                                             className="text-xl sm:text-2xl font-bold gradient-text-secondary"
-                                            data-oid="-2su968"
+                                            data-oid="hz86n6q"
                                         >
                                             {performanceStats.tasksCompleted}
                                         </span>
                                     </div>
                                     <div
                                         className="glass-effect p-4 rounded-xl hover-lift"
-                                        data-oid="7.sxkfz"
+                                        data-oid="s5aet2f"
                                     >
                                         <div
                                             className="flex items-center space-x-3 mb-2"
-                                            data-oid="wd_pv:2"
+                                            data-oid=":bihgu_"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="x.i81_9"
+                                                data-oid="p3_h_vv"
                                             >
                                                 📈
                                             </span>
                                             <span
                                                 className="font-medium text-sm sm:text-base"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="._uty77"
+                                                data-oid="jb.1l9b"
                                             >
                                                 Productivity Score
                                             </span>
@@ -1083,29 +959,29 @@ export default function Dashboard() {
                                         <span
                                             className="text-xl sm:text-2xl font-bold"
                                             style={{ color: 'var(--accent-secondary)' }}
-                                            data-oid=":73mw4c"
+                                            data-oid="pyb3d5j"
                                         >
                                             {performanceStats.productivityScore}%
                                         </span>
                                     </div>
                                     <div
                                         className="glass-effect p-4 rounded-xl hover-lift"
-                                        data-oid="qszo5fr"
+                                        data-oid="hatqn66"
                                     >
                                         <div
                                             className="flex items-center space-x-3 mb-2"
-                                            data-oid="u3wb0:d"
+                                            data-oid="ardaj9z"
                                         >
                                             <span
                                                 className="text-xl sm:text-2xl"
-                                                data-oid="6sjhy_9"
+                                                data-oid="bt.7:.h"
                                             >
                                                 💻
                                             </span>
                                             <span
                                                 className="font-medium text-sm sm:text-base"
                                                 style={{ color: 'var(--text-secondary)' }}
-                                                data-oid="gg.m:2s"
+                                                data-oid=":o8m8cg"
                                             >
                                                 Code Commits
                                             </span>
@@ -1113,7 +989,7 @@ export default function Dashboard() {
                                         <span
                                             className="text-xl sm:text-2xl font-bold"
                                             style={{ color: 'var(--accent-primary)' }}
-                                            data-oid="fb-uu_8"
+                                            data-oid="lk0-i63"
                                         >
                                             {performanceStats.codeCommits}
                                         </span>
@@ -1124,32 +1000,32 @@ export default function Dashboard() {
                             {/* 📢 ANNOUNCEMENTS SECTION */}
                             <section
                                 className="glass-effect p-6 rounded-2xl hover-lift glow-warning"
-                                data-oid="zb_lhuf"
+                                data-oid="_0e-n4b"
                             >
                                 <h3
                                     className="text-xl font-bold mb-6 gradient-text flex items-center"
-                                    data-oid="jkv84tc"
+                                    data-oid="jbvmxtj"
                                 >
-                                    <span className="mr-3" data-oid="9ngwaua">
+                                    <span className="mr-3" data-oid="jhrrjqb">
                                         📢
                                     </span>
                                     Recent Announcements
                                 </h3>
-                                <div className="space-y-4" data-oid="7xc.per">
+                                <div className="space-y-4" data-oid="7v6v-i5">
                                     {announcements.slice(0, 3).map((announcement) => (
                                         <div
                                             key={announcement.id}
                                             className="glass-effect p-4 rounded-xl hover-lift cursor-pointer transition-all duration-300"
                                             onClick={() => handleAnnouncementClick(announcement)}
-                                            data-oid="mxqyhjr"
+                                            data-oid="fv77r0z"
                                         >
                                             <div
                                                 className="flex items-start space-x-3"
-                                                data-oid="v1dmu5w"
+                                                data-oid="8a881tz"
                                             >
                                                 <span
                                                     className="text-lg sm:text-xl"
-                                                    data-oid="do2pstd"
+                                                    data-oid="74-xnw_"
                                                 >
                                                     {announcement.priority === 'high'
                                                         ? '🔴'
@@ -1157,25 +1033,25 @@ export default function Dashboard() {
                                                           ? '🟡'
                                                           : '🟢'}
                                                 </span>
-                                                <div className="flex-1" data-oid="_fwmg0w">
+                                                <div className="flex-1" data-oid="1pl262l">
                                                     <h4
                                                         className="font-semibold mb-2 text-sm sm:text-base"
                                                         style={{ color: 'var(--text-primary)' }}
-                                                        data-oid="g0qjro9"
+                                                        data-oid="npv7c5b"
                                                     >
                                                         {announcement.title}
                                                     </h4>
                                                     <p
                                                         className="text-xs sm:text-sm mb-2"
                                                         style={{ color: 'var(--text-secondary)' }}
-                                                        data-oid=".d8a47o"
+                                                        data-oid="m4-t-md"
                                                     >
                                                         {announcement.message.substring(0, 60)}...
                                                     </p>
                                                     <p
                                                         className="text-xs"
                                                         style={{ color: 'var(--text-muted)' }}
-                                                        data-oid="k0dhq:s"
+                                                        data-oid="pssn6s."
                                                     >
                                                         {announcement.time}
                                                     </p>
@@ -1189,50 +1065,50 @@ export default function Dashboard() {
                             {/* 👥 TEAM MEMBERS SECTION */}
                             <section
                                 className="glass-effect p-6 rounded-2xl hover-lift glow-secondary"
-                                data-oid="9z1urkd"
+                                data-oid="uy7h_gz"
                             >
                                 <h3
                                     className="text-xl font-bold mb-6 gradient-text flex items-center"
-                                    data-oid="qj9.mur"
+                                    data-oid="5g1wt0d"
                                 >
-                                    <span className="mr-3" data-oid="8vs3hh.">
+                                    <span className="mr-3" data-oid="vlx.usn">
                                         👥
                                     </span>
                                     Team Members
                                 </h3>
-                                <div className="space-y-4" data-oid="h.8ci9p">
+                                <div className="space-y-4" data-oid="ux:uku-">
                                     {teamMembers.slice(0, 4).map((member, index) => (
                                         <div
                                             key={index}
                                             className="glass-effect p-4 rounded-xl hover-lift flex items-center space-x-3 sm:space-x-4"
-                                            data-oid="v4aef2e"
+                                            data-oid="elqrjqr"
                                         >
                                             <div
                                                 className={`w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center text-xs sm:text-sm font-bold status-indicator status-${member.status} glow-primary`}
                                                 style={{ background: 'var(--gradient-secondary)' }}
-                                                data-oid="n6x:hg:"
+                                                data-oid="_et1rtl"
                                             >
                                                 {member.avatar}
                                             </div>
-                                            <div className="flex-1" data-oid="t9djm:1">
+                                            <div className="flex-1" data-oid="b:5ktco">
                                                 <div
                                                     className="font-semibold text-sm sm:text-base"
                                                     style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="ointqn9"
+                                                    data-oid="ijj6_.o"
                                                 >
                                                     {member.name}
                                                 </div>
                                                 <div
                                                     className="text-xs sm:text-sm"
                                                     style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="wsq5fd6"
+                                                    data-oid="2p.7kpq"
                                                 >
                                                     {member.role}
                                                 </div>
                                                 <div
                                                     className="text-xs"
                                                     style={{ color: 'var(--accent-warning)' }}
-                                                    data-oid="oy4dr3v"
+                                                    data-oid="4kvgbgu"
                                                 >
                                                     {getStatusInfo(member.status).icon}{' '}
                                                     {getStatusInfo(member.status).label}
@@ -1248,13 +1124,13 @@ export default function Dashboard() {
             </main>
 
             {/* 🔔 FOOTER SECTION */}
-            <footer className="relative z-10 py-8 border-t border-gray-800" data-oid="iq:42gl">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="jr27ifh">
-                    <div className="text-center" data-oid="9u83yhz">
+            <footer className="relative z-10 py-8 border-t border-gray-800" data-oid="hyvasl-">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="1pnfpp_">
+                    <div className="text-center" data-oid="ln.jipn">
                         <p
                             className="text-sm"
                             style={{ color: 'var(--text-secondary)' }}
-                            data-oid="r:mwr4l"
+                            data-oid="czm.fa3"
                         >
                             © 2024 Intern Dashboard. Built with ❤️ for productivity.
                         </p>
@@ -1267,29 +1143,29 @@ export default function Dashboard() {
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
                     onClick={closeAnnouncementModal}
-                    data-oid="_f0o5b7"
+                    data-oid=":plsuu2"
                 >
                     <div
                         className="card p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
-                        data-oid="jd7nr7j"
+                        data-oid="-_g9rst"
                     >
-                        <div className="flex justify-between items-start mb-6" data-oid="om91s:y">
-                            <div data-oid="djfxhhl">
+                        <div className="flex justify-between items-start mb-6" data-oid="yef6krk">
+                            <div data-oid="gnw:_14">
                                 <h2
                                     className="text-2xl font-bold mb-2"
                                     style={{ color: 'var(--text-primary)' }}
-                                    data-oid="uqz67by"
+                                    data-oid="mqj9hsy"
                                 >
                                     {selectedAnnouncement.title}
                                 </h2>
                                 <div
                                     className="flex items-center space-x-3 text-sm"
-                                    data-oid="y5-qz1x"
+                                    data-oid="pstrpaj"
                                 >
                                     <span
                                         className={`px-3 py-1 rounded-full text-white ${getPriorityBadgeColor(selectedAnnouncement.priority)}`}
-                                        data-oid="n7p6adn"
+                                        data-oid="k8p98-:"
                                     >
                                         {selectedAnnouncement.priority} priority
                                     </span>
@@ -1299,11 +1175,11 @@ export default function Dashboard() {
                                             background: 'var(--bg-tertiary)',
                                             color: 'var(--text-secondary)',
                                         }}
-                                        data-oid="8apq_.0"
+                                        data-oid="8.1j5xi"
                                     >
                                         {selectedAnnouncement.type}
                                     </span>
-                                    <span style={{ color: 'var(--text-muted)' }} data-oid="oj:len5">
+                                    <span style={{ color: 'var(--text-muted)' }} data-oid="4:m0lwn">
                                         {selectedAnnouncement.time}
                                     </span>
                                 </div>
@@ -1312,28 +1188,28 @@ export default function Dashboard() {
                                 onClick={closeAnnouncementModal}
                                 className="text-2xl hover:text-red-500 transition-colors"
                                 style={{ color: 'var(--text-secondary)' }}
-                                data-oid="-35227-"
+                                data-oid="97g-p1g"
                             >
                                 ×
                             </button>
                         </div>
 
-                        <div className="space-y-6" data-oid="vq86gyu">
-                            <div data-oid="qyrvwox">
+                        <div className="space-y-6" data-oid="t:xeq63">
+                            <div data-oid="1af8yk2">
                                 <p
                                     className="text-lg leading-relaxed"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="h5mi7x:"
+                                    data-oid="gl15yyv"
                                 >
                                     {selectedAnnouncement.message}
                                 </p>
                             </div>
 
-                            <div className="flex justify-center space-x-4" data-oid="epp-q2f">
+                            <div className="flex justify-center space-x-4" data-oid="bmarw-c">
                                 <button
                                     onClick={closeAnnouncementModal}
                                     className="btn-secondary"
-                                    data-oid="5bk1ak8"
+                                    data-oid="fivikcd"
                                 >
                                     Close
                                 </button>
