@@ -45,26 +45,26 @@ export function Charts({ performanceStats }: ChartsProps) {
     ];
 
     return (
-        <div className="space-y-8" data-oid="s_pyatt">
+        <div className="space-y-8" data-oid="jrsw0--">
             {/* Productivity Trend */}
-            <div className="glass-effect rounded-2xl p-6" data-oid="3-duee_">
+            <div className="glass-effect rounded-2xl p-6" data-oid="vvq:opn">
                 <h3
                     className="text-xl font-bold mb-6"
                     style={{ color: 'var(--text-primary)' }}
-                    data-oid="ne2goen"
+                    data-oid="lzi_.cq"
                 >
                     📈 Weekly Productivity Trend
                 </h3>
-                <ResponsiveContainer width="100%" height={300} data-oid="vnl8qyc">
-                    <LineChart data={productivityData} data-oid="mcf8zyj">
+                <ResponsiveContainer width="100%" height={300} data-oid="oqbrqv7">
+                    <LineChart data={productivityData} data-oid="5y16fgi">
                         <CartesianGrid
                             strokeDasharray="3 3"
                             stroke="var(--border-primary)"
-                            data-oid="b_d1boq"
+                            data-oid="xn1:mrh"
                         />
 
-                        <XAxis dataKey="name" stroke="var(--text-secondary)" data-oid="k1ssv.i" />
-                        <YAxis stroke="var(--text-secondary)" data-oid="a7ph.x4" />
+                        <XAxis dataKey="name" stroke="var(--text-secondary)" data-oid="h_n84xf" />
+                        <YAxis stroke="var(--text-secondary)" data-oid="lrd7qhs" />
                         <Tooltip
                             contentStyle={{
                                 background: 'var(--bg-tertiary)',
@@ -72,7 +72,7 @@ export function Charts({ performanceStats }: ChartsProps) {
                                 borderRadius: '8px',
                                 color: 'var(--text-primary)',
                             }}
-                            data-oid="_:4pic0"
+                            data-oid="rz21ri9"
                         />
 
                         <Line
@@ -81,7 +81,7 @@ export function Charts({ performanceStats }: ChartsProps) {
                             stroke="var(--accent-red)"
                             strokeWidth={3}
                             dot={{ fill: 'var(--accent-red)', strokeWidth: 2, r: 6 }}
-                            data-oid="38lf8ju"
+                            data-oid="gr.tjbu"
                         />
 
                         <Line
@@ -90,24 +90,24 @@ export function Charts({ performanceStats }: ChartsProps) {
                             stroke="var(--accent-yellow)"
                             strokeWidth={2}
                             dot={{ fill: 'var(--accent-yellow)', strokeWidth: 2, r: 4 }}
-                            data-oid="-uulbk0"
+                            data-oid="vpc7h6c"
                         />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-oid=".75ayi4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-oid="uferz_8">
                 {/* Task Distribution */}
-                <div className="glass-effect rounded-2xl p-6" data-oid="yeo5bjd">
+                <div className="glass-effect rounded-2xl p-6" data-oid="-mz1xms">
                     <h3
                         className="text-xl font-bold mb-6"
                         style={{ color: 'var(--text-primary)' }}
-                        data-oid="j3xl-:7"
+                        data-oid="pz_zir0"
                     >
                         🎯 Task Distribution
                     </h3>
-                    <ResponsiveContainer width="100%" height={250} data-oid="-y:mmjo">
-                        <PieChart data-oid="c5b0j5m">
+                    <ResponsiveContainer width="100%" height={250} data-oid="nxsy6rf">
+                        <PieChart data-oid="byuhut_">
                             <Pie
                                 data={taskDistribution}
                                 cx="50%"
@@ -116,13 +116,13 @@ export function Charts({ performanceStats }: ChartsProps) {
                                 outerRadius={100}
                                 paddingAngle={5}
                                 dataKey="value"
-                                data-oid="mwlqmey"
+                                data-oid="ywmr6cu"
                             >
                                 {taskDistribution.map((entry, index) => (
                                     <Cell
                                         key={`cell-${index}`}
                                         fill={entry.color}
-                                        data-oid="ltbf5i7"
+                                        data-oid="u2em-eg"
                                     />
                                 ))}
                             </Pie>
@@ -133,26 +133,26 @@ export function Charts({ performanceStats }: ChartsProps) {
                                     borderRadius: '8px',
                                     color: 'var(--text-primary)',
                                 }}
-                                data-oid="-uagh9b"
+                                data-oid="x:l23pn"
                             />
                         </PieChart>
                     </ResponsiveContainer>
-                    <div className="flex justify-center space-x-4 mt-4" data-oid="9hpn-5:">
+                    <div className="flex justify-center space-x-4 mt-4" data-oid="my_dksp">
                         {taskDistribution.map((item, index) => (
                             <div
                                 key={index}
                                 className="flex items-center space-x-2"
-                                data-oid="cq9c:8-"
+                                data-oid="nsdco88"
                             >
                                 <div
                                     className="w-3 h-3 rounded-full"
                                     style={{ backgroundColor: item.color }}
-                                    data-oid="3vveoby"
+                                    data-oid="ow4th0r"
                                 ></div>
                                 <span
                                     className="text-sm"
                                     style={{ color: 'var(--text-secondary)' }}
-                                    data-oid="dy672t4"
+                                    data-oid="mjebtlq"
                                 >
                                     {item.name}: {item.value}
                                 </span>
@@ -162,34 +162,34 @@ export function Charts({ performanceStats }: ChartsProps) {
                 </div>
 
                 {/* Skills Chart */}
-                <div className="glass-effect rounded-2xl p-6" data-oid="torlihu">
+                <div className="glass-effect rounded-2xl p-6" data-oid="mavl._r">
                     <h3
                         className="text-xl font-bold mb-6"
                         style={{ color: 'var(--text-primary)' }}
-                        data-oid="qi13ejm"
+                        data-oid="5ll:3c."
                     >
                         🛠️ Technical Skills
                     </h3>
-                    <ResponsiveContainer width="100%" height={250} data-oid="4oe9w03">
-                        <BarChart data={skillsData} layout="horizontal" data-oid="z9r9g.o">
+                    <ResponsiveContainer width="100%" height={250} data-oid="kxl:yt6">
+                        <BarChart data={skillsData} layout="horizontal" data-oid="n3h31k6">
                             <CartesianGrid
                                 strokeDasharray="3 3"
                                 stroke="var(--border-primary)"
-                                data-oid="12d7ops"
+                                data-oid="p_p4lol"
                             />
 
                             <XAxis
                                 type="number"
                                 domain={[0, 100]}
                                 stroke="var(--text-secondary)"
-                                data-oid="mdsqi2b"
+                                data-oid="jixzgf-"
                             />
 
                             <YAxis
                                 dataKey="skill"
                                 type="category"
                                 stroke="var(--text-secondary)"
-                                data-oid="k33gy1f"
+                                data-oid="wvow-jz"
                             />
 
                             <Tooltip
@@ -199,14 +199,14 @@ export function Charts({ performanceStats }: ChartsProps) {
                                     borderRadius: '8px',
                                     color: 'var(--text-primary)',
                                 }}
-                                data-oid=":kej3ks"
+                                data-oid="qqth58i"
                             />
 
                             <Bar
                                 dataKey="level"
                                 fill="var(--accent-yellow)"
                                 radius={[0, 4, 4, 0]}
-                                data-oid="n-i2hst"
+                                data-oid="3hdjlgu"
                             />
                         </BarChart>
                     </ResponsiveContainer>

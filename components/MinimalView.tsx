@@ -41,23 +41,23 @@ export function MinimalView() {
     if (!mounted) return null;
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-900" data-oid="kygm7o7">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-900" data-oid="rd99y-6">
             {/* Demo Data Notice */}
             {isDemoData && (
                 <div
                     className="bg-amber-100 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 mb-6"
-                    data-oid="vgv87a1"
+                    data-oid="4j59gs:"
                 >
-                    <div className="flex" data-oid="ikyuqdv">
-                        <div className="flex-shrink-0" data-oid="m.qieze">
-                            <span className="text-amber-500" data-oid="c8v.voi">
+                    <div className="flex" data-oid="ordhfnp">
+                        <div className="flex-shrink-0" data-oid="_phcpeb">
+                            <span className="text-amber-500" data-oid="uq9zkjf">
                                 ⚠️
                             </span>
                         </div>
-                        <div className="ml-3" data-oid="2sc.akf">
+                        <div className="ml-3" data-oid="u6t0kqi">
                             <p
                                 className="text-sm text-amber-700 dark:text-amber-300"
-                                data-oid="4dnmo.p"
+                                data-oid="o9qhlsn"
                             >
                                 {demoDataNotice}
                             </p>
@@ -69,45 +69,45 @@ export function MinimalView() {
             {/* Header */}
             <header
                 className="bg-white dark:bg-slate-800 shadow-sm border-b border-slate-200 dark:border-slate-700"
-                data-oid="vdm.1b0"
+                data-oid="nugemnz"
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="520ok7p">
-                    <div className="flex justify-between items-center h-16" data-oid="2qug5mt">
-                        <div className="flex items-center space-x-4" data-oid="2gi:-mi">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="adef_jr">
+                    <div className="flex justify-between items-center h-16" data-oid="sufct7b">
+                        <div className="flex items-center space-x-4" data-oid="ym84j.j">
                             <div
                                 className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center"
-                                data-oid="-h_61yc"
+                                data-oid="fm-hbtv"
                             >
-                                <span className="text-white font-bold text-lg" data-oid="g54.lls">
+                                <span className="text-white font-bold text-lg" data-oid="e:0ms4g">
                                     🚀
                                 </span>
                             </div>
-                            <div data-oid="25d83jd">
+                            <div data-oid="kcxm4.h">
                                 <h1
                                     className="text-xl font-bold text-slate-900 dark:text-white"
-                                    data-oid=".7eoc27"
+                                    data-oid="tc8fft2"
                                 >
                                     Intern Dashboard - Minimal View
                                 </h1>
                                 <p
                                     className="text-sm text-slate-500 dark:text-slate-400"
-                                    data-oid="0lrcw9q"
+                                    data-oid="l1sbmtu"
                                 >
                                     {formatDate(currentTime)}
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-4" data-oid="47cs4st">
-                            <div className="text-right" data-oid="1ckobv4">
+                        <div className="flex items-center space-x-4" data-oid="6kehyhi">
+                            <div className="text-right" data-oid="b07o_qa">
                                 <div
                                     className="text-lg font-bold text-slate-900 dark:text-white"
-                                    data-oid="_oei99v"
+                                    data-oid=".1:qest"
                                 >
                                     {formatTime(currentTime)}
                                 </div>
                                 <div
                                     className="text-xs text-slate-500 dark:text-slate-400"
-                                    data-oid="7it1:8h"
+                                    data-oid="mjlcnqq"
                                 >
                                     Current Time
                                 </div>
@@ -118,117 +118,117 @@ export function MinimalView() {
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="xy9xb3x">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-oid="iln7pr:">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="ihx60h-">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-oid="unjv051">
                     {/* Left Column */}
-                    <div className="space-y-8" data-oid="2866kz_">
+                    <div className="space-y-8" data-oid="k.mjbtp">
                         {/* 1. Intern Profile Card */}
                         <section
                             className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6"
-                            data-oid="0rrc7ip"
+                            data-oid="39dyerd"
                         >
                             <div
                                 className="flex items-center justify-between mb-6"
-                                data-oid="e6z6low"
+                                data-oid="z_uf81r"
                             >
                                 <h2
                                     className="text-xl font-bold text-slate-900 dark:text-white flex items-center"
-                                    data-oid="3ethvxb"
+                                    data-oid=":88642:"
                                 >
-                                    <span className="mr-3" data-oid="zzqu1dn">
+                                    <span className="mr-3" data-oid="w7hwoit">
                                         👤
                                     </span>
                                     Intern Profile
                                 </h2>
                                 <button
                                     className="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors"
-                                    data-oid="5i69ygl"
+                                    data-oid="aswqhb7"
                                 >
                                     ✏️ Quick Edit
                                 </button>
                             </div>
 
-                            <div className="flex items-start space-x-4" data-oid="t5q48_g">
+                            <div className="flex items-start space-x-4" data-oid="dbfk3x:">
                                 <div
                                     className="w-16 h-16 bg-indigo-600 rounded-xl flex items-center justify-center"
-                                    data-oid="qvozwe7"
+                                    data-oid="g_9u1yj"
                                 >
                                     <span
                                         className="text-white font-bold text-xl"
-                                        data-oid="4w_h9qb"
+                                        data-oid="ht4hw5q"
                                     >
                                         {internProfile.avatar}
                                     </span>
                                 </div>
-                                <div className="flex-1" data-oid="0ps_ees">
+                                <div className="flex-1" data-oid=":c98_c4">
                                     <h3
                                         className="text-lg font-semibold text-slate-900 dark:text-white"
-                                        data-oid="q2q.osa"
+                                        data-oid="7frzfi_"
                                     >
                                         {internProfile.name}
                                     </h3>
                                     <p
                                         className="text-indigo-600 dark:text-indigo-400 font-medium"
-                                        data-oid="pd.yb-6"
+                                        data-oid="2x_unh3"
                                     >
                                         {internProfile.role}
                                     </p>
                                     <div
                                         className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm"
-                                        data-oid="7h.15ny"
+                                        data-oid="1pkkp8d"
                                     >
-                                        <div data-oid="i4wrev-">
+                                        <div data-oid="34w7igg">
                                             <span
                                                 className="text-slate-500 dark:text-slate-400"
-                                                data-oid="y0we6b5"
+                                                data-oid="9jq9q9a"
                                             >
                                                 Email:
                                             </span>
                                             <p
                                                 className="text-slate-900 dark:text-white font-medium"
-                                                data-oid="33d7f6r"
+                                                data-oid="6870_72"
                                             >
                                                 {internProfile.email}
                                             </p>
                                         </div>
-                                        <div data-oid="1msobxm">
+                                        <div data-oid="c_uv54r">
                                             <span
                                                 className="text-slate-500 dark:text-slate-400"
-                                                data-oid="qsn1:-5"
+                                                data-oid="_wheg89"
                                             >
                                                 College:
                                             </span>
                                             <p
                                                 className="text-slate-900 dark:text-white font-medium"
-                                                data-oid="tdudxwx"
+                                                data-oid="le2gxz_"
                                             >
                                                 {internProfile.college}
                                             </p>
                                         </div>
-                                        <div data-oid="gcxu375">
+                                        <div data-oid="m7w2gls">
                                             <span
                                                 className="text-slate-500 dark:text-slate-400"
-                                                data-oid="pxvs4ts"
+                                                data-oid="_wtva7v"
                                             >
                                                 Year:
                                             </span>
                                             <p
                                                 className="text-slate-900 dark:text-white font-medium"
-                                                data-oid="l7gak-0"
+                                                data-oid="d_qvbq5"
                                             >
                                                 {internProfile.year}
                                             </p>
                                         </div>
-                                        <div data-oid="qflatt0">
+                                        <div data-oid="1vbt4yz">
                                             <span
                                                 className="text-slate-500 dark:text-slate-400"
-                                                data-oid="qiiccad"
+                                                data-oid=".6w0k5z"
                                             >
                                                 Manager:
                                             </span>
                                             <p
                                                 className="text-slate-900 dark:text-white font-medium"
-                                                data-oid="-6:5jra"
+                                                data-oid="-_9s:2g"
                                             >
                                                 {internProfile.manager}
                                             </p>
@@ -241,151 +241,151 @@ export function MinimalView() {
                         {/* 2. Assigned Project Info */}
                         <section
                             className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6"
-                            data-oid="rwr-n_0"
+                            data-oid="ele8igz"
                         >
                             <div
                                 className="flex items-center justify-between mb-6"
-                                data-oid="lk.2twf"
+                                data-oid="ygviflu"
                             >
                                 <h2
                                     className="text-xl font-bold text-slate-900 dark:text-white flex items-center"
-                                    data-oid="ji9:8a:"
+                                    data-oid="sj_p:wc"
                                 >
-                                    <span className="mr-3" data-oid="biid5yw">
+                                    <span className="mr-3" data-oid="u98fy33">
                                         🚀
                                     </span>
                                     Assigned Project
                                 </h2>
-                                <div className="flex items-center space-x-2" data-oid="9l9zxw-">
+                                <div className="flex items-center space-x-2" data-oid="3d5dp3i">
                                     <span
                                         className="text-sm text-slate-500 dark:text-slate-400"
-                                        data-oid="qtc3ely"
+                                        data-oid="zd54w2i"
                                     >
                                         Days left:
                                     </span>
                                     <span
                                         className="bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-300 px-2 py-1 rounded text-sm font-medium"
-                                        data-oid="sr4wi83"
+                                        data-oid="pj--:w9"
                                     >
                                         23 days
                                     </span>
                                 </div>
                             </div>
 
-                            <div data-oid="-xui34w">
+                            <div data-oid="4q56jg6">
                                 <h3
                                     className="text-lg font-semibold text-slate-900 dark:text-white mb-2"
-                                    data-oid="1om5a7t"
+                                    data-oid=".al4_dq"
                                 >
                                     {projectInfo.name}
                                 </h3>
                                 <p
                                     className="text-slate-600 dark:text-slate-300 mb-4"
-                                    data-oid=":qih1c0"
+                                    data-oid="kszap6b"
                                 >
                                     {projectInfo.description}
                                 </p>
 
                                 <div
                                     className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4"
-                                    data-oid="f7kuht-"
+                                    data-oid="9_1kyc2"
                                 >
                                     <div
                                         className="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg"
-                                        data-oid="se-aw8y"
+                                        data-oid="gz9ys7k"
                                     >
                                         <div
                                             className="text-xs text-slate-500 dark:text-slate-400 mb-1"
-                                            data-oid="8sz_g3t"
+                                            data-oid="iav4usj"
                                         >
                                             Status
                                         </div>
                                         <div
                                             className="text-green-600 dark:text-green-400 font-medium"
-                                            data-oid="89wvs:h"
+                                            data-oid="gok9yz4"
                                         >
                                             {projectInfo.status}
                                         </div>
                                     </div>
                                     <div
                                         className="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg"
-                                        data-oid="lddnsz2"
+                                        data-oid="p972jqg"
                                     >
                                         <div
                                             className="text-xs text-slate-500 dark:text-slate-400 mb-1"
-                                            data-oid="g1i7.kb"
+                                            data-oid="xg4i_g6"
                                         >
                                             Priority
                                         </div>
                                         <div
                                             className="text-red-600 dark:text-red-400 font-medium"
-                                            data-oid="xin5kgw"
+                                            data-oid="ipiv576"
                                         >
                                             {projectInfo.priority}
                                         </div>
                                     </div>
                                     <div
                                         className="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg"
-                                        data-oid="fe30zg2"
+                                        data-oid="dbfcrj4"
                                     >
                                         <div
                                             className="text-xs text-slate-500 dark:text-slate-400 mb-1"
-                                            data-oid="j1ywjxb"
+                                            data-oid="89sr1:_"
                                         >
                                             Deadline
                                         </div>
                                         <div
                                             className="text-amber-600 dark:text-amber-400 font-medium"
-                                            data-oid="28u3esv"
+                                            data-oid="n893v31"
                                         >
                                             {projectInfo.deadline}
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="mb-4" data-oid="klf:otv">
+                                <div className="mb-4" data-oid="asb7_rk">
                                     <div
                                         className="flex justify-between items-center mb-2"
-                                        data-oid="-kf4suw"
+                                        data-oid="2a1dlg-"
                                     >
                                         <span
                                             className="text-sm text-slate-600 dark:text-slate-300"
-                                            data-oid="cg.fgjq"
+                                            data-oid=".-t1vtp"
                                         >
                                             Progress
                                         </span>
                                         <span
                                             className="text-sm font-medium text-slate-900 dark:text-white"
-                                            data-oid="qjo0a4l"
+                                            data-oid="yavmj9-"
                                         >
                                             {projectInfo.progress}%
                                         </span>
                                     </div>
                                     <div
                                         className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
-                                        data-oid="jurng0r"
+                                        data-oid=".jgi_lt"
                                     >
                                         <div
                                             className="bg-indigo-600 h-2 rounded-full transition-all duration-500"
                                             style={{ width: `${projectInfo.progress}%` }}
-                                            data-oid="x.8pe1l"
+                                            data-oid="x0317i0"
                                         ></div>
                                     </div>
                                 </div>
 
-                                <div data-oid="boiub.a">
+                                <div data-oid="kgzm8gt">
                                     <span
                                         className="text-sm text-slate-600 dark:text-slate-300 mb-2 block"
-                                        data-oid="tip2:2b"
+                                        data-oid="ck1w6go"
                                     >
                                         Tech Stack:
                                     </span>
-                                    <div className="flex flex-wrap gap-2" data-oid="nqqvsla">
+                                    <div className="flex flex-wrap gap-2" data-oid="0h326_:">
                                         {projectInfo.techStack.map((tech, index) => (
                                             <span
                                                 key={index}
                                                 className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded text-xs font-medium"
-                                                data-oid="93ya7sy"
+                                                data-oid="f-xoj2f"
                                             >
                                                 {tech}
                                             </span>
@@ -397,40 +397,40 @@ export function MinimalView() {
                     </div>
 
                     {/* Right Column */}
-                    <div className="space-y-8" data-oid="-n7m8u8">
+                    <div className="space-y-8" data-oid="n:qwvtn">
                         {/* 3. Team Members List */}
                         <section
                             className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6"
-                            data-oid="a2:51yw"
+                            data-oid="xyxam9e"
                         >
                             <h2
                                 className="text-xl font-bold text-slate-900 dark:text-white flex items-center mb-6"
-                                data-oid="y6r:ch0"
+                                data-oid="af_cr.h"
                             >
-                                <span className="mr-3" data-oid="8y1f:2h">
+                                <span className="mr-3" data-oid="6yec3ft">
                                     👥
                                 </span>
                                 Team Members
                             </h2>
 
-                            <div className="space-y-4" data-oid="iq07smb">
+                            <div className="space-y-4" data-oid="5zb6pq5">
                                 {teamMembers.map((member, index) => (
                                     <div
                                         key={index}
                                         className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors"
-                                        data-oid="1qan_kp"
+                                        data-oid="fw3ef.t"
                                     >
                                         <div
                                             className="flex items-center space-x-3"
-                                            data-oid="p978s7s"
+                                            data-oid=".qjmx6-"
                                         >
                                             <div
                                                 className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center relative"
-                                                data-oid="nqfi_og"
+                                                data-oid="b6c:irc"
                                             >
                                                 <span
                                                     className="text-white font-bold text-sm"
-                                                    data-oid="sitk_.b"
+                                                    data-oid="ww74moj"
                                                 >
                                                     {member.avatar}
                                                 </span>
@@ -444,25 +444,25 @@ export function MinimalView() {
                                                                 ? 'bg-yellow-500'
                                                                 : 'bg-gray-500'
                                                     }`}
-                                                    data-oid="3a_0kyy"
+                                                    data-oid="w_qd579"
                                                 ></div>
                                             </div>
-                                            <div data-oid="-1jplu7">
+                                            <div data-oid="2oxvf9h">
                                                 <div
                                                     className="font-medium text-slate-900 dark:text-white"
-                                                    data-oid=":0-7.-8"
+                                                    data-oid="z_lf5u4"
                                                 >
                                                     {member.name}
                                                 </div>
                                                 <div
                                                     className="text-sm text-slate-500 dark:text-slate-400"
-                                                    data-oid="qzdhpri"
+                                                    data-oid="5jya-tx"
                                                 >
                                                     {member.role}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="text-right" data-oid="u-v0r_h">
+                                        <div className="text-right" data-oid="_3fmyi6">
                                             <div
                                                 className={`text-xs px-2 py-1 rounded-full font-medium ${
                                                     member.status === 'active'
@@ -473,7 +473,7 @@ export function MinimalView() {
                                                             ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/20 dark:text-yellow-300'
                                                             : 'bg-gray-100 text-gray-700 dark:bg-gray-900/20 dark:text-gray-300'
                                                 }`}
-                                                data-oid="t.tpv6x"
+                                                data-oid="t93sv3z"
                                             >
                                                 {getStatusInfo(member.status).icon}{' '}
                                                 {getStatusInfo(member.status).label}
@@ -487,61 +487,61 @@ export function MinimalView() {
                         {/* 4. Announcements Section */}
                         <section
                             className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6"
-                            data-oid="nbfditg"
+                            data-oid="ceeun8f"
                         >
                             <div
                                 className="flex items-center justify-between mb-6"
-                                data-oid="4:wm-t-"
+                                data-oid="3q737vj"
                             >
                                 <h2
                                     className="text-xl font-bold text-slate-900 dark:text-white flex items-center"
-                                    data-oid="5jbqy1c"
+                                    data-oid="y7tz.or"
                                 >
-                                    <span className="mr-3" data-oid="h2i05qm">
+                                    <span className="mr-3" data-oid="12y14bd">
                                         📢
                                     </span>
                                     Announcements
                                 </h2>
-                                <div className="flex space-x-2" data-oid="e:rscc_">
+                                <div className="flex space-x-2" data-oid="h2bvz3y">
                                     <button
                                         className="text-xs px-2 py-1 bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-300 rounded"
-                                        data-oid="k-vhaf5"
+                                        data-oid="hz.2531"
                                     >
                                         High
                                     </button>
                                     <button
                                         className="text-xs px-2 py-1 bg-yellow-100 text-yellow-700 dark:bg-yellow-900/20 dark:text-yellow-300 rounded"
-                                        data-oid="h5y0af4"
+                                        data-oid="un28m-r"
                                     >
                                         Medium
                                     </button>
                                     <button
                                         className="text-xs px-2 py-1 bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-300 rounded"
-                                        data-oid="o7i:j_4"
+                                        data-oid=".h3h.z:"
                                     >
                                         Low
                                     </button>
                                 </div>
                             </div>
 
-                            <div className="space-y-3" data-oid=".:.bdx4">
+                            <div className="space-y-3" data-oid="85q59xy">
                                 {announcements.slice(0, 4).map((announcement) => (
                                     <div
                                         key={announcement.id}
                                         className="p-4 border border-slate-200 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer transition-colors"
                                         onClick={() => handleAnnouncementClick(announcement)}
-                                        data-oid="-e.1wta"
+                                        data-oid="vsfwha9"
                                     >
                                         <div
                                             className="flex items-start justify-between"
-                                            data-oid="wb:qmx1"
+                                            data-oid="r-siqzc"
                                         >
-                                            <div className="flex-1" data-oid="meelumb">
+                                            <div className="flex-1" data-oid="ix:l5p9">
                                                 <div
                                                     className="flex items-center space-x-2 mb-2"
-                                                    data-oid="nujhz.s"
+                                                    data-oid="i4x7s-1"
                                                 >
-                                                    <span className="text-sm" data-oid="osup8ie">
+                                                    <span className="text-sm" data-oid="ay9-kd4">
                                                         {announcement.priority === 'high'
                                                             ? '🔴'
                                                             : announcement.priority === 'medium'
@@ -550,26 +550,26 @@ export function MinimalView() {
                                                     </span>
                                                     <h4
                                                         className="font-medium text-slate-900 dark:text-white text-sm"
-                                                        data-oid="7l-k.41"
+                                                        data-oid="-1arfjl"
                                                     >
                                                         {announcement.title}
                                                     </h4>
                                                 </div>
                                                 <p
                                                     className="text-sm text-slate-600 dark:text-slate-300 mb-2"
-                                                    data-oid="zn4..m4"
+                                                    data-oid="ftr-22."
                                                 >
                                                     {announcement.message.substring(0, 80)}...
                                                 </p>
                                                 <div
                                                     className="flex items-center space-x-3 text-xs text-slate-500 dark:text-slate-400"
-                                                    data-oid="0:al1ci"
+                                                    data-oid="2wfzu9c"
                                                 >
-                                                    <span data-oid="7:.5ihk">
+                                                    <span data-oid="vnynkay">
                                                         {announcement.time}
                                                     </span>
-                                                    <span data-oid="1godcfj">•</span>
-                                                    <span data-oid="rs7_8vi">
+                                                    <span data-oid="n..gch_">•</span>
+                                                    <span data-oid="r028q-a">
                                                         {announcement.author}
                                                     </span>
                                                 </div>
@@ -588,40 +588,40 @@ export function MinimalView() {
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
                     onClick={closeAnnouncementModal}
-                    data-oid="-ngh.2h"
+                    data-oid=".0go_y-"
                 >
                     <div
                         className="bg-white dark:bg-slate-800 rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
-                        data-oid="z3ogz1w"
+                        data-oid="ruylnps"
                     >
-                        <div className="flex justify-between items-start mb-6" data-oid="716.4kn">
-                            <div data-oid="6c:5v62">
+                        <div className="flex justify-between items-start mb-6" data-oid="47-rvl3">
+                            <div data-oid="591ixj9">
                                 <h2
                                     className="text-2xl font-bold mb-2 text-slate-900 dark:text-white"
-                                    data-oid="anboeqp"
+                                    data-oid="7s54le7"
                                 >
                                     {selectedAnnouncement.title}
                                 </h2>
                                 <div
                                     className="flex items-center space-x-3 text-sm"
-                                    data-oid="tr2hd8-"
+                                    data-oid="y4.8t76"
                                 >
                                     <span
                                         className={`px-3 py-1 rounded-full text-white ${getPriorityBadgeColor(selectedAnnouncement.priority)}`}
-                                        data-oid="_ofhwyt"
+                                        data-oid="m4xfy41"
                                     >
                                         {selectedAnnouncement.priority} priority
                                     </span>
                                     <span
                                         className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
-                                        data-oid="8uo7yvn"
+                                        data-oid="i952_9o"
                                     >
                                         {selectedAnnouncement.type}
                                     </span>
                                     <span
                                         className="text-slate-500 dark:text-slate-400"
-                                        data-oid="8::m.34"
+                                        data-oid="2mp88hc"
                                     >
                                         {selectedAnnouncement.time}
                                     </span>
@@ -630,27 +630,27 @@ export function MinimalView() {
                             <button
                                 onClick={closeAnnouncementModal}
                                 className="text-2xl hover:text-red-500 transition-colors text-slate-500 dark:text-slate-400"
-                                data-oid="s2fsg5x"
+                                data-oid="3xy.t-7"
                             >
                                 ×
                             </button>
                         </div>
 
-                        <div className="space-y-6" data-oid="etty9lo">
-                            <div data-oid="1dkx5un">
+                        <div className="space-y-6" data-oid="n1r937l">
+                            <div data-oid="dri-jg8">
                                 <p
                                     className="text-lg leading-relaxed text-slate-600 dark:text-slate-300"
-                                    data-oid="jpyinhm"
+                                    data-oid="abrs7y:"
                                 >
                                     {selectedAnnouncement.message}
                                 </p>
                             </div>
 
-                            <div className="flex justify-center space-x-4" data-oid="2p.hb_j">
+                            <div className="flex justify-center space-x-4" data-oid="se-0xf1">
                                 <button
                                     onClick={closeAnnouncementModal}
                                     className="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
-                                    data-oid="po2b95p"
+                                    data-oid="jb8ejek"
                                 >
                                     Close
                                 </button>
