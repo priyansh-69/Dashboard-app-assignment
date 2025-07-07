@@ -128,17 +128,17 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
     };
 
     return (
-        <div className="space-y-6" data-oid="eaggjl5">
+        <div className="space-y-6" data-oid="j51o0:n">
             {/* Header with filters */}
-            <div className="flex flex-wrap items-center justify-between gap-4" data-oid="x-7nqx2">
+            <div className="flex flex-wrap items-center justify-between gap-4" data-oid="n_deg5p">
                 <h3
                     className="text-xl font-bold"
                     style={{ color: 'var(--text-primary)' }}
-                    data-oid="46q22pl"
+                    data-oid="ox5er3o"
                 >
                     📋 Task Management
                 </h3>
-                <div className="flex items-center space-x-4" data-oid="1ns5w-0">
+                <div className="flex items-center space-x-4" data-oid="ibq9e9:">
                     <select
                         value={filter}
                         onChange={(e) => setFilter(e.target.value as any)}
@@ -147,18 +147,18 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--bg-tertiary)',
                             color: 'var(--text-primary)',
                         }}
-                        data-oid="aj03:u9"
+                        data-oid="ihsvtok"
                     >
-                        <option value="all" data-oid="7dg0olb">
+                        <option value="all" data-oid="luckb05">
                             All Status
                         </option>
-                        <option value="todo" data-oid="v2oc64d">
+                        <option value="todo" data-oid="ra638iv">
                             To Do
                         </option>
-                        <option value="in-progress" data-oid="jgs_ie-">
+                        <option value="in-progress" data-oid="m9h63lr">
                             In Progress
                         </option>
-                        <option value="completed" data-oid="prbt5ya">
+                        <option value="completed" data-oid="n9t5sle">
                             Completed
                         </option>
                     </select>
@@ -170,18 +170,18 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--bg-tertiary)',
                             color: 'var(--text-primary)',
                         }}
-                        data-oid="cecqf0:"
+                        data-oid=".lfhkqb"
                     >
-                        <option value="all" data-oid="ekthuhg">
+                        <option value="all" data-oid="fq.mvth">
                             All Priority
                         </option>
-                        <option value="high" data-oid="mzzn3cn">
+                        <option value="high" data-oid="95thssp">
                             High
                         </option>
-                        <option value="medium" data-oid="xe8n8q5">
+                        <option value="medium" data-oid="vpraza2">
                             Medium
                         </option>
-                        <option value="low" data-oid="h0r1wqn">
+                        <option value="low" data-oid="yzn6ygf">
                             Low
                         </option>
                     </select>
@@ -192,7 +192,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                             background: 'var(--gradient-primary)',
                             color: 'white',
                         }}
-                        data-oid="nauro3z"
+                        data-oid=".j-b14m"
                     >
                         + Add Task
                     </button>
@@ -200,32 +200,32 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
             </div>
 
             {/* Kanban Board */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-oid="-nqg.nd">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-oid="ywtdsyy">
                 {Object.entries(columns).map(([columnId, column]) => (
-                    <div key={columnId} className="space-y-4" data-oid="e1ln454">
+                    <div key={columnId} className="space-y-4" data-oid="-bhx505">
                         <div
                             className={`p-4 rounded-xl border-l-4 ${column.color}`}
                             style={{ background: 'var(--bg-tertiary)' }}
-                            data-oid="2r3u2ps"
+                            data-oid="l0-cu_y"
                         >
                             <h4
                                 className="font-bold text-lg"
                                 style={{ color: 'var(--text-primary)' }}
-                                data-oid=":l97s42"
+                                data-oid="-ntwtmk"
                             >
                                 {column.title}
                             </h4>
                             <span
                                 className="text-sm"
                                 style={{ color: 'var(--text-secondary)' }}
-                                data-oid="jyd3lr."
+                                data-oid="5.-d6g5"
                             >
                                 {filteredTasks.filter((task) => task.status === columnId).length}{' '}
                                 tasks
                             </span>
                         </div>
 
-                        <div className="space-y-3 min-h-[200px] p-2 rounded-xl" data-oid="85cu2vj">
+                        <div className="space-y-3 min-h-[200px] p-2 rounded-xl" data-oid=".1c:thq">
                             {filteredTasks
                                 .filter((task) => task.status === columnId)
                                 .map((task) => (
@@ -236,22 +236,22 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                             background: 'var(--bg-card)',
                                             border: '1px solid var(--border-primary)',
                                         }}
-                                        data-oid="yhjc:m9"
+                                        data-oid="6a6b444"
                                     >
                                         <div
                                             className="flex items-start justify-between mb-2"
-                                            data-oid="61x:l48"
+                                            data-oid="v.twkik"
                                         >
                                             <h5
                                                 className="font-medium"
                                                 style={{ color: 'var(--text-primary)' }}
-                                                data-oid="1.nxki5"
+                                                data-oid="_vsilp:"
                                             >
                                                 {task.title}
                                             </h5>
                                             <span
                                                 className={`px-2 py-1 rounded-full text-xs text-white ${getPriorityColor(task.priority)}`}
-                                                data-oid="iesmvlo"
+                                                data-oid="qdlkw08"
                                             >
                                                 {task.priority}
                                             </span>
@@ -259,13 +259,13 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         <p
                                             className="text-sm mb-3"
                                             style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="a6dlscb"
+                                            data-oid="0p_jmla"
                                         >
                                             {task.description}
                                         </p>
                                         <div
                                             className="flex flex-wrap gap-1 mb-3"
-                                            data-oid="7weadfk"
+                                            data-oid="r6mn_5a"
                                         >
                                             {task.tags.map((tag, tagIndex) => (
                                                 <span
@@ -275,7 +275,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                                         background: 'var(--bg-tertiary)',
                                                         color: 'var(--accent-yellow)',
                                                     }}
-                                                    data-oid="412y8ls"
+                                                    data-oid="t44za4."
                                                 >
                                                     {tag}
                                                 </span>
@@ -284,14 +284,14 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         <div
                                             className="flex justify-between items-center text-xs mb-3"
                                             style={{ color: 'var(--text-muted)' }}
-                                            data-oid="82.2b0c"
+                                            data-oid="nvhc4tm"
                                         >
-                                            <span data-oid="kym18a-">Due: {task.dueDate}</span>
-                                            <span data-oid="cvwq79p">{task.project}</span>
+                                            <span data-oid="v6v79dy">Due: {task.dueDate}</span>
+                                            <span data-oid="j65gi3.">{task.project}</span>
                                         </div>
 
                                         {/* Status Change Buttons */}
-                                        <div className="flex space-x-2" data-oid="3y9v621">
+                                        <div className="flex space-x-2" data-oid="16wfsxh">
                                             {Object.keys(columns).map((status) => (
                                                 <button
                                                     key={status}
@@ -314,7 +314,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                                                 ? 'white'
                                                                 : 'var(--text-primary)',
                                                     }}
-                                                    data-oid="6i-bi0j"
+                                                    data-oid="3q0dkj:"
                                                 >
                                                     {columns[status as keyof typeof columns].title}
                                                 </button>
@@ -331,16 +331,16 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
             {showAddTask && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-                    data-oid="7-zuma8"
+                    data-oid="3..885d"
                 >
                     <div
                         className="glass-effect rounded-2xl p-6 max-w-md w-full"
-                        data-oid="1qlnxp6"
+                        data-oid="gfidgr5"
                     >
                         <h3
                             className="text-xl font-bold mb-4"
                             style={{ color: 'var(--text-primary)' }}
-                            data-oid="-yd.ix3"
+                            data-oid="_.buw4b"
                         >
                             Add New Task
                         </h3>
@@ -359,9 +359,9 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         .map((tag) => tag.trim()),
                                 });
                             }}
-                            data-oid="q98ggo3"
+                            data-oid="himv-g5"
                         >
-                            <div className="space-y-4" data-oid="j.rch94">
+                            <div className="space-y-4" data-oid="c94ejt3">
                                 <input
                                     name="title"
                                     placeholder="Task title"
@@ -371,7 +371,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="l3pit-p"
+                                    data-oid="v6vc93w"
                                 />
 
                                 <textarea
@@ -383,7 +383,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="55gk0ow"
+                                    data-oid="2-x58ey"
                                 />
 
                                 <select
@@ -393,15 +393,15 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="bvmp-p5"
+                                    data-oid="75vmcis"
                                 >
-                                    <option value="low" data-oid="0x34k0b">
+                                    <option value="low" data-oid="pbmu7_g">
                                         Low Priority
                                     </option>
-                                    <option value="medium" data-oid="nu:8dvw">
+                                    <option value="medium" data-oid="plcz2d1">
                                         Medium Priority
                                     </option>
-                                    <option value="high" data-oid=".m2o5bi">
+                                    <option value="high" data-oid="i75oesm">
                                         High Priority
                                     </option>
                                 </select>
@@ -413,7 +413,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="s8-vph:"
+                                    data-oid="5vrbvov"
                                 />
 
                                 <input
@@ -424,7 +424,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="28sl9lr"
+                                    data-oid="6e8u8j2"
                                 />
 
                                 <input
@@ -435,10 +435,10 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--bg-tertiary)',
                                         color: 'var(--text-primary)',
                                     }}
-                                    data-oid="q:wt5.d"
+                                    data-oid="zb.qh3s"
                                 />
                             </div>
-                            <div className="flex space-x-3 mt-6" data-oid="49i7vqv">
+                            <div className="flex space-x-3 mt-6" data-oid="befi8h2">
                                 <button
                                     type="submit"
                                     className="flex-1 py-3 rounded-lg font-medium transition-all hover:scale-105"
@@ -446,7 +446,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         background: 'var(--gradient-primary)',
                                         color: 'white',
                                     }}
-                                    data-oid="oqk4::7"
+                                    data-oid="815yr8c"
                                 >
                                     Add Task
                                 </button>
@@ -459,7 +459,7 @@ export function TaskManager({ onTaskUpdate }: TaskManagerProps) {
                                         color: 'var(--text-primary)',
                                         border: '1px solid var(--border-primary)',
                                     }}
-                                    data-oid="vfp8zzu"
+                                    data-oid="0h0rml3"
                                 >
                                     Cancel
                                 </button>

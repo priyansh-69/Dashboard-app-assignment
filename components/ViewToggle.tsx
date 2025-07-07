@@ -7,13 +7,13 @@ interface ViewToggleProps {
 
 export function ViewToggle({ isMinimal, onToggle }: ViewToggleProps) {
     return (
-        <div className="fixed top-4 right-4 z-50" data-oid="vn5:nwz">
+        <div className="fixed top-4 right-4 z-50" data-oid="l1tgc04">
             <div
                 className="bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 p-2"
-                data-oid="6drs2mc"
+                data-oid="j5kzivg"
             >
-                <div className="flex items-center space-x-2" data-oid="fig3vgp">
-                    <span className="text-sm text-slate-600 dark:text-slate-300" data-oid="je9hi:9">
+                <div className="flex items-center space-x-2" data-oid="5mjnhob">
+                    <span className="text-sm text-slate-600 dark:text-slate-300" data-oid="9yso.7v">
                         View:
                     </span>
                     <button
@@ -23,7 +23,7 @@ export function ViewToggle({ isMinimal, onToggle }: ViewToggleProps) {
                                 ? 'bg-indigo-600 text-white'
                                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
                         }`}
-                        data-oid="hf.v-n3"
+                        data-oid="-s9uo0d"
                     >
                         Full
                     </button>
@@ -34,7 +34,7 @@ export function ViewToggle({ isMinimal, onToggle }: ViewToggleProps) {
                                 ? 'bg-indigo-600 text-white'
                                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700'
                         }`}
-                        data-oid="fuj_x:m"
+                        data-oid="67.pp_e"
                     >
                         Minimal
                     </button>
