@@ -557,36 +557,33 @@ export default function Page() {
     };
 
     return (
-        <div
-            className="min-h-screen"
-            style={{ background: 'var(--bg-primary)' }}
-            data-oid="g_h-r6l"
-        >
-            {/* Header */}
+        <div className="min-h-screen relative" data-oid="g_h-r6l">
+            {/* 🌊 Animated Background with Gradient Orbs */}
+            <div className="animated-background" data-oid="_op8q4-">
+                <div className="orb orb-1" data-oid="bf7fr_h"></div>
+                <div className="orb orb-2" data-oid="3_hs11:"></div>
+                <div className="orb orb-3" data-oid="lx59j9y"></div>
+            </div>
+            {/* ✨ Enhanced Header with Glass Morphism */}
             <header
-                className="card border-b-0 rounded-none"
-                style={{ borderColor: 'var(--border-primary)' }}
+                className="glass-effect border-b-0 rounded-none backdrop-blur-xl"
                 data-oid="d282xdw"
             >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-oid="72vnwfw">
-                    <div className="flex justify-between items-center h-16" data-oid="jbk2riy">
-                        <div className="flex items-center space-x-3" data-oid="va8y33w">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" data-oid="72vnwfw">
+                    <div className="flex justify-between items-center h-20" data-oid="jbk2riy">
+                        <div className="flex items-center space-x-4" data-oid="va8y33w">
                             <div
-                                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                                className="w-12 h-12 rounded-2xl flex items-center justify-center glow-primary hover-lift"
                                 style={{ background: 'var(--gradient-primary)' }}
                                 data-oid="eofcbpk"
                             >
-                                <span className="text-white font-bold" data-oid="pdu5ysb">
-                                    D
+                                <span className="text-white font-bold text-lg" data-oid="pdu5ysb">
+                                    🚀
                                 </span>
                             </div>
                             <div data-oid="xugtdou">
-                                <h1
-                                    className="text-xl font-semibold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="8631cm7"
-                                >
-                                    Dashboard
+                                <h1 className="text-2xl font-bold gradient-text" data-oid="8631cm7">
+                                    Intern Dashboard
                                 </h1>
                                 <p
                                     className="text-sm"
@@ -598,13 +595,15 @@ export default function Page() {
                             </div>
                         </div>
 
-                        {/* Header Right - Time and Profile */}
-                        <div className="flex items-center space-x-6" data-oid="ehfe_na">
-                            {/* Live Clock */}
-                            <div className="text-right" data-oid="5q_liv1">
+                        {/* Enhanced Header Right - Time and Profile */}
+                        <div className="flex items-center space-x-8" data-oid="ehfe_na">
+                            {/* Live Clock with Glow */}
+                            <div
+                                className="text-right glass-effect p-4 rounded-xl hover-lift"
+                                data-oid="5q_liv1"
+                            >
                                 <div
-                                    className="text-xl font-semibold"
-                                    style={{ color: 'var(--accent-primary)' }}
+                                    className="text-2xl font-bold gradient-text-secondary glow-pulse"
                                     data-oid="_s.ttsc"
                                 >
                                     {formatTime(currentTime)}
@@ -614,15 +613,18 @@ export default function Page() {
                                     style={{ color: 'var(--text-secondary)' }}
                                     data-oid="ypkx.nc"
                                 >
-                                    Current Time
+                                    ⏰ Current Time
                                 </div>
                             </div>
 
-                            {/* Profile */}
-                            <div className="flex items-center space-x-3" data-oid="fkpu-sw">
+                            {/* Enhanced Profile */}
+                            <div
+                                className="flex items-center space-x-4 glass-effect p-3 rounded-xl hover-lift"
+                                data-oid="fkpu-sw"
+                            >
                                 <div className="text-right" data-oid="bnqp.j5">
                                     <div
-                                        className="text-sm font-medium"
+                                        className="text-sm font-semibold"
                                         style={{ color: 'var(--text-primary)' }}
                                         data-oid="3.byoo5"
                                     >
@@ -630,18 +632,21 @@ export default function Page() {
                                     </div>
                                     <div
                                         className="text-xs"
-                                        style={{ color: 'var(--text-secondary)' }}
+                                        style={{ color: 'var(--accent-warning)' }}
                                         data-oid="zzxeixf"
                                     >
                                         {internProfile.role}
                                     </div>
                                 </div>
                                 <div
-                                    className="w-10 h-10 rounded-full flex items-center justify-center"
+                                    className="w-12 h-12 rounded-2xl flex items-center justify-center glow-primary status-indicator status-active"
                                     style={{ background: 'var(--gradient-primary)' }}
                                     data-oid="ghor44c"
                                 >
-                                    <span className="text-white font-semibold" data-oid="rbtqxl1">
+                                    <span
+                                        className="text-white font-bold text-lg"
+                                        data-oid="rbtqxl1"
+                                    >
                                         {internProfile.avatar}
                                     </span>
                                 </div>
@@ -651,27 +656,27 @@ export default function Page() {
                 </div>
             </header>
 
-            {/* Main Content */}
+            {/* 🚀 Enhanced Main Content with Better Spacing */}
             <main
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10"
+                className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 relative z-10"
                 data-oid="26fh1kx"
             >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8" data-oid="62oi3.d">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12" data-oid="62oi3.d">
                     {/* Left Column */}
-                    <div className="lg:col-span-2 space-y-8" data-oid="ifpi4l2">
-                        {/* Enhanced Profile Card */}
+                    <div className="lg:col-span-2 space-y-12" data-oid="ifpi4l2">
+                        {/* 🎨 Enhanced Profile Card with Modern Design */}
                         <div
-                            className="glass-effect rounded-2xl p-8 hover:shadow-2xl transition-all duration-300"
+                            className="glass-effect rounded-3xl p-10 hover-lift glow-primary"
                             data-oid="au_s-jw"
                         >
-                            <div className="flex items-start space-x-6" data-oid="nz.v3xv">
+                            <div className="flex items-start space-x-8" data-oid="nz.v3xv">
                                 <div
-                                    className="w-20 h-20 rounded-2xl flex items-center justify-center glow-red"
+                                    className="w-24 h-24 rounded-3xl flex items-center justify-center glow-primary float-animation"
                                     style={{ background: 'var(--gradient-primary)' }}
                                     data-oid="e.r4sap"
                                 >
                                     <span
-                                        className="text-white font-bold text-2xl"
+                                        className="text-white font-bold text-3xl"
                                         data-oid="4:5c73_"
                                     >
                                         {internProfile.avatar}
@@ -679,138 +684,179 @@ export default function Page() {
                                 </div>
                                 <div className="flex-1" data-oid="jfxc1uu">
                                     <div
-                                        className="flex items-center space-x-3 mb-2"
+                                        className="flex items-center space-x-4 mb-3"
                                         data-oid="nadwif:"
                                     >
                                         <h2
-                                            className="text-2xl font-bold"
-                                            style={{ color: 'var(--text-primary)' }}
+                                            className="text-3xl font-bold gradient-text"
                                             data-oid="6h1vx:n"
                                         >
                                             {internProfile.name}
                                         </h2>
                                         <span
-                                            className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusInfo(currentStatus).color} text-white`}
+                                            className={`px-4 py-2 rounded-full text-sm font-semibold ${getStatusInfo(currentStatus).color} text-white glow-secondary`}
                                             data-oid="lg86k29"
                                         >
+                                            {getStatusInfo(currentStatus).icon}{' '}
                                             {getStatusInfo(currentStatus).label}
                                         </span>
                                     </div>
                                     <p
-                                        className="font-medium text-lg mb-4"
-                                        style={{ color: 'var(--accent-yellow)' }}
+                                        className="font-semibold text-xl mb-6 gradient-text-secondary"
                                         data-oid="3_a3xcb"
                                     >
                                         {internProfile.role}
                                     </p>
                                     <div
-                                        className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"
+                                        className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-base"
                                         data-oid="3.2a28v"
                                     >
-                                        <div className="space-y-2" data-oid="nmra8_o">
+                                        <div className="space-y-4" data-oid="nmra8_o">
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="ip6a:_9"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="gvdskv7"
-                                                >
-                                                    📧 Email:
+                                                <span className="text-2xl" data-oid="vdsmwi0">
+                                                    📧
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="o6n..n_"
-                                                >
-                                                    {internProfile.email}
-                                                </span>
+                                                <div data-oid="40ggs.a">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid=".4slmox"
+                                                    >
+                                                        Email
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="o6n..n_"
+                                                    >
+                                                        {internProfile.email}
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="g8dxk5b"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="x8qpsy9"
-                                                >
-                                                    🎓 College:
+                                                <span className="text-2xl" data-oid="wad8bwj">
+                                                    🎓
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="71vou3v"
-                                                >
-                                                    {internProfile.college}
-                                                </span>
+                                                <div data-oid="qs0ch6i">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="h-cwn7:"
+                                                    >
+                                                        College
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="71vou3v"
+                                                    >
+                                                        {internProfile.college}
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="yd49:e7"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="ecj:zu9"
-                                                >
-                                                    📚 Year:
+                                                <span className="text-2xl" data-oid="r-bj:g8">
+                                                    📚
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="dn.eb2n"
-                                                >
-                                                    {internProfile.year}
-                                                </span>
+                                                <div data-oid="we_satp">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="7qse.tn"
+                                                    >
+                                                        Year
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="dn.eb2n"
+                                                    >
+                                                        {internProfile.year}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="space-y-2" data-oid="iy66k67">
+                                        <div className="space-y-4" data-oid="iy66k67">
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="::17gon"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="w:g0hfj"
-                                                >
-                                                    🏢 Department:
+                                                <span className="text-2xl" data-oid="tt-4dcz">
+                                                    🏢
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="hztmys8"
-                                                >
-                                                    {internProfile.department}
-                                                </span>
+                                                <div data-oid="-8481cl">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="qy:aiol"
+                                                    >
+                                                        Department
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="hztmys8"
+                                                    >
+                                                        {internProfile.department}
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="y:j6777"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="i3e_qxq"
-                                                >
-                                                    👤 Manager:
+                                                <span className="text-2xl" data-oid="7y22ubq">
+                                                    👤
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="rm2rxo9"
-                                                >
-                                                    {internProfile.manager}
-                                                </span>
+                                                <div data-oid="ghz.dby">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="r7qwwpb"
+                                                    >
+                                                        Manager
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="rm2rxo9"
+                                                    >
+                                                        {internProfile.manager}
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-3 p-3 rounded-xl glass-effect"
                                                 data-oid="5s:u1w9"
                                             >
-                                                <span
-                                                    style={{ color: 'var(--text-secondary)' }}
-                                                    data-oid="h_71ni9"
-                                                >
-                                                    📅 Start Date:
+                                                <span className="text-2xl" data-oid="zk3q2gp">
+                                                    📅
                                                 </span>
-                                                <span
-                                                    style={{ color: 'var(--text-primary)' }}
-                                                    data-oid="3jr1j8y"
-                                                >
-                                                    {internProfile.startDate}
-                                                </span>
+                                                <div data-oid="h6n6odk">
+                                                    <div
+                                                        className="text-xs"
+                                                        style={{ color: 'var(--text-secondary)' }}
+                                                        data-oid="hs4kxwe"
+                                                    >
+                                                        Start Date
+                                                    </div>
+                                                    <div
+                                                        className="font-medium"
+                                                        style={{ color: 'var(--text-primary)' }}
+                                                        data-oid="3jr1j8y"
+                                                    >
+                                                        {internProfile.startDate}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -818,57 +864,48 @@ export default function Page() {
                             </div>
                         </div>
 
-                        {/* Time Tracking Card */}
+                        {/* ⏰ Enhanced Time Tracking Card */}
                         <div
-                            className="glass-effect rounded-2xl p-6 hover:shadow-2xl transition-all duration-300"
+                            className="glass-effect rounded-3xl p-8 hover-lift glow-secondary"
                             data-oid=":g0hmx."
                         >
                             <div
-                                className="flex items-center justify-between mb-6"
+                                className="flex items-center justify-between mb-8"
                                 data-oid="5vjnx09"
                             >
-                                <h3
-                                    className="text-xl font-bold"
-                                    style={{ color: 'var(--text-primary)' }}
-                                    data-oid="26m3g2q"
-                                >
+                                <h3 className="text-2xl font-bold gradient-text" data-oid="26m3g2q">
                                     ⏰ Time Tracking
                                 </h3>
                                 <button
                                     onClick={() => setIsEditingTime(!isEditingTime)}
-                                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-105"
-                                    style={{
-                                        background: 'var(--gradient-secondary)',
-                                        color: 'black',
-                                    }}
+                                    className="btn-secondary hover-lift"
                                     data-oid="lvro3qx"
                                 >
-                                    {isEditingTime ? 'Save' : 'Edit Times'}
+                                    {isEditingTime ? '💾 Save' : '✏️ Edit Times'}
                                 </button>
                             </div>
 
                             <div
-                                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                                className="grid grid-cols-1 md:grid-cols-2 gap-8"
                                 data-oid="48tbk-8"
                             >
                                 <div
-                                    className="p-4 rounded-xl"
-                                    style={{ background: 'var(--bg-tertiary)' }}
+                                    className="glass-effect p-6 rounded-2xl hover-lift glow-secondary"
                                     data-oid="g2h.emu"
                                 >
                                     <div
-                                        className="flex items-center space-x-2 mb-2"
+                                        className="flex items-center space-x-3 mb-4"
                                         data-oid="6_fyase"
                                     >
-                                        <span className="text-2xl" data-oid="_j:8l9z">
+                                        <span className="text-3xl" data-oid="_j:8l9z">
                                             🌅
                                         </span>
                                         <span
-                                            className="font-medium"
+                                            className="font-semibold text-lg"
                                             style={{ color: 'var(--text-secondary)' }}
                                             data-oid="c_slc7q"
                                         >
-                                            In Time
+                                            Check In
                                         </span>
                                     </div>
                                     {isEditingTime ? (
@@ -876,7 +913,7 @@ export default function Page() {
                                             type="time"
                                             value={inTime.replace(/\s(AM|PM)/, '')}
                                             onChange={(e) => setInTime(e.target.value)}
-                                            className="w-full p-2 rounded-lg border-0 focus:ring-2 focus:ring-green-500"
+                                            className="w-full p-4 rounded-xl border-0 focus:ring-2 focus:ring-green-500 glass-effect"
                                             style={{
                                                 background: 'var(--bg-secondary)',
                                                 color: 'var(--text-primary)',
@@ -885,8 +922,7 @@ export default function Page() {
                                         />
                                     ) : (
                                         <div
-                                            className="text-2xl font-bold"
-                                            style={{ color: 'var(--status-active)' }}
+                                            className="text-3xl font-bold gradient-text-secondary"
                                             data-oid="hx64.8o"
                                         >
                                             {inTime}
@@ -895,23 +931,22 @@ export default function Page() {
                                 </div>
 
                                 <div
-                                    className="p-4 rounded-xl"
-                                    style={{ background: 'var(--bg-tertiary)' }}
+                                    className="glass-effect p-6 rounded-2xl hover-lift glow-danger"
                                     data-oid="bkyvt5e"
                                 >
                                     <div
-                                        className="flex items-center space-x-2 mb-2"
+                                        className="flex items-center space-x-3 mb-4"
                                         data-oid="o8av_fq"
                                     >
-                                        <span className="text-2xl" data-oid="n6_r1k.">
-                                            🌅
+                                        <span className="text-3xl" data-oid="n6_r1k.">
+                                            🌇
                                         </span>
                                         <span
-                                            className="font-medium"
+                                            className="font-semibold text-lg"
                                             style={{ color: 'var(--text-secondary)' }}
                                             data-oid="-veb7g2"
                                         >
-                                            Out Time
+                                            Check Out
                                         </span>
                                     </div>
                                     {isEditingTime ? (
@@ -919,7 +954,7 @@ export default function Page() {
                                             type="time"
                                             value={outTime.replace(/\s(AM|PM)/, '')}
                                             onChange={(e) => setOutTime(e.target.value)}
-                                            className="w-full p-2 rounded-lg border-0 focus:ring-2 focus:ring-red-500"
+                                            className="w-full p-4 rounded-xl border-0 focus:ring-2 focus:ring-red-500 glass-effect"
                                             style={{
                                                 background: 'var(--bg-secondary)',
                                                 color: 'var(--text-primary)',
@@ -928,8 +963,8 @@ export default function Page() {
                                         />
                                     ) : (
                                         <div
-                                            className="text-2xl font-bold"
-                                            style={{ color: 'var(--accent-red)' }}
+                                            className="text-3xl font-bold"
+                                            style={{ color: 'var(--accent-danger)' }}
                                             data-oid="d7ojiw:"
                                         >
                                             {outTime}
@@ -939,23 +974,27 @@ export default function Page() {
                             </div>
 
                             <div
-                                className="mt-6 p-4 rounded-xl"
-                                style={{ background: 'var(--bg-tertiary)' }}
+                                className="mt-8 glass-effect p-6 rounded-2xl hover-lift glow-warning"
                                 data-oid=":n2:60l"
                             >
                                 <div
                                     className="flex items-center justify-between"
                                     data-oid="7zqorf2"
                                 >
+                                    <div className="flex items-center space-x-3" data-oid="ao65410">
+                                        <span className="text-2xl" data-oid="hfci3.5">
+                                            ⏱️
+                                        </span>
+                                        <span
+                                            className="font-semibold text-lg"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid="xc4a5oj"
+                                        >
+                                            Total Work Hours Today
+                                        </span>
+                                    </div>
                                     <span
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="xc4a5oj"
-                                    >
-                                        Total Work Hours Today:
-                                    </span>
-                                    <span
-                                        className="text-xl font-bold"
-                                        style={{ color: 'var(--accent-yellow)' }}
+                                        className="text-3xl font-bold gradient-text-secondary"
                                         data-oid="boo:hwv"
                                     >
                                         8h 30m
@@ -1135,50 +1174,64 @@ export default function Page() {
                         <TimeTracker data-oid="j09wf6o" />
                     </div>
 
-                    {/* Right Column - Sidebar */}
-                    <div className="space-y-6" data-oid="xk2g52j">
-                        {/* Quick Stats */}
-                        <div className="card p-4" data-oid="mlfx-:j">
-                            <h3
-                                className="text-sm font-semibold mb-4"
-                                style={{ color: 'var(--text-primary)' }}
-                                data-oid="1ao0yu."
-                            >
-                                Quick Stats
+                    {/* 📊 Enhanced Right Column - Performance Sidebar */}
+                    <div className="space-y-8" data-oid="xk2g52j">
+                        {/* 🚀 Enhanced Performance Metrics */}
+                        <div
+                            className="glass-effect p-6 rounded-2xl hover-lift glow-primary"
+                            data-oid="mlfx-:j"
+                        >
+                            <h3 className="text-xl font-bold mb-6 gradient-text" data-oid="1ao0yu.">
+                                📊 Performance Metrics
                             </h3>
-                            <div className="space-y-3" data-oid="dlfs0af">
+                            <div className="space-y-4" data-oid="dlfs0af">
                                 <div
-                                    className="flex justify-between items-center"
+                                    className="glass-effect p-4 rounded-xl hover-lift"
                                     data-oid="tp8panj"
                                 >
-                                    <span
-                                        className="text-sm"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="ayk7s3o"
+                                    <div
+                                        className="flex items-center space-x-3 mb-2"
+                                        data-oid="xti183:"
                                     >
-                                        Tasks Completed
-                                    </span>
+                                        <span className="text-2xl" data-oid="15::8fx">
+                                            ✅
+                                        </span>
+                                        <span
+                                            className="font-medium"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid="ayk7s3o"
+                                        >
+                                            Tasks Completed
+                                        </span>
+                                    </div>
                                     <span
-                                        className="font-semibold"
-                                        style={{ color: 'var(--accent-primary)' }}
+                                        className="text-2xl font-bold gradient-text-secondary"
                                         data-oid="_j7kf-r"
                                     >
                                         {performanceStats.tasksCompleted}
                                     </span>
                                 </div>
                                 <div
-                                    className="flex justify-between items-center"
+                                    className="glass-effect p-4 rounded-xl hover-lift"
                                     data-oid="hbmfy1."
                                 >
-                                    <span
-                                        className="text-sm"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid="a:15::q"
+                                    <div
+                                        className="flex items-center space-x-3 mb-2"
+                                        data-oid="n66kc8p"
                                     >
-                                        Productivity
-                                    </span>
+                                        <span className="text-2xl" data-oid="lw7__ts">
+                                            📈
+                                        </span>
+                                        <span
+                                            className="font-medium"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid="a:15::q"
+                                        >
+                                            Productivity Score
+                                        </span>
+                                    </div>
                                     <span
-                                        className="font-semibold"
+                                        className="text-2xl font-bold"
                                         style={{ color: 'var(--accent-secondary)' }}
                                         data-oid="6s_--it"
                                     >
@@ -1186,18 +1239,26 @@ export default function Page() {
                                     </span>
                                 </div>
                                 <div
-                                    className="flex justify-between items-center"
+                                    className="glass-effect p-4 rounded-xl hover-lift"
                                     data-oid=".lrx2xq"
                                 >
-                                    <span
-                                        className="text-sm"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                        data-oid=":vh84z0"
+                                    <div
+                                        className="flex items-center space-x-3 mb-2"
+                                        data-oid="hxdqtjf"
                                     >
-                                        Code Commits
-                                    </span>
+                                        <span className="text-2xl" data-oid="1.dcwh7">
+                                            💻
+                                        </span>
+                                        <span
+                                            className="font-medium"
+                                            style={{ color: 'var(--text-secondary)' }}
+                                            data-oid=":vh84z0"
+                                        >
+                                            Code Commits
+                                        </span>
+                                    </div>
                                     <span
-                                        className="font-semibold"
+                                        className="text-2xl font-bold"
                                         style={{ color: 'var(--accent-primary)' }}
                                         data-oid="mzzy8i7"
                                     >
@@ -1207,67 +1268,79 @@ export default function Page() {
                             </div>
                         </div>
 
-                        {/* Recent Announcements */}
-                        <div className="card p-4" data-oid="jbtonu7">
-                            <h3
-                                className="text-sm font-semibold mb-4"
-                                style={{ color: 'var(--text-primary)' }}
-                                data-oid=".lkt0o0"
-                            >
-                                Recent Announcements
+                        {/* 📢 Enhanced Announcements */}
+                        <div
+                            className="glass-effect p-6 rounded-2xl hover-lift glow-warning"
+                            data-oid="jbtonu7"
+                        >
+                            <h3 className="text-xl font-bold mb-6 gradient-text" data-oid=".lkt0o0">
+                                📢 Recent Announcements
                             </h3>
-                            <div className="space-y-3" data-oid="i4wt9lq">
+                            <div className="space-y-4" data-oid="i4wt9lq">
                                 {announcements.slice(0, 3).map((announcement) => (
                                     <div
                                         key={announcement.id}
-                                        className="p-3 rounded-lg"
-                                        style={{ background: 'var(--bg-tertiary)' }}
+                                        className="glass-effect p-4 rounded-xl hover-lift cursor-pointer transition-all duration-300"
+                                        onClick={() => handleAnnouncementClick(announcement)}
                                         data-oid="6bv_ona"
                                     >
-                                        <h4
-                                            className="text-sm font-medium mb-1"
-                                            style={{ color: 'var(--text-primary)' }}
-                                            data-oid="bc_x_y5"
+                                        <div
+                                            className="flex items-start space-x-3"
+                                            data-oid="dubrqdf"
                                         >
-                                            {announcement.title}
-                                        </h4>
-                                        <p
-                                            className="text-xs"
-                                            style={{ color: 'var(--text-secondary)' }}
-                                            data-oid="3r:va8f"
-                                        >
-                                            {announcement.message.substring(0, 80)}...
-                                        </p>
-                                        <p
-                                            className="text-xs mt-1"
-                                            style={{ color: 'var(--text-muted)' }}
-                                            data-oid=".vbuhtw"
-                                        >
-                                            {announcement.time}
-                                        </p>
+                                            <span className="text-xl" data-oid="9r3x5_.">
+                                                {announcement.priority === 'high'
+                                                    ? '🔴'
+                                                    : announcement.priority === 'medium'
+                                                      ? '🟡'
+                                                      : '🟢'}
+                                            </span>
+                                            <div className="flex-1" data-oid="58-4yc3">
+                                                <h4
+                                                    className="font-semibold mb-2"
+                                                    style={{ color: 'var(--text-primary)' }}
+                                                    data-oid="bc_x_y5"
+                                                >
+                                                    {announcement.title}
+                                                </h4>
+                                                <p
+                                                    className="text-sm mb-2"
+                                                    style={{ color: 'var(--text-secondary)' }}
+                                                    data-oid="3r:va8f"
+                                                >
+                                                    {announcement.message.substring(0, 60)}...
+                                                </p>
+                                                <p
+                                                    className="text-xs"
+                                                    style={{ color: 'var(--text-muted)' }}
+                                                    data-oid=".vbuhtw"
+                                                >
+                                                    {announcement.time}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Team Members */}
-                        <div className="card p-4" data-oid="0tlubts">
-                            <h3
-                                className="text-sm font-semibold mb-4"
-                                style={{ color: 'var(--text-primary)' }}
-                                data-oid="4_--qh3"
-                            >
-                                Team Members
+                        {/* 👥 Enhanced Team Members */}
+                        <div
+                            className="glass-effect p-6 rounded-2xl hover-lift glow-secondary"
+                            data-oid="0tlubts"
+                        >
+                            <h3 className="text-xl font-bold mb-6 gradient-text" data-oid="4_--qh3">
+                                👥 Team Members
                             </h3>
-                            <div className="space-y-3" data-oid="t_0:fz5">
+                            <div className="space-y-4" data-oid="t_0:fz5">
                                 {teamMembers.slice(0, 4).map((member, index) => (
                                     <div
                                         key={index}
-                                        className="flex items-center space-x-3"
+                                        className="glass-effect p-4 rounded-xl hover-lift flex items-center space-x-4"
                                         data-oid="-opr611"
                                     >
                                         <div
-                                            className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium"
+                                            className={`w-12 h-12 rounded-2xl flex items-center justify-center text-sm font-bold status-indicator status-${member.status} glow-primary`}
                                             style={{ background: 'var(--gradient-secondary)' }}
                                             data-oid="v8hzzq2"
                                         >
@@ -1275,24 +1348,28 @@ export default function Page() {
                                         </div>
                                         <div className="flex-1" data-oid="p8_39xx">
                                             <div
-                                                className="text-sm font-medium"
+                                                className="font-semibold"
                                                 style={{ color: 'var(--text-primary)' }}
                                                 data-oid="vrlzxhy"
                                             >
                                                 {member.name}
                                             </div>
                                             <div
-                                                className="text-xs"
+                                                className="text-sm"
                                                 style={{ color: 'var(--text-secondary)' }}
                                                 data-oid="xf5225k"
                                             >
                                                 {member.role}
                                             </div>
+                                            <div
+                                                className="text-xs"
+                                                style={{ color: 'var(--accent-warning)' }}
+                                                data-oid="q8_30qw"
+                                            >
+                                                {getStatusInfo(member.status).icon}{' '}
+                                                {getStatusInfo(member.status).label}
+                                            </div>
                                         </div>
-                                        <div
-                                            className={`w-2 h-2 rounded-full ${getStatusInfo(member.status).color}`}
-                                            data-oid="hquyicp"
-                                        ></div>
                                     </div>
                                 ))}
                             </div>
