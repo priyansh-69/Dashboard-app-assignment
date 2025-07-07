@@ -11,6 +11,7 @@
 ---
 
 ## 📋 Table of Contents
+
 - [Overview](#-overview)
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
@@ -46,29 +47,34 @@
 ## ✨ Features
 
 ### 🏠 Dashboard Overview
+
 - Live Clock & Date
 - Intern Profile Card (Name, Email, College, Year, Role)
 - Performance Metrics: Tasks, Commits, Work Hours
 - Animated Gradient Backgrounds
 
 ### 📋 Task Management
+
 - Drag-and-drop Kanban Board
 - Modal-based Task Creation
 - Priority + Status Filters
 - Detailed Task Metadata
 
 ### ⏱️ Time Tracking
+
 - Real-time Start/Stop Timers
 - Break + Overtime Tracking
 - Daily Summaries
 - Time Entries History
 
 ### 👥 Team Collaboration
+
 - Team Member Directory with Status Indicators
 - Announcement System with Priority Levels
 - Project Overview & Manager Info
 
 ### 🎨 User Experience
+
 - View Mode Toggle: Full vs Minimal
 - Glass Morphism, Gradient UI, and Accessibility
 - Keyboard Navigation and Reduced Motion Support
@@ -78,23 +84,27 @@
 ## 🛠️ Tech Stack
 
 ### Frontend Frameworks
+
 - **Next.js 14** – App Router support
 - **React 18** – Hooks-based UI logic
 - **TypeScript 5** – Type safety
 
 ### Styling & UI
+
 - **TailwindCSS 3.4**
 - **Tailwind Animate**
 - **Lucide Icons**
 - **Radix UI Primitives**
 
 ### Utilities
+
 - **Recharts** – Data visualizations
 - **React Hot Toast** – Notifications
 - **clsx & tailwind-merge** – Class handling
 - **Class Variance Authority (CVA)** – Variant styling
 
 ### Dev Tools
+
 - ESLint + Prettier
 - PostCSS
 - Git-based workflow
@@ -104,10 +114,12 @@
 ## 🚀 Getting Started
 
 ### ✅ Prerequisites
+
 - Node.js 18+
 - npm / yarn / pnpm / bun
 
 ### 🔧 Installation
+
 ```bash
 git clone <your-repo-url>
 cd dashboard
@@ -181,27 +193,27 @@ Switches between full and minimal dashboard views.
 
 ## 🎨 Styling
 
-* Glass Morphism with backdrop blur
-* Status-based color coding
-* Responsive typography with `clamp()`
-* Hover-lift and glow animations
-* Gradient overlays for depth
-* Mobile-first utility classes with Tailwind
+- Glass Morphism with backdrop blur
+- Status-based color coding
+- Responsive typography with `clamp()`
+- Hover-lift and glow animations
+- Gradient overlays for depth
+- Mobile-first utility classes with Tailwind
 
 ---
 
 ## 📊 Data Management
 
-* TypeScript interfaces
-* Dummy data models in `dummyData.ts`
-* Centralized state using React Hooks (`useState`, `useEffect`)
-* Placeholder data for:
+- TypeScript interfaces
+- Dummy data models in `dummyData.ts`
+- Centralized state using React Hooks (`useState`, `useEffect`)
+- Placeholder data for:
 
-  * Intern Profile
-  * Team Members
-  * Tasks
-  * Announcements
-  * Project Info
+    - Intern Profile
+    - Team Members
+    - Tasks
+    - Announcements
+    - Project Info
 
 ---
 
@@ -221,11 +233,11 @@ Adaptive 3-column grid and mobile stacking layouts.
 
 ## ⚡ Performance
 
-* Lazy loaded components
-* Tailwind purge for unused CSS
-* Optimized asset delivery
-* Next.js App Router hydration
-* Minimal runtime JS for smooth UX
+- Lazy loaded components
+- Tailwind purge for unused CSS
+- Optimized asset delivery
+- Next.js App Router hydration
+- Minimal runtime JS for smooth UX
 
 ---
 
@@ -240,10 +252,10 @@ git push origin feature/new-feature
 
 Follow:
 
-* Clean commit messages
-* Consistent naming conventions
-* Add JSDoc for complex components
-* Ensure accessibility compliance (WCAG)
+- Clean commit messages
+- Consistent naming conventions
+- Add JSDoc for complex components
+- Ensure accessibility compliance (WCAG)
 
 ---
 
